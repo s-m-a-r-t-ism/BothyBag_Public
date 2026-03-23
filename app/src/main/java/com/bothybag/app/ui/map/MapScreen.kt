@@ -303,9 +303,7 @@ private fun addBothyMarkers(
                 }
             }
             setOnMarkerClickListener { m, _ ->
-                if (m.isInfoWindowShown) {
-                    onBothyClick(bothy.id)
-                } else {
+                if (!m.isInfoWindowShown) {
                     m.showInfoWindow()
                     mapView.controller.animateTo(m.position)
                 }
