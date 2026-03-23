@@ -49,6 +49,7 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
+import org.osmdroid.views.overlay.infowindow.InfoWindow
 import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
@@ -296,14 +297,20 @@ private fun addBothyMarkers(
             ) {
                 override fun onOpen(item: Any?) {
                     super.onOpen(item)
-                    mView.setOnClickListener {
-                        onBothyClick(bothy.id)
-                        close()
+                    mView.setOnTouchListener { _, event ->
+                        if (event.action == android.view.MotionEvent.ACTION_UP) {
+                            onBothyClick(bothy.id)
+                            close()
+                        }
+                        true
                     }
                 }
             }
             setOnMarkerClickListener { m, _ ->
-                if (!m.isInfoWindowShown) {
+                if (m.isInfoWindowShown) {
+                    onBothyClick(bothy.id)
+                } else {
+                    InfoWindow.closeAllInfoWindowsOn(mapView)
                     m.showInfoWindow()
                     mapView.controller.animateTo(m.position)
                 }
