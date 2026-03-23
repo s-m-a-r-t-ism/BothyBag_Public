@@ -23,6 +23,7 @@ class NewsRepository(private val context: Context) {
         private const val KEY_NEWS = "cached_news"
         private const val KEY_TIMESTAMP = "cached_timestamp"
         private const val CACHE_DURATION_MS = 24 * 60 * 60 * 1000L // 24 hours
+        private const val MAX_PAGES = 5 // Fetch up to 5 pages (~50 articles)
     }
 
     /**
@@ -79,20 +80,34 @@ class NewsRepository(private val context: Context) {
     }
 
     private suspend fun fetchRss(): List<NewsItem> = withContext(Dispatchers.IO) {
-        val connection = URL(RSS_URL).openConnection() as HttpURLConnection
-        connection.apply {
-            requestMethod = "GET"
-            setRequestProperty("User-Agent", "BothyBag/1.0")
-            connectTimeout = 15_000
-            readTimeout = 15_000
+        val allItems = mutableListOf<NewsItem>()
+
+        for (page in 1..MAX_PAGES) {
+            val url = if (page == 1) RSS_URL else "$RSS_URL?paged=$page"
+            val connection = URL(url).openConnection() as HttpURLConnection
+            connection.apply {
+                requestMethod = "GET"
+                setRequestProperty("User-Agent", "BothyBag/1.0")
+                connectTimeout = 15_000
+                readTimeout = 15_000
+            }
+
+            try {
+                val responseCode = connection.responseCode
+                if (responseCode != 200) break // No more pages
+                val xml = connection.inputStream.bufferedReader().use { it.readText() }
+                val items = parseRss(xml)
+                if (items.isEmpty()) break
+                allItems.addAll(items)
+            } catch (e: Exception) {
+                if (page == 1) throw e // Only fail if the first page fails
+                break
+            } finally {
+                connection.disconnect()
+            }
         }
 
-        try {
-            val xml = connection.inputStream.bufferedReader().use { it.readText() }
-            parseRss(xml)
-        } finally {
-            connection.disconnect()
-        }
+        allItems
     }
 
     private fun parseRss(xml: String): List<NewsItem> {
