@@ -274,12 +274,12 @@ fun BothyDetailScreen(
                 Text("Navigate")
             }
 
-            if (bothy.isMba) {
+            if (bothy.isMba && bothy.mbaUrl != null) {
                 Spacer(modifier = Modifier.height(8.dp))
                 OutlinedButton(
                     onClick = {
-                        val uri = Uri.parse("https://www.mountainbothies.org.uk/bothies/location-map/")
-                        context.startActivity(Intent(Intent.ACTION_VIEW, uri))
+                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(bothy.mbaUrl))
+                        context.startActivity(intent)
                     },
                     modifier = Modifier.fillMaxWidth()
                 ) {
