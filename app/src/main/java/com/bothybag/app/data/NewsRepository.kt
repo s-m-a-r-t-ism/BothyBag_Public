@@ -169,8 +169,21 @@ class NewsRepository(private val context: Context) {
     }
 
     /**
+     * Normalize a string for fuzzy matching: lowercase, strip apostrophes/special
+     * chars, collapse whitespace.
+     */
+    private fun normalize(text: String): String {
+        return text
+            .lowercase()
+            .replace(Regex("[''`\u2018\u2019\u201A\u201B]"), "") // strip apostrophes
+            .replace(Regex("[^a-z0-9\\s]"), " ")                 // non-alphanumeric → space
+            .replace(Regex("\\s+"), " ")                         // collapse whitespace
+            .trim()
+    }
+
+    /**
      * Match news items to bothies by checking if any bothy name appears in the title.
-     * Strips common suffixes like "Bothy" for broader matching.
+     * Strips "Bothy" suffix, apostrophes, and special characters for flexible matching.
      */
     private fun matchBothies(
         items: List<NewsItem>,
@@ -178,23 +191,23 @@ class NewsRepository(private val context: Context) {
     ): List<NewsItem> {
         val bothies = bothyRepo.loadBothies()
 
-        // Build lookup: list of (normalized name variants, bothy) pairs
+        // Build lookup: list of (normalized name, bothy) pairs
         val bothyLookup = bothies.flatMap { bothy ->
-            val names = mutableListOf(bothy.name.lowercase())
+            val names = mutableListOf(normalize(bothy.name))
             // Also try without "Bothy" suffix
-            val stripped = bothy.name
-                .replace(Regex("\\s+bothy$", RegexOption.IGNORE_CASE), "")
-                .lowercase()
-            if (stripped != names[0]) names.add(stripped)
-            names.map { it to bothy }
+            val stripped = normalize(
+                bothy.name.replace(Regex("\\s+bothy$", RegexOption.IGNORE_CASE), "")
+            )
+            if (stripped != names[0] && stripped.isNotBlank()) names.add(stripped)
+            names.filter { it.isNotBlank() }.map { it to bothy }
         }
         // Sort by name length descending so longer names match first (avoids partial matches)
         val sortedLookup = bothyLookup.sortedByDescending { it.first.length }
 
         return items.map { item ->
-            val titleLower = item.title.lowercase()
+            val titleNormalized = normalize(item.title)
             val match = sortedLookup.firstOrNull { (name, _) ->
-                titleLower.contains(name)
+                titleNormalized.contains(name)
             }
             if (match != null) {
                 item.copy(
