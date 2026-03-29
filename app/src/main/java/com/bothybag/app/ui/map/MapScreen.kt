@@ -8,9 +8,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.FilterList
 import androidx.compose.material.icons.filled.MyLocation
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
@@ -119,12 +122,33 @@ fun MapScreen(
                     )
                 },
                 actions = {
-                    Text(
-                        text = "$visitedMbaCount / $totalMba MBA visited",
-                        fontSize = 13.sp,
-                        color = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.85f),
-                        modifier = Modifier.padding(end = 4.dp)
-                    )
+                    var showMenu by remember { mutableStateOf(false) }
+                    Box {
+                        IconButton(onClick = { showMenu = true }) {
+                            Icon(
+                                Icons.Default.ArrowDropDown,
+                                contentDescription = "Menu",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+                        DropdownMenu(
+                            expanded = showMenu,
+                            onDismissRequest = { showMenu = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text("Created by Smartism") },
+                                onClick = { showMenu = false }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Version v1.0") },
+                                onClick = { showMenu = false }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("$visitedMbaCount/105 MBA visited") },
+                                onClick = { showMenu = false }
+                            )
+                        }
+                    }
                     IconButton(onClick = onNewsClick) {
                         Icon(
                             Icons.Default.Article,
