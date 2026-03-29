@@ -8,12 +8,15 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.windowInsetsPadding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -103,17 +106,20 @@ fun BothyDetailScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(12.dp),
+                    .windowInsetsPadding(WindowInsets.navigationBars)
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                // Mark as Visited button - bottom left, 1/4 width
+                // Mark as Visited button - bottom left, 1/3 width
                 Button(
                     onClick = {
                         visitedRepo.toggleVisited(bothyId)
                         isVisited = !isVisited
                         visitedDate = visitedRepo.getVisitedDate(bothyId)
                     },
-                    modifier = Modifier.weight(0.25f),
+                    modifier = Modifier
+                        .weight(1f / 3f)
+                        .height(48.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (isVisited) GreenVisited else MaterialTheme.colorScheme.surfaceVariant,
                         contentColor = if (isVisited) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant
@@ -122,19 +128,19 @@ fun BothyDetailScreen(
                     Icon(
                         Icons.Default.CheckCircle,
                         contentDescription = null,
-                        modifier = Modifier.size(16.dp)
+                        modifier = Modifier.size(18.dp)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
+                    Spacer(modifier = Modifier.width(6.dp))
                     Text(
                         text = if (isVisited) "Visited" else "Visit",
-                        fontSize = 12.sp,
+                        fontSize = 14.sp,
                         maxLines = 1
                     )
                 }
 
-                Spacer(modifier = Modifier.weight(0.5f))
+                Spacer(modifier = Modifier.weight(1f / 3f))
 
-                // Navigate button - bottom right, 1/4 width
+                // Navigate button - bottom right, 1/3 width
                 Button(
                     onClick = {
                         val uri = Uri.parse(
@@ -152,7 +158,9 @@ fun BothyDetailScreen(
                             context.startActivity(Intent(Intent.ACTION_VIEW, webUri))
                         }
                     },
-                    modifier = Modifier.weight(0.25f),
+                    modifier = Modifier
+                        .weight(1f / 3f)
+                        .height(48.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = MaterialTheme.colorScheme.primary
                     )
@@ -160,10 +168,10 @@ fun BothyDetailScreen(
                     Icon(
                         Icons.Default.Navigation,
                         contentDescription = null,
-                        modifier = Modifier.size(16.dp)
+                        modifier = Modifier.size(18.dp)
                     )
-                    Spacer(modifier = Modifier.width(4.dp))
-                    Text("Navigate", fontSize = 12.sp, maxLines = 1)
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text("Navigate", fontSize = 14.sp, maxLines = 1)
                 }
             }
         }
