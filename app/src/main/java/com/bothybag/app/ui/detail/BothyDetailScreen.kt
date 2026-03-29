@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -96,6 +98,74 @@ fun BothyDetailScreen(
                     navigationIconContentColor = MaterialTheme.colorScheme.onPrimary
                 )
             )
+        },
+        bottomBar = {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(12.dp),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                // Mark as Visited button - bottom left, 1/4 width
+                Button(
+                    onClick = {
+                        visitedRepo.toggleVisited(bothyId)
+                        isVisited = !isVisited
+                        visitedDate = visitedRepo.getVisitedDate(bothyId)
+                    },
+                    modifier = Modifier.weight(0.25f),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = if (isVisited) GreenVisited else MaterialTheme.colorScheme.surfaceVariant,
+                        contentColor = if (isVisited) MaterialTheme.colorScheme.onPrimary else MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                ) {
+                    Icon(
+                        Icons.Default.CheckCircle,
+                        contentDescription = null,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text(
+                        text = if (isVisited) "Visited" else "Visit",
+                        fontSize = 12.sp,
+                        maxLines = 1
+                    )
+                }
+
+                Spacer(modifier = Modifier.weight(0.5f))
+
+                // Navigate button - bottom right, 1/4 width
+                Button(
+                    onClick = {
+                        val uri = Uri.parse(
+                            "google.navigation:q=${bothy.latitude},${bothy.longitude}&mode=w"
+                        )
+                        val intent = Intent(Intent.ACTION_VIEW, uri).apply {
+                            setPackage("com.google.android.apps.maps")
+                        }
+                        if (intent.resolveActivity(context.packageManager) != null) {
+                            context.startActivity(intent)
+                        } else {
+                            val webUri = Uri.parse(
+                                "https://www.google.com/maps/dir/?api=1&destination=${bothy.latitude},${bothy.longitude}&travelmode=walking"
+                            )
+                            context.startActivity(Intent(Intent.ACTION_VIEW, webUri))
+                        }
+                    },
+                    modifier = Modifier.weight(0.25f),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
+                    Icon(
+                        Icons.Default.Navigation,
+                        contentDescription = null,
+                        modifier = Modifier.size(16.dp)
+                    )
+                    Spacer(modifier = Modifier.width(4.dp))
+                    Text("Navigate", fontSize = 12.sp, maxLines = 1)
+                }
+            }
         }
     ) { paddingValues ->
         Column(
@@ -112,64 +182,6 @@ fun BothyDetailScreen(
             ) {
                 BothyTypeBadge(isMba = bothy.isMba)
                 StatusBadge(status = bothy.status)
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Visited toggle card
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                colors = CardDefaults.cardColors(
-                    containerColor = if (isVisited)
-                        GreenVisited.copy(alpha = 0.1f)
-                    else
-                        MaterialTheme.colorScheme.surfaceVariant
-                )
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(16.dp),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        if (isVisited) {
-                            Icon(
-                                Icons.Default.CheckCircle,
-                                contentDescription = null,
-                                tint = GreenVisited,
-                                modifier = Modifier.padding(end = 8.dp)
-                            )
-                        }
-                        Column {
-                            Text(
-                                text = if (isVisited) "Visited" else "Mark as visited",
-                                fontWeight = FontWeight.Medium,
-                                fontSize = 16.sp
-                            )
-                            if (isVisited && visitedDate != null) {
-                                Text(
-                                    text = visitedDate!!,
-                                    fontSize = 13.sp,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                        }
-                    }
-                    Switch(
-                        checked = isVisited,
-                        onCheckedChange = {
-                            visitedRepo.toggleVisited(bothyId)
-                            isVisited = !isVisited
-                            visitedDate = visitedRepo.getVisitedDate(bothyId)
-                        },
-                        colors = SwitchDefaults.colors(
-                            checkedThumbColor = GreenVisited,
-                            checkedTrackColor = GreenVisited.copy(alpha = 0.4f)
-                        )
-                    )
-                }
             }
 
             // Latest updates section (news matched to this bothy)
@@ -244,38 +256,8 @@ fun BothyDetailScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.height(20.dp))
-
-            // Action buttons
-            Button(
-                onClick = {
-                    val uri = Uri.parse(
-                        "google.navigation:q=${bothy.latitude},${bothy.longitude}&mode=w"
-                    )
-                    val intent = Intent(Intent.ACTION_VIEW, uri).apply {
-                        setPackage("com.google.android.apps.maps")
-                    }
-                    if (intent.resolveActivity(context.packageManager) != null) {
-                        context.startActivity(intent)
-                    } else {
-                        val webUri = Uri.parse(
-                            "https://www.google.com/maps/dir/?api=1&destination=${bothy.latitude},${bothy.longitude}&travelmode=walking"
-                        )
-                        context.startActivity(Intent(Intent.ACTION_VIEW, webUri))
-                    }
-                },
-                modifier = Modifier.fillMaxWidth(),
-                colors = ButtonDefaults.buttonColors(
-                    containerColor = MaterialTheme.colorScheme.primary
-                )
-            ) {
-                Icon(Icons.Default.Navigation, contentDescription = null)
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Navigate")
-            }
-
             if (bothy.isMba && bothy.mbaUrl != null) {
-                Spacer(modifier = Modifier.height(8.dp))
+                Spacer(modifier = Modifier.height(12.dp))
                 OutlinedButton(
                     onClick = {
                         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(bothy.mbaUrl))
