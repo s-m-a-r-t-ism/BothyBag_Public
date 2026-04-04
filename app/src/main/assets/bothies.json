@@ -66,15 +66,21 @@
     "id": "mba_005",
     "latitude": 55.786487,
     "longitude": -6.084126,
-    "mba_url": "https://www.mountainbothies.org.uk/bothies/southwest-highlands-islands/an-cladach/",
+    "mba_url": "https://www.mountainbothies.org.uk/bothies/northern-highlands/achnanclach/",
     "name": "An Cladach Bothy",
     "os_grid_ref": "NR440623",
     "region": "Southwest Highlands & Islands",
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Scottish Ministers\n\nAvailability:not available during stag stalking September 10 to October 20\n\nPlease give priority to shepherds who use the bothy occasionally.Dogs: The bothy is on a sheep farm, please keep dogs under strict control.Fuel:  Thesheep fankoutside the bothy is vital for sheep management andunder no circumstancesshould be vandalised for firewood.Please do not cut live wood.\n\nDerivation: Achnanclach is Gaelic forfield of the stone.",
+    "bothy_features": [
+      "Small Bothy",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Dogs under strict control",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 400,
@@ -1188,22 +1194,6 @@
     "status": "open",
     "type": "MBA",
     "description": "Grid Ref: LR79: NT 183 082\n\nLocation: Southern Scotland\n\nOwner: Mountain Bothies Association\n\nVehicles must not be taken beyond end of tarmac road up Ettrick Valley.\n\nIndoor flushing toilet in the byre adjacent to the bothy.\n\nTimber extraction currently in progress in the vicinity of the bothy; please heed advisory signs. Visitors should also be aware that both burns close to the bothy are designated under international conservation rules. Please take care not to foul the water.\n\nTrees have recently been planted to enhance the environment and protect the side of the burn from erosion.\n\nHistorical Note A History of Over Phawhope\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
-  },
-  {
-    "elevation_m": 11,
-    "id": "mba_077",
-    "latitude": 56.859835,
-    "longitude": -5.754061,
-    "mba_url": "https://www.mountainbothies.org.uk/bothies/western-highlands-islands/peanmeanach/",
-    "name": "Peanmeanach Bothy",
-    "notes": "Permanently closed from October 2020",
-    "os_grid_ref": "NM712805",
-    "region": "Western Highlands & Islands",
-    "source": "haroldstreet.org.uk / MBA",
-    "status": "permanently_closed",
-    "type": "MBA",
-    "description": "",
     "bothy_features": []
   },
   {
