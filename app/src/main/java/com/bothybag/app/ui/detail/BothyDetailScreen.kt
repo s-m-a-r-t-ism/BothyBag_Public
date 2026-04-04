@@ -200,21 +200,14 @@ fun BothyDetailScreen(
 
             Spacer(modifier = Modifier.height(20.dp))
 
-            // Info section
+            // Single info block
             Card(
                 modifier = Modifier.fillMaxWidth(),
                 colors = CardDefaults.cardColors(
-                    containerColor = MaterialTheme.colorScheme.surface
+                    containerColor = MaterialTheme.colorScheme.surfaceVariant
                 )
             ) {
                 Column(modifier = Modifier.padding(16.dp)) {
-                    Text(
-                        "Details",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 16.sp,
-                        modifier = Modifier.padding(bottom = 12.dp)
-                    )
-
                     bothy.region?.takeIf { it != "Unknown" }?.let {
                         InfoRow("Region", it)
                     }
@@ -227,8 +220,6 @@ fun BothyDetailScreen(
                         InfoRow("OS Grid Ref", it)
                     }
 
-                    InfoRow("Coordinates", "%.5f, %.5f".format(bothy.latitude, bothy.longitude))
-
                     bothy.fireInfo?.let {
                         InfoRow("Fire/Stove", it)
                     }
@@ -237,84 +228,20 @@ fun BothyDetailScreen(
                         InfoRow("Size", it)
                     }
 
-                    bothy.operator?.let {
-                        InfoRow("Operator", it)
-                    }
-
-                    bothy.access?.let {
-                        InfoRow("Access", it)
-                    }
-
-                    bothy.combinedNotes?.let {
-                        Spacer(modifier = Modifier.height(8.dp))
-                        HorizontalDivider()
-                        Spacer(modifier = Modifier.height(8.dp))
-                        Text(
-                            "Notes",
-                            fontWeight = FontWeight.Medium,
-                            fontSize = 14.sp,
-                            modifier = Modifier.padding(bottom = 4.dp)
-                        )
-                        Text(
-                            text = it,
-                            fontSize = 14.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
+                    if (bothy.bothyFeatures.isNotEmpty()) {
+                        InfoRow("Features", bothy.bothyFeatures.joinToString(" • "))
                     }
                 }
             }
 
-            // Description section
+            // Description text (no card border)
             bothy.description?.let {
                 Spacer(modifier = Modifier.height(16.dp))
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surface
-                    )
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            "Description",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp,
-                            modifier = Modifier.padding(bottom = 8.dp)
-                        )
-                        Text(
-                            text = it,
-                            fontSize = 14.sp,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-                    }
-                }
-            }
-
-            // Bothy Features section
-            if (bothy.bothyFeatures.isNotEmpty()) {
-                Spacer(modifier = Modifier.height(16.dp))
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    colors = CardDefaults.cardColors(
-                        containerColor = MaterialTheme.colorScheme.surface
-                    )
-                ) {
-                    Column(modifier = Modifier.padding(16.dp)) {
-                        Text(
-                            "Bothy Features",
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp,
-                            modifier = Modifier.padding(bottom = 8.dp)
-                        )
-                        bothy.bothyFeatures.forEach { feature ->
-                            Text(
-                                text = "• $feature",
-                                fontSize = 14.sp,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                modifier = Modifier.padding(vertical = 2.dp)
-                            )
-                        }
-                    }
-                }
+                Text(
+                    text = it,
+                    fontSize = 14.sp,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
             }
 
             if (bothy.isMba && bothy.mbaUrl != null) {
