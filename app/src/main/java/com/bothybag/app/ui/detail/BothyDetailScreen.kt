@@ -25,6 +25,7 @@ import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material.icons.filled.Public
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
@@ -244,18 +245,49 @@ fun BothyDetailScreen(
                 )
             }
 
-            if (bothy.isMba && bothy.mbaUrl != null) {
-                Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(12.dp))
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                if (bothy.isMba && bothy.mbaUrl != null) {
+                    OutlinedButton(
+                        onClick = {
+                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(bothy.mbaUrl))
+                            context.startActivity(intent)
+                        },
+                        modifier = Modifier.weight(1f)
+                    ) {
+                        Icon(Icons.Default.Public, contentDescription = null)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text("MBA Website")
+                    }
+                }
                 OutlinedButton(
                     onClick = {
-                        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(bothy.mbaUrl))
-                        context.startActivity(intent)
+                        val shareText = buildString {
+                            append(bothy.name)
+                            bothy.region?.takeIf { it != "Unknown" }?.let {
+                                append(" — $it")
+                            }
+                            bothy.osGridRef?.let {
+                                append(" — Grid ref: $it")
+                            }
+                            if (bothy.isMba && bothy.mbaUrl != null) {
+                                append(" — More info: ${bothy.mbaUrl}")
+                            }
+                        }
+                        val sendIntent = Intent(Intent.ACTION_SEND).apply {
+                            putExtra(Intent.EXTRA_TEXT, shareText)
+                            type = "text/plain"
+                        }
+                        context.startActivity(Intent.createChooser(sendIntent, "Share bothy"))
                     },
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = if (bothy.isMba && bothy.mbaUrl != null) Modifier.weight(1f) else Modifier.fillMaxWidth()
                 ) {
-                    Icon(Icons.Default.Public, contentDescription = null)
+                    Icon(Icons.Default.Share, contentDescription = null)
                     Spacer(modifier = Modifier.width(8.dp))
-                    Text("MBA Website")
+                    Text("Share")
                 }
             }
 
