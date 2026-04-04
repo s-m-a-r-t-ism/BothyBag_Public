@@ -4,12 +4,10 @@ import android.Manifest
 import android.location.Location
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -154,39 +152,37 @@ fun MapScreen(
                             )
                             // Search results
                             if (searchQuery.length >= 2) {
-                                val results = bothies.filter {
-                                    it.name.contains(searchQuery, ignoreCase = true)
-                                }.take(8)
+                                val results = remember(searchQuery, bothies) {
+                                    bothies.filter { bothy ->
+                                        bothy.name.contains(searchQuery, ignoreCase = true)
+                                    }.take(8)
+                                }
                                 if (results.isNotEmpty()) {
-                                    LazyColumn(
-                                        modifier = Modifier.heightIn(max = 200.dp)
-                                    ) {
-                                        items(results) { bothy ->
-                                            DropdownMenuItem(
-                                                text = {
-                                                    Text(
-                                                        bothy.name,
-                                                        fontSize = 14.sp
-                                                    )
-                                                },
-                                                onClick = {
-                                                    showMenu = false
-                                                    searchQuery = ""
-                                                    val pos = GeoPoint(bothy.latitude, bothy.longitude)
-                                                    mapView?.let { mv ->
-                                                        mv.controller.animateTo(pos, 14.0, 500L)
-                                                        // Find and open the marker's info window
-                                                        mv.overlays.filterIsInstance<Marker>().find {
-                                                            it.position.latitude == bothy.latitude &&
-                                                                it.position.longitude == bothy.longitude
-                                                        }?.let { marker ->
-                                                            InfoWindow.closeAllInfoWindowsOn(mv)
-                                                            marker.showInfoWindow()
-                                                        }
+                                    results.forEach { bothy ->
+                                        DropdownMenuItem(
+                                            text = {
+                                                Text(
+                                                    bothy.name,
+                                                    fontSize = 14.sp
+                                                )
+                                            },
+                                            onClick = {
+                                                showMenu = false
+                                                searchQuery = ""
+                                                val pos = GeoPoint(bothy.latitude, bothy.longitude)
+                                                mapView?.let { mv ->
+                                                    mv.controller.animateTo(pos, 14.0, 500L)
+                                                    // Find and open the marker's info window
+                                                    mv.overlays.filterIsInstance<Marker>().find { m ->
+                                                        m.position.latitude == bothy.latitude &&
+                                                            m.position.longitude == bothy.longitude
+                                                    }?.let { marker ->
+                                                        InfoWindow.closeAllInfoWindowsOn(mv)
+                                                        marker.showInfoWindow()
                                                     }
                                                 }
-                                            )
-                                        }
+                                            }
+                                        )
                                     }
                                     HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
                                 }
