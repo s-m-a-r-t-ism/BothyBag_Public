@@ -5,7 +5,11 @@ import android.location.Location
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
@@ -15,6 +19,8 @@ import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -123,8 +129,9 @@ fun MapScreen(
                 },
                 actions = {
                     var showMenu by remember { mutableStateOf(false) }
+                    var searchQuery by remember { mutableStateOf("") }
                     Box {
-                        IconButton(onClick = { showMenu = true }) {
+                        IconButton(onClick = { showMenu = true; searchQuery = "" }) {
                             Icon(
                                 Icons.Default.ArrowDropDown,
                                 contentDescription = "Menu",
@@ -135,6 +142,56 @@ fun MapScreen(
                             expanded = showMenu,
                             onDismissRequest = { showMenu = false }
                         ) {
+                            // Search field
+                            OutlinedTextField(
+                                value = searchQuery,
+                                onValueChange = { searchQuery = it },
+                                placeholder = { Text("Search bothies...", fontSize = 14.sp) },
+                                singleLine = true,
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .padding(horizontal = 12.dp, vertical = 4.dp)
+                            )
+                            // Search results
+                            if (searchQuery.length >= 2) {
+                                val results = bothies.filter {
+                                    it.name.contains(searchQuery, ignoreCase = true)
+                                }.take(8)
+                                if (results.isNotEmpty()) {
+                                    LazyColumn(
+                                        modifier = Modifier.heightIn(max = 200.dp)
+                                    ) {
+                                        items(results) { bothy ->
+                                            DropdownMenuItem(
+                                                text = {
+                                                    Text(
+                                                        bothy.name,
+                                                        fontSize = 14.sp
+                                                    )
+                                                },
+                                                onClick = {
+                                                    showMenu = false
+                                                    searchQuery = ""
+                                                    val pos = GeoPoint(bothy.latitude, bothy.longitude)
+                                                    mapView?.let { mv ->
+                                                        mv.controller.animateTo(pos, 14.0, 500L)
+                                                        // Find and open the marker's info window
+                                                        mv.overlays.filterIsInstance<Marker>().find {
+                                                            it.position.latitude == bothy.latitude &&
+                                                                it.position.longitude == bothy.longitude
+                                                        }?.let { marker ->
+                                                            InfoWindow.closeAllInfoWindowsOn(mv)
+                                                            marker.showInfoWindow()
+                                                        }
+                                                    }
+                                                }
+                                            )
+                                        }
+                                    }
+                                    HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                                }
+                            }
+                            // Static menu items
                             DropdownMenuItem(
                                 text = { Text("Created by Smartism") },
                                 onClick = { showMenu = false }
