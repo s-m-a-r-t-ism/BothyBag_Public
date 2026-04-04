@@ -13,8 +13,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR33: NM 944 924\n\nLocation: Western Highlands & Islands\n\nAvailability : No restrictions on access but please consult estate notices about all routes during the stalking season. Please note that there is strictly no vehicular access. This is a busy bothy, please keep it tidy and the surrounding area clean.\n\nFuel . The bothy has two open fires and there is a supply of fallen timber in the local forest. Do not cut live wood.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Availability: No restrictions on access but please consult estate notices about all routes during the stalking season. Please note that there is strictly no vehicular access. This is a busy bothy, please keep it tidy and the surrounding area clean.\n\nFuel. The bothy has two open fires and there is a supply of fallen timber in the local forest. Do not cut live wood.",
+    "bothy_features": [
+      "Open fire",
+      "Sleeping platform",
+      "Strictly no vehicle access",
+      "Composting toilet"
+    ]
   },
   {
     "elevation_m": 254,
@@ -28,8 +33,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR56 NN 256 117\n\nLocation: Southwest Highlands & Islands\n\nAccess . The bothy is situated 4km up a private estate track. Vehicles are not allowed on this track; there is car parking available at Butterbridge at the start of the track. There is a burn to cross on the final approach to the bothy. You will not be able to cross this burn when it is in spate. Rainfall quickly turns this burn into spate. At all times this burn should be crossed with extreme caution.\n\nThe bothy has two main rooms and an inner porch. There are bunks for 8 people and a cooking area with a table and chairs in the main room.\n\nFuel . There is a small multi fuel stove provided at this bothy. There is no fallen or suitable wood in the area to burn so all fuel must be carried in.\n\nStalking takes place in the area; notices will be placed at the start of the track and in the bothy advising the areas and times.\n\nHistorical Note Situated in Glen Kinglas, Abyssinia provides welcome shelter to those exploring the surrounding hills. Thought to be built around the late 1800’s, it was occupied as a shepherd’s cottage until it was abandoned after the First World War. It was used for storage of animal feed and hay for a nearby farm then fell into ruin before being renovated as a bothy in 2017.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Access. The bothy is situated 4km up a private estate track. Vehicles are not allowed on this track; there is car parking available at Butterbridge at the start of the track.  There is a burn to cross on the final approach to the bothy. You will not be able to cross this burn when it is in spate. Rainfall quickly turns this burn into spate. At all times this burn should be crossed with extreme caution.\n\nThe bothy has two main rooms and an inner porch. There are bunks for 8 people and a cooking area with a table and chairs in the main room.\n\nFuel. There is a small multi fuel stove provided at this bothy. There is no fallen or suitable wood in the area to burn so all fuel must be carried in.\n\nStalkingtakes place in the area; notices will be placed at the start of the track and in the bothy advising the areas and times.\n\nHistorical NoteSituated in Glen Kinglas, Abyssinia provides welcome shelter to those exploring the surrounding hills. Thought to be built around the late 1800’s, it was occupied as a shepherd’s cottage until it was abandoned after the First World War. It was used for storage of animal feed and hay for a nearby farm then fell into ruin before being renovated as a bothy in 2017.",
+    "bothy_features": [
+      "Sleeping platform",
+      "Multi-fuel stove",
+      "Strictly no vehicle access"
+    ]
   },
   {
     "elevation_m": 150,
@@ -43,8 +52,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR10: NC 631 511\n\nLocation: Northern Highlands\n\nOwner : Scottish Ministers\n\nPlease give priority to shepherds who use the bothy occasionally. Dogs : The bothy is on a sheep farm, please keep dogs under strict control. Fuel : The sheep fank outside the bothy is vital for sheep management and under no circumstances should be vandalised for firewood. Please do not cut live wood.\n\nDerivation : Achnanclach is Gaelic for field of the stone.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner: Scottish Ministers\n\nAvailability:not available during stag stalking September 10 to October 20\n\nPlease give priority to shepherds who use the bothy occasionally.Dogs: The bothy is on a sheep farm, please keep dogs under strict control.Fuel:  Thesheep fankoutside the bothy is vital for sheep management andunder no circumstancesshould be vandalised for firewood.Please do not cut live wood.\n\nDerivation: Achnanclach is Gaelic forfield of the stone.",
+    "bothy_features": [
+      "Small Bothy",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Dogs under strict control",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 458,
@@ -58,8 +73,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR43: NN 835 737\n\nLocation: Eastern Highlands\n\nAidan Sutherland\n\nOwner. Atholl Estate.\n\nAvailability : Stalking takes place in the area between the beginning of Aug and 20th Oct. No stalking on Sundays. Stalking info available by recorded phone message on 01796 481740 – if further information is needed, please e-mail [email protected] or phone 01796 481355 (office hours only).\n\nFuel : scarce.\n\nPlease note that new bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Park between 1st April and 30th September.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Atholl Estate.\n\nAvailability: Stalking takes place in the area between the beginning of Aug and 20th Oct. No stalking on Sundays. Stalking info available by recorded phone message on 01796 481740 – if further information is needed, please e-mail[email protected]or phone 01796 481355 (office hours only).\n\nFuel: scarce.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.",
+    "bothy_features": [
+      "Fuel scarce",
+      "Open fire",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 5,
@@ -96,8 +115,17 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR124: SH 850 379\n\nLocation: Wales\n\nBothy probably originated as shelter for reservoir construction workmen. Sleeps 2 only, 3 max. Sheep graze locally, ensure door firmly closed on departure.\n\nFuel . No local fuel – please respect the local environment.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Bothy probably originated as shelter for reservoir construction workmen.  Sleeps 2 only, 3 max. Sheep graze locally, ensure door firmly closed on departure.\n\nFuel. No local fuel – please respect the local environment.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Sleeping platform",
+      "Small Bothy",
+      "No dogs allowed",
+      "Open fire",
+      "No local fuel"
+    ]
   },
   {
     "elevation_m": 282,
@@ -114,8 +142,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR25: NH 021 431\n\nLocation: North West Highlands & Islands\n\nOwner: Achnashellach Estate\n\nThe bothy is a single room shelter.\n\nHistorical Note Bearnais bothy is in a great location to explore the hills between Glen Carron and Loch Monar. It was restored in 1974 as a memorial to Eric Beard, a well-known character in the outdoor world. The Bearnais Story by MBA founders Bernard & Betty Heath gives a good account of how major MBA projects were carried out in the mid 1970s.\n\nLOGBOOK ENTRIES “Excellent bothy, great for reaching 2 remote Munros. I was alone there over 2 days. Totally silent at night: no sound of any rodents etc. Peaceful and friendly! I much appreciated the efforts of the MO. I removed a bag of rubbish left by previous occupant and disposed of it in Strathcarron, and swept the place out. Visitor’s book makes very interesting reading and a useful log”.\n\n“Just to say Bearnais saved my life… “swam” the burn in spate… Everything soaked apart from sleeping bag… just to get out of the storm and wind…whew! Too windy to pitch tent at Loch Monar… Thanks”\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Achnashellach Estate\n\nThe bothy is a single room shelter.\n\nHistorical NoteBearnais bothy is in a great location to explore the hills between Glen Carron and Loch Monar. It was restored in 1974 as a memorial to Eric Beard, a well-known character in the outdoor world.The Bearnais Storyby MBA founders Bernard & Betty Heath gives a good account of how major MBA projects were carried out in the mid 1970s.\n\nLOGBOOK ENTRIES“Excellent bothy, great for reaching 2 remote Munros. I was alone there over 2 days. Totally silent at night: no sound of any rodents etc. Peaceful and friendly! I much appreciated the efforts of the MO. I removed a bag of rubbish left by previous occupant and disposed of it in Strathcarron, and swept the place out. Visitor’s book makes very interesting reading and a useful log”.\n\n“Just to say Bearnais saved my life… “swam” the burn in spate… Everything soaked apart from sleeping bag… just to get out of the storm and wind…whew! Too windy to pitch tent at Loch Monar… Thanks”",
+    "bothy_features": [
+      "No local fuel",
+      "Open fire",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 361,
@@ -131,8 +163,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR42: NN 499 680\n\nLocation: Central Highlands\n\nOwner: Ben Alder Estate\n\nBen Alder Cottage is in two parts. The old stone part of the bothy is always open and accessible for anyone to use. The timber built extension is for estate use only.\n\nAvailability : Deer Stalking takes place in this area from mid August until the 15th February. The advice from the estate during this time is to stick to paths where possible, and use the most prominent ridges to access the hilltops. Access is never restricted.\n\nLOGBOOK ENTRY Well done for keeping it looking good and being there for us when we needed it in storm Erik, we arrived soaked to bone and cold after walking in from Corrour Station in heavy rain and knee deep snow and were so grateful to the wood that had been left.\n\nHistorical Note Ben Alder Cottage was last inhabited around 1918 by a Joseph McCook who had lived in this isolated cottage for almost forty years as a deer forester. The bothy sits at a junction of two rights of way and in its present form dates back to 1871. It was first renovated by the MBA in 1969.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Ben Alder Estate\n\nBen Alder Cottage is in two parts. The old stone part of the bothy is always open and accessible for anyone to use. The timber built extension is for estate use only.\n\nAvailability: Deer Stalking takes place in this area from mid August until the 15th February. The advice from the estate during this time is to stick to paths where possible, and use the most prominent ridges to access the hilltops. Access is never restricted.\n\nHistorical NoteBen Alder Cottage was last inhabited around 1918 by a Joseph McCook who had lived in this isolated cottage for almost forty years as a deer forester. The bothy sits at a junction of two rights of way and in its present form dates back to 1871. It was first renovated by the MBA in 1969.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Fuel scarce"
+    ]
   },
   {
     "elevation_m": 340,
@@ -146,8 +181,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR34: NH 382 029\n\nLocation: Central Highlands\n\nA McQuiston\n\nOwner: Culachy Estate\n\nSmall bothy with one room only.\n\nNo off-road vehicles please.\n\nHistorical Note Blackburn of Corrieyairack sits beside one of General Wade’s Military Roads. The road, which was built in 1731, reaches a height of 770m (2526 ft). It was renovated by the MBA in 1998 in memory of Pat Biegel.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Culachy Estate\n\nSmall bothy with one room only.\n\nNo off-road vehicles please.\n\nHistorical NoteBlackburn of Corrieyairack sits beside one of General Wade’s Military Roads. The road, which was built in 1731, reaches a height of 770m (2526 ft). It was renovated by the MBA in 1998 in memory of Pat Biegel.",
+    "bothy_features": [
+      "Open fire",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 272,
@@ -163,8 +201,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR78: NT 016 069\n\nLocation: Southern Scotland\n\nImportant note re Parking: No vehicles must be taken beyond the public road end at Cloffinburn Cottage, NT 046 066. Parking at Cloffinburn Cottage is strictly private. Access along the Southern Upland Way preferred. Please take note of local signs.\n\nHistorical Note Brattleburn bothy is situated in the Lowther Hills with the Southern Upland Way coast to coast walk close by. The bothy was renovated in 1984, the same year that the Way was opened and continues to provide shelter for the walkers who undertake the 212 mile long journey.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Important note re Parking:No vehicles must be taken beyond the public road end at Cloffinburn Cottage, NT 046 066. Parking at Cloffinburn Cottage is strictly private. Access along the Southern Upland Way preferred. Please take note of local signs.\n\nHistorical NoteBrattleburn bothy is situated in the Lowther Hills with the Southern Upland Way coast to coast walk close by. The bothy was renovated in 1984, the same year that the Way was opened and continues to provide shelter for the walkers who undertake the 212 mile long journey.",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Wood burning stove"
+    ]
   },
   {
     "elevation_m": 354,
@@ -178,8 +219,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR78: NS 971 001\n\nLocation: Southern Scotland\n\nOwner. Queensberry Estate .\n\nThe bothy is situated on a hill sheep farm and both it and the adjacent pens may be used by shepherds. Dogs must be kept under close control at all times.\n\nTHIS BUILDING IS NOT AVAILABLE DURING LAMBING SEASON FROM 12th APRIL – 31st MAY . PLEASE RESPECT THE WISHES OF THE ESTATE AND DO NOT USE THE BOTHY BETWEEN THESE DATES",
-    "bothy_features": []
+    "description": "Owner.Queensberry Estate.\n\nThe bothy is situated on a hill sheep farm and both it and the adjacent pens may be used by shepherds.Dogsmust be kept under close control at all times.\n\nTHIS BUILDING IS NOT AVAILABLE DURING LAMBING SEASON FROM12th APRIL – 31st MAY. PLEASE RESPECT THE WISHES OF THE ESTATE AND DO NOT USE THE BOTHY BETWEEN THESE DATES",
+    "bothy_features": [
+      "Wood burning stove",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 15,
@@ -193,8 +237,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR50: NN 047 370\n\nLocation: Southwest Highlands & Islands\n\nOwner. Loch Etive Estate.\n\nAvailability and access. Vehicles not permitted beyond entrance to Bonawe quarry. Please keep dogs on lead during the lambing season.\n\nSmall sleeping area with bunks in the back room. Open fires in the two front rooms. Fuel available from local woodland.\n\nHistorical Note “Between the Burn and the Turning Sea” – The Story of Cadderlie by Maire Ross (pdf file)",
-    "bothy_features": []
+    "description": "Owner.Loch Etive Estate.\n\nAvailability and access.Vehicles not permitted beyond entrance to Bonawe quarry. Please keepdogson lead during the lambing season.\n\nSmall sleeping area with bunks in the back room. Open fires in the two front rooms.Fuelavailable from local woodland.\n\nHistorical Note“Between the  Burn and the Turning Sea” – The Story of Cadderlieby Maire Ross  (pdf file)",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 208,
@@ -208,8 +255,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR115: SH 517 455\n\nLocation: Wales\n\nFormer hill farm occupied as a climbing club hut for approx. 50 years. Cae Amos is one of several former dwellings in the general area – please respect other buildings and occupiers.\n\nPlease note that rat poison is currently being used both inside and outside the building – do not bring dogs to the bothy\n\nAccess . No vehicle access – most approaches give a good prospect of wet feet! Please note that approaching the bothy from Cwm Pennant in darkness could result in immersion in a bog- be careful! The surrounding land continues to be active sheep pasture – dogs should be kept strictly under control at all times.\n\nParking . Very limited parking in Cwm Pennant – recommended nearest approach is from Garn Dolbenmaen to the west where there is a public car park. But if you do access from Cwm Pennant, through the farm, please do not park in the farmyard at Bryn Wern SH 523452 and be quiet passing through the farmyard at night.\n\nFuel . No fuel supply locally. Multi fuel stove.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Former hill farm occupied as a climbing club hut for approx. 50 years. Cae Amos is one of several former dwellings in the general area – please respect other buildings and occupiers.\n\nPlease note that rat poison is currently being used both inside and outside the building – do not bring dogs to the bothy\n\nAccess. No vehicle access – most approaches give a good prospect of wet feet!  Please note that approaching the bothy from Cwm Pennant in darkness could result in immersion in a bog- be careful! The surrounding land continues to be active sheep pasture –dogsshould be kept strictly under control at all times.\n\nParking. Very limited parking in Cwm Pennant – recommended nearest approach is from Garn Dolbenmaen to the west where there is a public car park.  But if you do access from Cwm Pennant, through the farm, please do not park in the farmyard at Bryn Wern SH 523452 and be quiet passing through the farmyard at night.\n\nFuel. No fuel supply locally. Multi fuel stove.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Multi-fuel stove",
+      "Strictly no vehicle access"
+    ]
   },
   {
     "elevation_m": 505,
@@ -223,8 +275,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR43: 178 845\n\nLocation: Eastern Highlands\n\nOwner. Invercauld Estate is a working estate with farming and sporting activities.The livelihood of several local people depends on this activity and it should thus be respected. Sheep are prevalent in the area of the bothy and the walk into it.\n\nGarrons are often in the paddock at the bothy. They can seek entry to the bothy itself and should not be fed as this encourages them to gain entry.\n\nToilet. A toilet is situated at the back of the estate shed. This is NOT controlled or run by the MBA. Problems should be rectified by walkers themselves using the instructions therein and NOT reported to the MBA. Should the toilet not be available follow the Bothy Code and use the spade that is in the bothy.\n\nPlease note that new bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Park between 1st April and 30th September.\n\nHistorical Note Callater bothy was originally used as stables for the adjacent lodge and the estate garrons still use the paddock surrounding the bothy during the stalking season. The bothy provides welcome shelter to those following Jock’s Road, an old drove road which was used to move livestock from Braemar over the high Tolmount to the market near the foot of Glen Clova.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Invercauld Estate is a working estate with farming and sporting activities.The livelihood of several local people depends on this activity and it should thus be respected. Sheep are prevalent in the area of the bothy and the walk into it.\n\nGarronsare often in the paddock at the bothy. They can seek entry to the bothy itself and should not be fed as this encourages them to gain entry.\n\nToilet.A toilet is situated at the back of the estate shed. This is NOT controlled or run by the MBA. Problems should be rectified by walkers themselves using the instructions therein and NOT reported to the MBA.Should the toilet not be available follow the Bothy Code and use the spade that is in the bothy.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nHistorical NoteCallater bothy was originally used as stables for the adjacent lodge and the estate garrons still use the paddock surrounding the bothy during the stalking season. The bothy provides welcome shelter to those following Jock’s Road, an old drove road which was used to move livestock from Braemar over the high Tolmount to the market near the foot of Glen Clova.",
+    "bothy_features": [
+      "Composting toilet",
+      "No Fire or Stove",
+      "No fires outside",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 5,
@@ -240,8 +297,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR32: NG 517 183\n\nLocation: North West Highlands & Islands\n\nOwner: Camasunary Estate.\n\nThe building is on the east side of the bay about 1km from the site of the old bothy. It can accommodate around 15 people. Please respect the privacy of the nearby lodge. Note that there is strictly no fishing in nearby lochs or rivers. There is no fire or stove but the building is insulated throughout. Please do not light fires outside the bothy, if you want a fire, light it on the pebble beach. Please help us to maintain this bothy by carrying out any rubbish. Comments are welcome in the logbook but NO graffiti on the walls please.\n\nCamasunary Work Party\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Camasunary Estate.\n\nThe building is on the east side of the bay about 1km from the site of the old bothy. It can accommodate around 15 people. Please respect the privacy of the nearby lodge. Note that there is strictlyno fishingin nearby lochs or rivers. There is no fire or stove but the building is insulated throughout. Please do not light fires outside the bothy, if you want a fire, light it on the pebble beach.Please help us to maintain this bothy by carrying out any rubbish.Comments are welcome in the logbook but NO graffiti on the walls please.\n\nCamasunary Work Party",
+    "bothy_features": [
+      "Sleeping platform",
+      "No Fire or Stove",
+      "No fires outside",
+      "Composting toilet"
+    ]
   },
   {
     "elevation_m": 335,
@@ -255,8 +317,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR33: NH 053 184\n\nLocation: North West Highlands & Islands\n\nOwner: National Trust for Scotland- West Affric Estate\n\nFacilities . Two large rooms with sleeping platforms for 8 upwards.\n\nRenovated with Corriemulzie MC in memory of Tranter and Park. 2008 renovation in memory of Liz Innes.\n\nHistorical Notes:\n\nReturn to Camban – an account of the first work party by Nigel Tranter\n\nHistory Board PDF\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:National Trust for Scotland- West Affric Estate\n\nFacilities. Two large rooms with sleeping platforms for 8 upwards.\n\nRenovated with Corriemulzie MC in memory of Tranter and Park. 2008 renovation in memory of Liz Innes.\n\nHistorical Notes:\n\nReturn to Camban– an account of the first work party by Nigel Tranter\n\nHistory Board PDF",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Sleeping platform",
+      "Fuel scarce"
+    ]
   },
   {
     "elevation_m": 188,
@@ -270,8 +336,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR55: NR 944 996\n\nLocation: Southwest Highlands & Islands\n\nOwner. Ederline Estate\n\nNo dogs please, especially during the lambing season.\n\nStalking . There is stag stalking in the area south and west of the bothy from end September to end October. The Forestry Commission website states that the forest drive is only open from May to end October.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Ederline Estate\n\nNo dogsplease, especially during the lambing season.\n\nStalking. There is stag stalking in the area south and west of the bothy from end September to end October. The Forestry Commission website states that the forest drive is only open from May to end October.",
+    "bothy_features": [
+      "Small Bothy",
+      "Fuel scarce",
+      "Sleeping platform",
+      "No dogs allowed",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 258,
@@ -285,8 +357,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR45: NO 616 831\n\nLocation: Eastern Highlands\n\nOwner. Glendye Estate.\n\nNo fire or stove.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Glendye Estate.\n\nNo fire or stove.",
+    "bothy_features": [
+      "No Fire or Stove"
+    ]
   },
   {
     "elevation_m": 405,
@@ -300,8 +374,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR77: NS 603 002\n\nLocation: Southern Scotland\n\nA McQuiston\n\nOwner. Moorbrock Estate.\n\nAccess to Clennoch\n\nA deer fence has been constructed by the Moorbrock Estate around their land and this has blocked access on some of the walking routes to the bothy. Two crossing points have been created to remove the need to climb the fence as follows:\n\n1) A stile across the fence at NGR NS 607 014 – what3words, extend.sketch.putts has been built. This is on the walking route from Afton using wind farm roads where the wind farm road below Windy Standard is closest to the fence.\n\n2) A gate in the fence between wind turbines 12 and 13 on Dugland hill at NGR NS 605 009 – what3words, patching.stuff.stone has been installed. This is on a marked walking route recently established by Dumfries and Galloway Council which passes the bothy and leads up Dugland hill.\n\nThese crossing points are to be used if approaching the bothy from Afton. Please use them in order to avoid damage to the fence.\n\nRoutes to the bothy from the south via the estate tracks which pass Moorbrock are unaffected. Walkers should use the bypass path which has been established around Moorbrock to respect the privacy of the Estate Manager and his family who live permanently at Moorbrock. If approaching from the Water of Ken road, the path passes to the south and east of the buildings and rejoins the main track close to the Poltie\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Moorbrock Estate.\n\nAccess to Clennoch\n\nA deer fence has been constructed by the Moorbrock Estate around their land and this has blocked access on some of the walking routes to the bothy. Two crossing points have been created to remove the need to climb the fence as follows:\n\n1) A stile across the fence at NGR NS 607 014 – what3words, extend.sketch.putts has been built. This is on the walking route from Afton using wind farm roads where the wind farm road below Windy Standard is closest to the fence.\n\n2) A gate in the fence between wind turbines 12 and 13 on Dugland hill at NGR NS 605 009 – what3words, patching.stuff.stone has been installed. This is on a marked walking route recently established by Dumfries and Galloway Council which passes the bothy and leads up Dugland hill.\n\nThese crossing points are to be used if approaching the bothy from Afton. Please use them in order to avoid damage to the fence.\n\nRoutes to the bothy from the south via the estate tracks which pass Moorbrock are unaffected. Walkers should use the bypass path which has been established around Moorbrock to respect the privacy of the Estate Manager and his family who live permanently at Moorbrock. If approaching from the Water of Ken road, the path passes to the south and east of the buildings and rejoins the main track close to the Poltie",
+    "bothy_features": [
+      "No Fire or Stove"
+    ]
   },
   {
     "elevation_m": 181,
@@ -315,8 +391,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR25: NG 950 480\n\nLocation: North West Highlands & Islands\n\nOwner: Fionnaraich Estate\n\nVehicle parking There is a car parking area just over the bridge close to start of the public footpath to the bothy. Can bothy users please avoid parking on the intake or entrance-way to the locked gate. By doing so we are placing at risk the excellent relationship with the estate and local crofters. Thank you\n\nHistorical Note Coire Fionnaraich Bothy was built in the nineteenth century as a stalkers cottage. An entry in the bothy book from 1989, by a Mr D McKenzie, mentions a pre-war visit when he helped the stalker cut peats. Sadly, the stalker, Duncan Maclennan, who was a sniper in the Seaforth Highlanders, was killed at Dunkirk. The cottage was renovated for use as a bothy in 1986 and is an ideal stopping off place for hill walkers tackling the peaks of the Coulin Forest.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Fionnaraich Estate\n\nAvailability:Bothy closed 20th September to 20th October for stag stalking.\n\nVehicle parkingThere is a car parking area just over the bridge close to start of the public footpath to the bothy. Can bothy users please avoid parking on the intake or entrance-way to the locked gate. By doing so we are placing at risk the excellent relationship with the estate and local crofters. Thank you\n\nHistorical NoteCoire Fionnaraich Bothy was built in the nineteenth century as a stalkers cottage. An entry in the bothy book from 1989, by a Mr D McKenzie, mentions a pre-war visit when he helped the stalker cut peats. Sadly, the stalker, Duncan Maclennan, who was a sniper in the Seaforth Highlanders, was killed at Dunkirk. The cottage was renovated for use as a bothy in 1986 and is an ideal stopping off place for hill walkers tackling the peaks of the Coulin Forest.",
+    "bothy_features": [
+      "No local fuel",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 303,
@@ -330,8 +409,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR10: NH 305 888\n\nLocation: Northern Highlands\n\nMelvin Morrison\n\nOwner: Corriemulzie Estate :\n\nDuring the stalking season, September 1st to October 20th, please keep to the main estate tracks and keep dogs under strict control. Access : Coiremor bothy is the eastern end of the building, with Magoo’s bothy (non-MBA) occupying the western end. It is used by the estate especially in the fishing and deer stalking seasons but access is allowable so long as recognized tracks are followed. To access the bothy, it is necessary to ford the River Mulzie at NH 292 906. If the river is in spate, a bridge can be used about 1km north of the ford at NH 298 922 although it is rough ground from the bridge back up to the path.\n\nDerivation : Coiremor is simply the big corrie\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Corriemulzie Estate:\n\nDuring the stalking season,  September 1st to October 20th, please keep to the main estate tracks and keep dogs under strict control.Access: Coiremor bothy is the eastern end of the building, with Magoo’s bothy (non-MBA) occupying the western end. It is used by the estate especially in the fishing and deer stalking seasons but access is allowable so long as recognized tracks are followed.To access the bothy, it is necessary to ford the River Mulzie at NH 292 906.  If the river is in spate, a bridge can be used about 1km north of the ford at NH 298 922 although it is rough ground from the bridge back up to the path.\n\nDerivation: Coiremor is simplythe big corrie",
+    "bothy_features": [
+      "No local fuel",
+      "Multi-fuel stove",
+      "Strictly no vehicle access",
+      "No fires outside",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 562,
@@ -347,8 +432,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR36: NN 981 958\n\nLocation: Eastern Highlands\n\nOwner. Mar Lodge Estate . Local contact: NTS Ranger Service, 01339 741669.\n\nFuel. No fuel in surrounding area. Please do not dig up bogwood.\n\nToilet . There is a toilet at the bothy, please observe instructions for its use.\n\nPlease note that new bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Park between 1st April and 30th September.\n\nHistorical Note One of the most famous of all bothies, Corrour i- located in the Lairig Ghru, an old right of way between Deeside and Speyside. The original bothy was built in 1877 as a deer watchers hut and the last watcher to stay at the bothy was a Frank Scott who left in 1920. In 1949 the bothy was reconstructed by members of the Cairngorm Club with help from others and has been maintained by the MBA since 1967. Over the years, increased usage was unfortunately accompanied by irresponsible toilet practices. So much so that the area around the bothy was becoming an environmental hazard. The MBA resolved to address the issue and in 2006, a small extension was built to accommodate an experimental “dry toilet”. This has subsequently been doubled in size, evidence of the popularity and usage of this well known bothy.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Mar Lodge Estate.Local contact: NTS Ranger Service, 01339 741669.\n\nFuel.No fuel in surrounding area. Please do not dig up bogwood.\n\nToilet. There is a toilet at the bothy, please observe instructions for its use.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nHistorical NoteOne of the most famous of all bothies, Corrour i- located in the Lairig Ghru, an old right of way between Deeside and Speyside. The original bothy was built in 1877 as a deer watchers hut and the last watcher to stay at the bothy was a Frank Scott who left in 1920. In 1949 the bothy was reconstructed by members of the Cairngorm Club with help from others and has been maintained by the MBA since 1967. Over the years, increased usage was unfortunately accompanied by irresponsible toilet practices. So much so that the area around the bothy was becoming an environmental hazard. The MBA resolved to address the issue and in 2006, a small extension was built to accommodate an experimental “dry toilet”. This has subsequently been doubled in size, evidence of the popularity and usage of this well known bothy.",
+    "bothy_features": [
+      "No local fuel",
+      "Small Bothy",
+      "Composting toilet",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 58,
@@ -362,8 +452,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR19: NG 775 639\n\nLocation: North West Highlands & Islands\n\nOwner: Diabeg Estate .\n\nPlease remember to bring your own fuel in with you. There is none in the vicinity and, as with all bothies, it is in any case preferred that people bring dry kiln wood or coal with them, rather than forage for deadwood that is an important part of the local ecosystem.\n\nHistorical Note Craig is a late 19th century sandstone building and like so many bothies, was built as a home for a shepherd and his family. In 1935, it was adapted by the Scottish Youth Hostels Association and operated by them as a hostel until 2003. It was taken over by the MBA in 2006 for future use as a bothy.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Diabeg Estate.\n\nPlease remember to bring your own fuel in with you.   There is none in the vicinity and, as with all bothies, it is in any case preferred that people bring dry kiln wood or coal with them, rather than forage for deadwood that is an important part of the local ecosystem.\n\nHistorical NoteCraig is a late 19th century sandstone building and like so many bothies, was built as a home for a shepherd and his family. In 1935, it was adapted by the Scottish Youth Hostels Association and operated by them as a hostel until 2003. It was taken over by the MBA in 2006 for future use as a bothy.\n\nCraig map",
+    "bothy_features": [
+      "Fuel scarce",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 160,
@@ -377,8 +470,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR10: NC 794 490\n\nLocation: Northern Highlands\n\nOwner : Strathy South Estate\n\nAccess- Important Note : The track into Croft House from the A836 passes through two windfarm construction sites. The contractors at both sites are committed to maintaining access to the bothy on foot and by bike. From time to time, diversions may apply and it may be necessary to wait for periods. Please follow all guidance. Strictly no vehicle access from the A836. Guidance on site conditions is available from James Young of RTS Forestry on 07775 000423 or [email protected] ”\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner: Strathy South Estate\n\nAccess- Important Note:The track into Croft House from the A836 passes through two windfarm construction sites.  The contractors at both sites are committed to maintaining access to the bothy on foot and by bike.   From time to time, diversions may apply and it may be necessary to wait for periods.  Please follow all guidance.   Strictly no vehicle access from the A836.  Guidance on site conditions is available from James Young of RTS Forestry on 07775 000423 or[email protected]”",
+    "bothy_features": [
+      "Open fire",
+      "Strictly no vehicle access",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 695,
@@ -414,8 +511,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR61: NR 567 829\n\nLocation: Southwest Highlands & Islands\n\nFuel. No wood available, driftwood rarely found.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Fuel.No wood available, driftwood rarely found.",
+    "bothy_features": [
+      "No local fuel",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 458,
@@ -430,7 +530,7 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "permanently_closed",
     "type": "MBA",
-    "description": "Grid Ref: LR42: 523 762\n\nLocation: Central Highlands\n\nNote that there is currently no shelter at all in the vicinity\n\nWork on constructing a new building will commence in 2026\n\nWhilst we will be able to meet the cost from our existing funds, it could adversely impact on our ongoing programme of annual maintenance and plans for new bothies. We would therefore welcome contributions from the outdoors community.\n\nDeer Stalking takes place in this area from mid August until the 15th February. The advice from the estate during this time is to stick to paths where possible, and use the most prominent ridges to access the hilltops. Access is never restricted. Ben Alder Estate can be contacted on 01540 672000.",
+    "description": "Note that there is currently no shelter at all in the vicinity\n\nWork on constructing a new building will commence in 2026\n\nWhilst we will be able to meet the cost from our existing funds, it could adversely impact on our ongoing programme of annual maintenance and plans for new bothies. We would therefore welcome contributions from the outdoors community.\n\nDeer Stalking takes place in this area from mid August until the 15th February. The advice from the estate during this time is to stick to paths where possible, and use the most prominent ridges to access the hilltops. Access is never restricted. Ben Alder Estate can be contacted on 01540 672000.",
     "bothy_features": []
   },
   {
@@ -447,8 +547,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR39: NM 393 928\n\nLocation: Western Highlands & Islands\n\nAvailability. No restrictions on access. During stalking season, daily stalking activities are displayed on map boards in Kinloch, or contact Reserve office 01687 462027.\n\nThere is virtually no fuel anywhere nearby except in the rare event of something being washed up.\n\nMobile phones . There is good mobile coverage in the event of illness or accident.\n\nWarning. Care should be taken on coastal track after heavy rain as streams in spate can be difficult to cross. Also, please note that the bothy is close to dangerous fissures.\n\nHistorical Note Dibidil was originally a shepherd’s house and was renovated by the MBA in 1970. The bothy is situated above the shore on the south coast of the Island of Rum and gives wonderful views across to Eigg. It is reached by walking a 5 mile path from Kinloch, the only habitation on the Island.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Availability.No restrictions on access. During stalking season, daily stalking activities are displayed on map boards in Kinloch, or contact Reserve office 01687 462027.\n\nThere is virtually nofuelanywhere nearby except in the rare event of something being washed up.\n\nMobile phones. There is good mobile coverage in the event of illness or accident.\n\nWarning.Care should be taken on coastal track after heavy rain as streams in spate can be difficult to cross. Also, please note that the bothy is close to dangerous fissures.\n\nHistorical NoteDibidil was originally a shepherd’s house and was renovated by the MBA in 1970. The bothy is situated above the shore on the south coast of the Island of Rum and gives wonderful views across to Eigg. It is reached by walking a 5 mile path from Kinloch, the only habitation on the Island.",
+    "bothy_features": [
+      "Sleeping platform",
+      "No local fuel",
+      "Multi-fuel stove",
+      "Fuel scarce"
+    ]
   },
   {
     "elevation_m": 33,
@@ -462,8 +567,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR56: NN 332 144\n\nLocation: Southwest Highlands & Islands\n\nThis is a busy bothy, the West Highland Way passes close by. It has one large room, 10m by 6m dimensions with sleeping platforms for around 10 people.\n\nFuel. Drift wood can be obtained from loch side when you walk into the bothy.\n\nHelp us to keep this well used bothy clean and tidy by removing all your rubbish when you leave.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "This is a busy bothy, the West Highland Way passes close by. It has one large room, 10m by 6m dimensions with sleeping platforms for around 10 people.\n\nFuel.Drift wood can be obtained from loch side when you walk into the bothy.\n\nHelp us to keep this well used bothy clean and tidy by removing all your rubbish when you leave.",
+    "bothy_features": [
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 302,
@@ -477,8 +584,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR79: NY 170 999\n\nLocation: Southern Scotland\n\nOwner: Tanlawhill Farms\n\nAccess: No vehicles in the forest please, except by arrangement with Tilhill Forestry and/or other owners. If parking at Waterhead, PLEASE DO NOT PARK ON THE GRASS VERGES on the approach to the house and barn. All vehicles should park on the hard standing beside the barn by the gate into the forest. Note that when in spate, the Dryfe Water may be difficult and dangerous to cross and instead of taking the more direct path alongside the Dryfe Water, it may be prudent to take a longer route following the main forestry tracks.\n\nDerivation: Dryfe is believed to derive from a Norse personal name, Drifr , after whom the river is named.\n\nHistorical Note Dryfehead bothy is in Eskdalemuir Forest. It is the result of a major, two year project to renovate a near ruinous former shepherd’s cottage and completed in 2013.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Tanlawhill Farms\n\nAccess:No vehicles in the forest please, except by arrangement with Tilhill Forestry and/or other owners. If parking at Waterhead,PLEASE DO NOT PARK ON THE GRASS VERGESon the approach to the house and barn. All vehicles should park on the hard standing beside the barn by the gate into the forest.  Note that when in spate, the Dryfe Water may be difficult and dangerous to cross and instead of taking the more direct path alongside the Dryfe Water, it may be prudent to take a longer route following the main forestry tracks.\n\nDerivation:Dryfe is believed to derive from a Norse personal name,Drifr, after whom the river is named.\n\nHistorical NoteDryfehead bothy is in Eskdalemuir Forest. It is the result of a major, two year project to renovate a near ruinous former shepherd’s cottage and completed in 2013.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Composting toilet",
+      "Strictly no vehicle access"
+    ]
   },
   {
     "elevation_m": 480,
@@ -492,8 +603,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR89: NY 209 134\n\nLocation: Northern England & Borders\n\nPlease be aware car parking at Honister Slate Mines is a paid for facility. Overnight is £15 per vehicle per night. Tickets are issued and vehicles will be clamped if not clearly showing official dated stamped tickets.\n\nFuel: No fuel available. There is no rubbish collection at this or any other bothy. Please help us to maintain this bothy by carrying out any rubbish.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "With a generous grant fromRamble Worldwide Outdoor Trust, the Dubs Hut was renovated in 2016-17 but remains a basic shelter. It is slate built with a stone floor and a slate roof.\n\nPlease be aware car parking at Honister Slate Mines is a paid for facility. Overnight is £15 per vehicle per night. Tickets are issued and vehicles will be clamped if not clearly showing  official dated stamped tickets.\n\nFuel:No fuel available.There is no rubbish collection at this or any other bothy. Please help us to maintain this bothy by carrying out any rubbish.",
+    "bothy_features": [
+      "Wood burning stove"
+    ]
   },
   {
     "elevation_m": 511,
@@ -509,8 +622,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR115: 705 664\n\nLocation: Wales\n\nHistorical Note: Building history linked to nearby reservoir construction mid-1880’s.\n\nSteep approach to road end can be problematical in winter conditions. Sheep graze locally, please ensure door firmly closed on departure.\n\nAll rubbish to be removed after any visit as there is no collection service at any Bothy\n\nThe maintenance organiser, Phil Maslen, can be contacted on 07790 003739 email: p [email protected]\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Historical Note:Building history linked to nearby reservoir construction mid-1880’s.\n\nSteep approach to road end can be problematical in winter conditions.Sheep graze locally,please ensure door firmly closed on departure.\n\nAll rubbish to be removed after any visit as there is no collection service at any Bothy\n\nThe maintenance organiser, Phil Maslen, can be contacted on 07790 003739  email: p[email protected]",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Sleeping platform",
+      "No local fuel",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 177,
@@ -527,8 +647,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR25: NH 012 526\n\nLocation: North West Highlands & Islands\n\nOwner: Coulin Estate\n\nAs its name implies, this is a very small bothy. There is no fireplace and fires are not permitted outside the bothy.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Coulin Estate\n\nAs its name implies, this is a very small bothy. There is no fireplace and fires are not permitted outside the bothy.",
+    "bothy_features": [
+      "Small Bothy",
+      "No Fire or Stove",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 40,
@@ -542,8 +666,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR40: NM 817 817\n\nLocation: Southwest Highlands & Islands\n\nOwne: Inverailort estate\n\nImportant warning: Do not cross or walk on the railway.\n\nThere is no path to this bothy. The recommended route from Lochailort is to go past Glenshian house and along argocat tracks heading east, then strike up the hillside to the rocky ridge, Creagan-t- Sagairt. Follow the ridge east then drop down steep ground to the bothy.\n\nThose wishing to cross Loch Eilt by kayak or canoe are advised to use the layby just east of the “narrows” at NM829820\n\nThe bothy is situated in an area of naturally regenerating native woodland – please do not under any circumstance cut live wood. Be aware of ticks in thick bracken surrounding the bothy.\n\nDerivation: (place of the) waterfalls\n\nHistorical Note A former shepherd’s cottage, traditionally used as a rough bothy since the 1960s. Renovated by the MBA in 1977 and again in 1988.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owne:Inverailort estate\n\nImportant warning: Do not cross or walk on the railway.\n\nThere is no path to this bothy. The recommended route from Lochailort is to go past Glenshian house and along argocat tracks heading east, then strike up the hillside to the rocky ridge, Creagan-t- Sagairt. Follow the ridge east then drop down steep ground to the bothy.\n\nThose wishing to cross Loch Eilt by kayak or canoe are advised to use the layby just east of the “narrows” at NM829820\n\nThe bothy is situated in an area of naturally regenerating native woodland –please do not under any circumstance cut live wood.Be aware of ticks in thick bracken surrounding the bothy.\n\nDerivation:(place of the) waterfalls\n\nHistorical NoteA former shepherd’s cottage, traditionally used as a rough bothy since the 1960s. Renovated by the MBA in 1977 and again in 1988.",
+    "bothy_features": [
+      "Sleeping Bunks",
+      "Open fire",
+      "Fuel scarce"
+    ]
   },
   {
     "elevation_m": 591,
@@ -557,8 +685,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR36: NJ 082 062\n\nLocation: Eastern Highlands\n\nAvailability. Contact to be made before visiting during period 1 September to 20 October, Andrew Young, Glenavon Estate, 07742 516114\n\nFacilities. The former stable across from the bothy may also be used if the bothy is busy.\n\nPlease note that new bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Park between 1st April and 30th September.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Availability.Contact to be made before visiting during period 1 September to 20 October, Andrew Young, Glenavon Estate, 07742 516114\n\nFacilities.The former stable across from the bothy may also be used if the bothy is busy.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 281,
@@ -572,8 +703,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR80: NY 754 886\n\nLocation: Northern England & Borders\n\nSmall bothy with accommodation for four maximum. Parking in Falstone village. NO vehicles permitted in the forest. FIRE RISK – No fires outside.\n\nWhen approaching from the east please ensure any dogs are kept on a lead and gates closed behind you as there are now sheep and cattle in the area.\n\nFlittingford Discovered This little gem of a building had been hidden for years surrounded by mature fir trees and was discovered when harvesting took place. Local information leads us to believe the building was used as a shepherd’s shelter. After discussion at our March 2014 area meeting it was decided to adopt the building but it wasn’t until June 2016 when Forest Enterprise finished harvesting that we were able to start work on the bothy… the full article can be read in NEWSLETTER no. 198 in the Member Section.\n\nHistorical Note The area where the bothy is situated is known as Hospital Gate, the word “hospital” meaning hospitality and is on the drovers trail to Bellingham. Local knowledge leads us to believe the bothy was a stopping point for the drovers where they would tidy up the sheep ready for market. A resident of Falstone can remember her father who drove sheep to market always carried his accordion, it was quite common for men to take along their instruments and have a ceilidh before bedding down.\n\nTwo names are recorded in the cement fill left hand-side of the window frame from when it was replaced in Ocotober 1959. The names are “R.Robson” and “J.Proudlock”. These were 2 local forestry workers who were then engaged on the first phase of forestry activity on this site. The site had been bought by the Forestry Commission in 1958 from the owners of Vaux Brewery, Sunderland, who had had it as part of a fishing rights property holding. “R.Robson” was Robert Robson, who had 3 sons later followed him into forest work and who still live locally.\n\nThe last known shepherd to have used the bothy was an ‘R.Brown’ in the earlier part of the 1950s. The original Victorian 6″ to mile Ordnance Survey maps record that both the stell and current kebhouse enclosure walling were surveyed in 1862, and the existence of the present shepherd’s bothy/kebhouse positively confirmed by the 1896 survey.\n\nRobert Robson’s son to whom we are indebted for this information was also able to confirm that there was never any direct connection between the nearby Flittingford Well and this old shepherd’s bothy/keb house. The well was once connected by iron pipe down to Rye Close, Crag House and Oldhall farms, but apparently never ran as reliably as would have been wished and post-WW2 was abandoned when other sources of water became available.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Small bothy with accommodation for four maximum. Parking in Falstone village.NO vehicles permitted in the forest.FIRE RISK – No fires outside.\n\nWhen approaching from the east please ensure any dogs are kept on a lead and gates closed behind you as there are now sheep and cattle in the area.\n\nFlittingford DiscoveredThis little gem of a building had been hidden for years surrounded by mature fir trees and was discovered when harvesting took place. Local information leads us to believe the building was used as a shepherd’s shelter. After discussion at our March 2014 area meeting it was decided to adopt the building but it wasn’t until June 2016 when Forest Enterprise finished harvesting that we were able to start work on the bothy…the full article can be read in NEWSLETTER no. 198 in the Member Section.\n\nHistorical NoteThe area where the bothy is situated is known as Hospital Gate, the word “hospital” meaning hospitality and is on the drovers trail to Bellingham. Local knowledge leads us to believe the bothy was a stopping point for the drovers where they would tidy up the sheep ready for market. A resident of Falstone can remember her father who drove sheep to market always carried his accordion, it was quite common for men to take along their instruments and have a ceilidh before bedding down.\n\nTwo names are recorded in the cement fill left hand-side of the window frame from when it was replaced in Ocotober 1959. The names are “R.Robson” and “J.Proudlock”. These were 2 local forestry workers who were then engaged on the first phase of forestry activity on this site. The site had been bought by the Forestry Commission in 1958 from the owners of Vaux Brewery, Sunderland, who had had it as part of a fishing rights property holding. “R.Robson” was Robert Robson, who had 3 sons later followed him into forest work and who still live locally.\n\nThe last known shepherd to have used the bothy was an ‘R.Brown’ in the earlier part of the 1950s. The original Victorian 6″ to mile Ordnance Survey maps record that both the stell and current kebhouse enclosure walling were surveyed in 1862, and the existence of the present shepherd’s bothy/kebhouse positively confirmed by the 1896 survey.\n\nRobert Robson’s son to whom we are indebted for this information was also able to confirm that there was never any direct connection between the nearby Flittingford Well and this old shepherd’s bothy/keb house. The well was once connected by iron pipe down to Rye Close, Crag House and Oldhall farms, but apparently never ran as reliably as would have been wished and post-WW2 was abandoned when other sources of water became available.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "Strictly no vehicle access",
+      "Open fire",
+      "No fires outside",
+      "Water unreliable",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 688,
@@ -606,8 +744,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR78: NT 135 185\n\nLocation: Southern Scotland\n\nThe bothy is sited on land owned by Borders Forest Trust which is undertaking an ambitious long term habitat restoration project in the surrounding area.\n\nSTRICTLY NO FIRES OR BBQS TO BE LIT OUTSIDE THE BOTHY, OR SURROUNDING AREA, UNDER ANY CIRCUMSTANCES\n\nDog owners are asked to keep their dogs under close control particularly in the bird breeding months from March-July.\n\nBothy renovated in memory of Andrew Jensen.\n\nHistorical Note Gameshope cottage was built by a stonemason called John Dickson probably in the early 19th century. What is now the bothy was originally the byre. A family called Anderson were shepherds here for many years. The last permanent residents left in 1919. The quarries by the track on the way up the glen provided stone for the dam holding back the Talla reservoir which was completed in 1905. This reservoir provides drinking water to Edinburgh. In the late 17th century, the area was used by Covenanters for their meetings, and there is a stone in the glen called Peden’s Pulpit, named for Alexander Peden, a famous preacher. Sadly, it has not been possible to conclusively identify the stone. Gameshope Glen features in James Hogg’s story “The Bridal of Polmood” as the scene of an ambush.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "The bothy is sited on land owned byBorders Forest Trustwhich is undertaking an ambitious long term habitat restoration project in the surrounding area.\n\nSTRICTLY NO FIRES OR BBQS TO BE LIT OUTSIDE THE BOTHY, OR SURROUNDING AREA, UNDER ANY CIRCUMSTANCES\n\nDogowners are asked to keep their dogs under close control particularly in the bird breeding months from March-July.\n\nBothy renovated in memory of Andrew Jensen.\n\nHistorical NoteGameshope cottage was built by a stonemason called John Dickson probably in the early 19th century. What is now the bothy was originally the byre. A family called Anderson were shepherds here for many years. The last permanent residents left in 1919. The quarries by the track on the way up the glen provided stone for the dam holding back the Talla reservoir which was completed in 1905. This reservoir provides drinking water to Edinburgh. In the late 17th century, the area was used by Covenanters for their meetings, and there is a stone in the glen called Peden’s Pulpit, named for Alexander Peden, a famous preacher. Sadly, it has not been possible to conclusively identify the stone. Gameshope Glen features in James Hogg’s story “The Bridal of Polmood” as the scene of an ambush.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No Fire or Stove",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 435,
@@ -621,8 +763,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR44 258 900\n\nLocation: Eastern Highlands\n\nToilet . There is a toilet at the bothy, please observe instructions for its use and ensure that it is left clean.\n\nFuel . The estate asks that visitors dont forage for wood. Some wood is supplied at the bothy, please take some fuel with you and use some of the supplied wood.\n\nPlease note that new bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Park between 1st April and 30th September.\n\nVisitors should also note that parking is not permitted on the Distillery Road in Easter Balmoral",
-    "bothy_features": []
+    "description": "Toilet. There is a toilet at the bothy, please observe instructions for its use and ensure that it is left clean.\n\nFuel. The estate asks that visitors dont forage for wood. Some wood is supplied at the bothy, please take some fuel with you and use some of the supplied wood.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nVisitors should also note that parking is not permitted on the Distillery Road in Easter Balmoral",
+    "bothy_features": [
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 129,
@@ -636,8 +780,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR40: NM 945 820\n\nLocation: Western Highlands & Islands\n\nAvailability : No access restrictions but please consult estate notices about low level routes during stalking.\n\nThe bothy was restored in memory of Nicholas Randall.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Availability: No access restrictions but please consult estate notices about low level routes during stalking.\n\nThe bothy was restored in memory of Nicholas Randall.",
+    "bothy_features": [
+      "Open fire",
+      "Sleeping platform",
+      "Strictly no vehicle access"
+    ]
   },
   {
     "elevation_m": 290,
@@ -651,8 +799,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR34: NN 336 996\n\nLocation: Central Highlands\n\nOwner: Aberchalder Estate, Steven MacKenzie (gamekeeper) 07780 693779.\n\nAvailability: Not available during stalking from 1st October to mid February.\n\nHistorical Note Located at 260m above sea level in the Great Glen, Glenbuck was first renovated in 1981. The Great Glen is most well known for the 62 mile long Caledonian Canal which was engineered by Thomas Telford and completed in 1822.",
-    "bothy_features": []
+    "description": "Owner:Aberchalder Estate, Steven MacKenzie (gamekeeper) 07780 693779.\n\nAvailability:Not available during stalking from 1st October to mid February.\n\nHistorical NoteLocated at 260m above sea level in the Great Glen, Glenbuck was first renovated in 1981. The Great Glen is most well known for the 62 mile long Caledonian Canal which was engineered by Thomas Telford and completed in 1822.",
+    "bothy_features": [
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 8,
@@ -666,8 +816,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR15: NC 271 304\n\nLocation: Northern Highlands\n\nOwner : Reay Forest Estate, 01971 500 221 or 01971 502 220.\n\nSmall bothy sleeping 8 on a platform.\n\nFuel : Firewood is restricted to scarce driftwood only. Please respect the long suffering trees adjacent to the bothy.\n\nDrinking water : There is a small stream in front of the bothy of dubious quality. The best source is Glen Coul river, some 300 yards north-east along the foreshore.\n\nLitter. Please take out any accumulating litter most especially if travelling by boat. There are refuse bins at Kylesku and Inchnadamph.\n\nCamping. There is good flat camping above the stony beach.\n\nHistorical Note :\n\nJohn Elliot and his wife Margaret lived in the now empty estate house where John was employed as a shepherd/deer stalker. When their five sons, born between 1891 and 1901, reached school age a small two roomed cottage (now the bothy) was built on the side of the house which is where the teacher lived. Even a close-knit remote community like Glencoul could not escape the tragic events playing out in the wider world; and the white marble cross on the hillock close by the bothy commemorates eldest brothers William and Alastair Elliot who died in World War I. The last inhabitants of Glencoul came out in the 1950’s.The last inhabitants of Glencoul came out in the 1950’s.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner: Reay Forest Estate, 01971 500 221 or 01971 502 220.\n\nSmall bothysleeping 8 on a platform.\n\nFuel: Firewood is restricted to scarce driftwood only. Please respect the long suffering trees adjacent to the bothy.\n\nDrinking water: There is a small stream in front of the bothy of dubious quality. The best source is Glen Coul river, some 300 yards north-east along the foreshore.\n\nLitter.Please take out any accumulating litter most especially if travelling by boat. There are refuse bins at Kylesku and Inchnadamph.\n\nCamping.There is good flat camping above the stony beach.\n\nHistorical Note:\n\nJohn Elliot and his wife Margaret lived in the now empty estate house where John was employed as a shepherd/deer stalker. When their five sons, born between 1891 and 1901, reached school age a small two roomed cottage (now the bothy) was built on the side of the house which is where the teacher lived. Even a close-knit remote community like Glencoul could not escape the tragic events playing out in the wider world; and the white marble cross on the hillock close by the bothy commemorates eldest brothers William and Alastair Elliot who died in World War I. The last inhabitants of Glencoul came out in the 1950’s.The last inhabitants of Glencoul came out in the 1950’s.",
+    "bothy_features": [
+      "Small Bothy",
+      "Open fire",
+      "Sleeping platform"
+    ]
   },
   {
     "elevation_m": 5,
@@ -681,8 +835,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR15: NC283 338\n\nLocation: Northern Highlands\n\nOwner : Reay Forest Estate, 01971 500 221 or 01971 502 220.\n\nFirewood : Only driftwood available locally.\n\nForestry regeneration: Kylestrome Estate are in process of fencing off an area of land below the path climbing out of Glencoul in the direction of Glendhu to allow native woodlands to regenerate. Some of this work will be very close to the path and machinery may be operating, however, the path will remain open to walkers at all times. Users are requested to cooperate with any requests given to them by the workforce.\n\nLOGBOOK ENTRY “Called in to see this as it was the birthplace of my grt granma in 1833, it was a thrill to actually take shelter from the hail in her place, all was in good order. Thank you for making this trip worthwhile by preserving the bothy” Lindsay Mcdonald, May 2011\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner: Reay Forest Estate, 01971 500 221 or 01971 502 220.\n\nAvailability: The estate asks visitors to phone first if intending to visit during the stalking season, Aug 12 to Oct 20.\n\nFirewood: Only driftwood available locally.\n\nForestry regeneration:Kylestrome Estate are in process of fencing off an area of land below the path climbing out of Glencoul in the direction of Glendhu to allow native woodlands to regenerate. Some of this work will be very close to the path and machinery may be operating, however, the path will remain open to walkers at all times. Users are requested to cooperate with any requests given to them by the workforce.",
+    "bothy_features": [
+      "Fuel scarce",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 9,
@@ -696,8 +853,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR61: NR 644 970\n\nLocation: Southwest Highlands & Islands\n\nOwner. Ardlussa Estate, 01496 820 323. Permission should always be sought from the owner before visiting the bothy.\n\nAvailability . The bothy is not available during stag stalking, mid August to mid October.\n\nFuel. Driftwood is now scarce.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Ardlussa Estate, 01496 820 323. Permission should always be sought from the owner before visiting the bothy.\n\nAvailability. The bothy is not available during stag stalking, mid August to mid October.\n\nFuel.Driftwood is now scarce.",
+    "bothy_features": [
+      "No local fuel",
+      "Open fire",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 70,
@@ -713,8 +874,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR33: NM 936 904\n\nLocation: Western Highlands & Islands\n\nOwner: Mountain Bothies Association\n\nAvailability : No restrictions on access but please consult estate notices about low level routes during stalking.\n\nFacilities . There are sleeping platforms in both downstairs rooms and plenty of floor space upstairs. Composting toilet. Please note, no outside fires permitted and no vehicular access.\n\nFuel : Plentiful wood due to forestry work but please don’t cut live trees.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Mountain Bothies Association\n\nAvailability: No restrictions on access but please consult estate notices about low level routes during stalking.\n\nFacilities. There are sleeping platforms in both downstairs rooms and plenty of floor space upstairs. Composting toilet. Please note, no outside fires permitted and no vehicular access.\n\nFuel: Plentiful wood due to forestry work but please don’t cut live trees.",
+    "bothy_features": [
+      "Wood burning stove",
+      "Open fire",
+      "Sleeping platform",
+      "Strictly no vehicle access",
+      "No fires outside",
+      "Composting toilet"
+    ]
   },
   {
     "elevation_m": 297,
@@ -728,8 +896,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR50: NN 375 481\n\nLocation: Central Highlands\n\nOwner: Blackmount Estate, 01838 400255.\n\nNote: The bridge over The Water of Tulla, 500m east of Gorton bothy is no longer there – anybody wanting to go to Glen Lyon or access the mountains south of Gorton will have to ford the river which may be problematic when in spate.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Blackmount Estate, 01838 400255.\n\nNote: The bridge over The Water of Tulla, 500m east of Gorton bothy is no longer there – anybody wanting to go to Glen Lyon or access the mountains south of Gorton will have to ford the river which may be problematic when in spate.",
+    "bothy_features": [
+      "Fuel scarce",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 600,
@@ -743,8 +914,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR89: NY 311 335\n\nLocation: Northern England & Borders\n\nSmall Hut, room for three to four persons. Comments are welcome in the logbook but NO graffiti please. Situated at around 600m in the Lake District’s Northern Fells, just below the summit of Great Lingy hill and close to the route of the Cumbria Way Long Distance footpath. An article describing the restoration of the hut can be found in Newsletter 205 p.35 available in the Membership section.\n\nHistorical Note\n\nGreat Lingy Hut is a simple timber built cabin situated at about 600m on an exposed hillside on the Northern Fells of Lakeland in an area known as ‘back o’ Skiddaw’. It is situated on the Cumbria Way long distance path with views across to Blencathra and the distant Pennine hills.\n\nThe hut was originally used by miners at the nearby but now disused Carrock Mine where lead, arsenic, copper and tungsten were once excavated. Following closure of the mine the hut was relocated to its present site high above on the exposed moorland for use as a shooting box. During the 1960’s the hut was leased to the ‘Friends’ Quaker boarding school in Wigton as an outdoor base and was fitted by them with a sleeping platform. When the school closed the hut became an open shelter and eventually the Lake District National Park took responsibility for its maintenance. In the latest chapter of its history, in 2017, the MBA took on the hut and refurbished it so that once again it’s able to provide passersby with welcome shelter.\n\nLOGBOOK entry: I had a night up there on Tuesday . It was the night of the ‘super moon’ and I saw my first ‘moonbow’ an amazing sight, these things make it all worthwhile!\n\nWork party 1\n\nWork party 2\n\nWork party 3\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Small Hut, room for three to four persons.Comments are welcome in the logbook but NO graffiti please.Situated at around 600m in the Lake District’s Northern Fells, just below the summit of Great Lingy hill and close to the route of the Cumbria Way Long Distance footpath.An article describing the restoration of the hut can be found inNewsletter 205 p.35available in the Membership section.\n\nHistorical Note\n\nGreat Lingy Hut is a simple timber built cabin situated at about 600m on an exposed hillside on the Northern Fells of Lakeland in an area known as ‘back o’ Skiddaw’. It is situated on the Cumbria Way long distance path with views across to Blencathra and the distant Pennine hills.\n\nThe hut was originally used by miners at the nearby but now disused Carrock Mine where lead, arsenic, copper and tungsten were once excavated. Following closure of the mine the hut was relocated to its present site high above on the exposed moorland for use as a shooting box. During the 1960’s the hut was leased to the ‘Friends’ Quaker boarding school in Wigton as an outdoor base and was fitted by them with a sleeping platform. When the school closed the hut became an open shelter and eventually the Lake District National Park took responsibility for its maintenance. In the latest chapter of its history, in 2017, the MBA took on the hut and refurbished it so that once again it’s able to provide passersby with welcome shelter.",
+    "bothy_features": [
+      "No fires outside",
+      "Small Bothy",
+      "No Fire or Stove"
+    ]
   },
   {
     "elevation_m": 272,
@@ -758,8 +933,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR86: NY 740 786\n\nLocation: Northern England & Borders\n\nUnfortunately Green bothy has had to be closed and, following assessment by the owners, is now scheduled to be demolished due to the discovery of serious structural issues.\n\nThis bothy will NOT re-open.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Bothy CLOSED – awaiting demolition\n\nUnfortunately Green bothy has had to be closed and, following assessment by the owners, is now scheduled to be demolished due to the discovery of serious structural issues.\n\nThis bothy will NOT re-open.",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Open fire",
+      "Wood burning stove"
+    ]
   },
   {
     "elevation_m": 268,
@@ -773,8 +952,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR79: NT 312 000\n\nLocation: Southern Scotland\n\nAccess . The easiest way on foot or by bike to Greensykes is via the farm track running up the west side of the Meggat Water Glen from the roadhead at Glendinning. The Bothy is situated approximately 2 miles up the Glen, a 45 to 50 minute walk. Glendinning should not be confused with Jamestown, the southernmost group of buildings close by. Vehicles should not be parked adjacent to these buildings. There is hardstanding immediately over the bridge at Glendinning, adjacent to the river bank (GR LT 79 NY298969), where vehicles should be parked. This car park is private land and technically part of a working farmyard. Vehicles are parked there at their owner’s risk. The farm track heading north up from Glendinning is a private road and strictly intended for the use of farm vehicles such as tractors and quad bikes. A notice displayed at Glendinning clearly states that there is no unauthorised vehicular access to Greensykes . The same restriction applies to all other farm and forestry tracks in the area.\n\nThe MBA has right of access to Greensykes on foot or by bicycle using the track up the west side of Meggat Water Glen. Please do not leave gates open if they are found to be closed. The forest gate at grid reference NY 308998 is padlocked but a step stile has been installed to facilitate access to the forest area.\n\nAn alternative access to Greensykes, again on foot or by bicycle , is via the forest roads of the Eskdalemuir forest. Unauthorised vehicular access leading to Greensykes Bothy via forest tracks in that area is not permitted and such tracks are closed by padlocked barriers,\n\nFollowing incidents in early 2018 which resulted in damage to farm property and trespass around Glendinning Farm, Police Scotland now make community policing visits to the Meggat Water Glen area during the week, and which includes weekends. Such visits may include visits to the bothy itself. Vehicles parked overnight at Glendinning may be subject to a police check, and in such cases owners are recommended to leave a note of their whereabouts prominently displayed in the vehicle.\n\nFinally please leave no litter ANYWHERE when you visit Greensykes! What you carry in you should carry out !”\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Access. The easiest way on foot or by bike to Greensykes is via the farm track running up the west side of  the Meggat Water Glen from the roadhead at Glendinning. The Bothy is situated approximately 2 miles up the Glen, a 45 to 50 minute walk. Glendinning should not be confused with Jamestown, the southernmost group of buildings close by. Vehicles should not be parked adjacent to these buildings. There is hardstanding immediately over the bridge at Glendinning, adjacent to the river bank (GR LT 79 NY298969), where vehicles should be parked. This car park is private land and technically part of a working farmyard. Vehicles are parked there at their owner’s risk. The farm track heading north up from Glendinning is a private road andstrictly intendedfor the use of farm vehicles such as tractors and quad bikes. A notice displayed at Glendinning clearly states that there isno unauthorised vehicular access to Greensykes.The same restriction appliesto all other farm and forestry tracks in the area.\n\nThe MBA has right of access to Greensykes on foot or by bicycle using the track up the west side of Meggat Water Glen. Please do not leave gates open if they are found to be closed. The forest gate at grid reference NY 308998 is padlocked but a step stile has been installed to facilitate access to the forest area.\n\nAn alternative access to Greensykes,again on foot or by bicycle, is via the forest roads of the Eskdalemuir forest.Unauthorised vehicular accessleading to Greensykes Bothy via forest tracks in that areais not permittedand such tracks are closed by padlocked barriers,\n\nFollowing incidents in early 2018 which resulted in damage to farm property and trespass around Glendinning Farm,Police Scotlandnow make community policing visits to the Meggat Water Glen area during the week, and which includes weekends. Such visits may include visits to the bothy itself.Vehicles parked overnight at Glendinning may be subject to a police check, and in such cases owners are recommended to leave a note of their whereabouts prominently displayed in the vehicle.\n\nFinally please leave no litterANYWHEREwhen you visit Greensykes!What you carry in you should carry out!”",
+    "bothy_features": [
+      "Composting toilet",
+      "Open fire",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 555,
@@ -790,8 +973,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR161: SO 225 313\n\nLocation: Wales\n\nBothy history linked to adjacent reservoir.\n\nBothy very small, suitable for small numbers only (three).\n\nVehicles . No vehicles on adjacent track.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Bothy history linked to adjacent reservoir.\n\nBothy very small, suitable for small numbers only (three).\n\nVehicles. No vehicles on adjacent track.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Small Bothy",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 9,
@@ -805,8 +994,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR39: NG 320 014\n\nLocation: Western Highlands & Islands\n\nAvailability: No restrictions on access. During the stalking season, daily stalking activities are displayed on map boards in Kinloch, or contact the Reserve office 01687 462026.\n\nAccess by bike is not advisable.\n\nFuel : Some fallen timber (often wet) in the plantation on Bloodstone Hill. Please do not cut live wood. Although there is rarely driftwood in Guirdil Bay, copious amounts can be had in the bays and coves north of Shellesder. However, collection involves a round trek of about two hours. Coal and wood bricks are sold at the village shop in Kinloch. Dogs are allowed but must be kept under strict control especially during the nesting and stalking seasons. There is a sleeping platform for 6-8 people plus space on the ground floor.\n\nHistory Note. The bothy originally would have been a shepherd’s cottage dating around the late 19th Century. Following the clearances (1825-28), the island was used for large-scale sheep farming, with some 10,000 sheep by about 1880, Guirdil being one of several hirsels on the island. It is not clear when the sheep were cleared and Guirdil abandoned. It may have been from 1914-18, when most of the younger men, horses and ponies left to fight in the Great War and never returned.\n\nPrior to the clearances, Guirdil was one of several crofting townships on Rum. A census in 1764-65 recorded 5 families (22 persons) living there. The lazy beds near the bothy and on the slopes of the surrounding hills is evidence of their subsistence farming, as are the numerous shielings. Early human habitation has been identified as far back as the Neolithic age. Archaeologists have identified a burial cairn at Guirdil from that era.\n\nThe bothy was renovated from near- ruin in 1982 in memory of Tom and Margaret Brown who were keen members of the MBA in its early days and who both died of cancer within weeks of each other. It also commemorates Peter Davies who fell to his death on Askival on 12 May 1996.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Availability:No restrictions on access. During the stalking season, daily stalking activities are displayed on map boards in Kinloch, or contact the Reserve office 01687 462026.\n\nAccessby bike is not advisable.\n\nFuel: Some fallen timber (often wet) in the plantation on Bloodstone Hill. Please do not cut live wood. Although there is rarely driftwood in Guirdil Bay, copious amounts can be had in the bays and coves north of Shellesder. However, collection involves a round trek of about two hours. Coal and wood bricks are sold at the village shop in Kinloch.Dogsare allowed but must be kept under strict control especially during the nesting and stalking seasons. There is a sleeping platform for 6-8 people plus space on the ground floor.\n\nHistory Note.The bothy originally would have been a shepherd’s cottage dating around the late 19th Century. Following the clearances (1825-28), the island was used for large-scale sheep farming, with some 10,000 sheep by about 1880, Guirdil being one of several hirsels on the island. It is not clear when the sheep were cleared and Guirdil abandoned. It may have been from 1914-18, when most of the younger men, horses and ponies left to fight in the Great War and never returned.\n\nPrior to the clearances, Guirdil was one of several crofting townships on Rum. A census in 1764-65 recorded 5 families (22 persons) living there. The lazy beds near the bothy and on the slopes of the surrounding hills is evidence of their subsistence farming, as are the numerous shielings. Early human habitation has been identified as far back as the Neolithic age. Archaeologists have identified a burial cairn at Guirdil from that era.\n\nThe bothy was renovated from near- ruin in 1982 in memory of Tom and Margaret Brown who were keen members of the MBA in its early days and who both died of cancer within weeks of each other. It also commemorates Peter Davies who fell to his death on Askival on 12 May 1996.",
+    "bothy_features": [
+      "Open fire",
+      "Sleeping platform",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 248,
@@ -820,8 +1013,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR86: 788 713\n\nLocation: Northern England & Borders\n\nJS Mitchell\n\nToilet . Composting toilet. Fuel . Wood fuel locally available. No vehicles are permitted in the forest.\n\nRead about nearby Bellcrag cave in Newsletter 207 p.27 which can be found in the Membership section .\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Toilet. Composting toilet.Fuel. Wood fuel locally available.No vehicles are permitted in the forest.\n\nRead about nearby Bellcrag cave inNewsletter 207 p.27which can be found in theMembership section.",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Composting toilet",
+      "Wood burning stove"
+    ]
   },
   {
     "elevation_m": 699,
@@ -837,8 +1034,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR36: NO 023 998\n\nLocation: Eastern Highlands\n\nHistorical Note The Hutchison Memorial Hut was built in 1954 with kind permission of the Trustees of the late Duke of Fife as a mountain refuge in Coire Etchachan at a height of about 2,500 feet. Its erection was made possible by funds subscribed by friends of the late Dr A G Hutchison of Aberdeen, who was killed in a climbing accident in Pembrokeshire in 1949. The construction was carried out by W J Brown builders of Aberdeen with assistance in transport of materials etc from members of local climbing clubs and others. A further substantial update was undertaken by MBA volunteers in 2014-15.\n\nLog book entry: “Last here 50 years ago. Nothing much has changed” GW\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Historical NoteThe Hutchison Memorial Hut was built in 1954 with kind permission of the Trustees of the late Duke of Fife as a mountain refuge in Coire Etchachan at a height of about 2,500 feet. Its erection was made possible by funds subscribed by friends of the late Dr A G Hutchison of Aberdeen, who was killed in a climbing accident in Pembrokeshire in 1949. The construction was carried out by W J Brown builders of Aberdeen with assistance in transport of materials etc from members of local climbing clubs and others. A further substantial update was undertaken by MBA volunteers in 2014-15.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Small Bothy",
+      "No local fuel"
+    ]
   },
   {
     "elevation_m": 45,
@@ -852,8 +1053,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR34: NN 136 888\n\nLocation: Western Highlands & Islands\n\nAvailability : Please contact the estate during the stalking season, 01397 712709.\n\nAccess Restrictions – Forestry Operations As part of the restoration of Loch Arkaig Pine Forest, non-native trees are being removed from the Glen Mallie forest between 2021 and 2026. In order to accommodate the transport of the timber, the White Bridge over the River Arkaig has successfully been upgraded and the Glen Mallie track is being resurfaced and upgraded. Pedestrian and bicycle access along the Glen Mallie track will be maintained throughout the work; however, you may have a short wait at times. FAQs Map\n\nAccess : Please note that the bridge marked on the OS map is now around 1/2 mile upstream of the bothy. The area around the bothy is prone to flooding after prolonged rain making access difficult.\n\nFuel : Don’t cut live trees, fallen timber is plentiful.\n\nHistory Note .\n\nInvermallie is a 6 roomed building standing close to the shore of Loch Arkaig near Achnacarry in the west highlands. The area was once a small settlement of 21 houses of which only the bothy remains as it was built to a higher standard than the others. The current building was built in 1776 by Alexander the 5 th of Invermallie, a tackman (a sort of factor) for Lochiel, the chief of the clan Cameron at Achnacarry. It replaced an earlier black house which had burned down the year before. Alexander lived here with his wife Elizabeth McBean until 1804 when he was evicted during the Highland Clearances. His children had left by this time, one son moving to Surinam and setting up a plantation. Alexander moved to Ardgour and died in Fort William in 1832. He is buried in Kilmallie cemetery.\n\nThe house was originally a single storey cruck house but was altered in the mid-1800s by cutting off the crucks, some of which can still be seen embedded in the walls. The walls were raised by around one metre and a new roof fitted to allow an upper floor to be built. Sometime after Alexander’s eviction the house became a stalkers residence. The hunting, mostly for red deer, would be taken by wealthy individuals; one notable visitor was Lord Malmesbury who took the shooting every year. The building continued as a stalkers house until 1966. It was taken on as a bothy by the MBA in 1981 and originally looked after by MBA stalwart Howard Ashton for 28 years.\n\nSee NEWSLETTER 212 in the Member section for additional historical information.",
-    "bothy_features": []
+    "description": "Availability: Please contact the estate during the stalking season, 01397 712709.\n\nAccess Restrictions – Forestry OperationsAs part of the restoration of Loch Arkaig Pine Forest, non-native trees are being removed from the Glen Mallie forest between 2021 and 2026. In order to accommodate the transport of the timber, the White Bridge over the River Arkaig has successfully been upgraded and the Glen Mallie track is being resurfaced and upgraded.  Pedestrian and bicycle access along the Glen Mallie track will be maintained throughout the work; however, you may have a short wait at times.FAQsMap\n\nAccess: Please note that the bridge marked on the OS map is now around 1/2 mile upstream of the bothy. The area around the bothy is prone to flooding after prolonged rain making access difficult.\n\nFuel: Don’t cut live trees, fallen timber is plentiful.\n\nHistory Note.\n\nInvermallie is a 6 roomed building standing close to the shore of Loch Arkaig near Achnacarry in the west highlands. The area was once a small settlement of 21 houses of which only the bothy remains as it was built to a higher standard than the others. The current building was built in 1776 by Alexander the 5thof Invermallie, a tackman (a sort of factor) for Lochiel, the chief of the clan Cameron at Achnacarry. It replaced an earlier black house which had burned down the year before. Alexander lived here with his wife Elizabeth McBean until 1804 when he was evicted during the Highland Clearances. His children had left by this time, one son moving to Surinam and setting up a plantation.  Alexander moved to Ardgour and died in Fort William in 1832. He is buried in Kilmallie cemetery.\n\nThe house was originally a single storey cruck house but was altered in the mid-1800s by cutting off the crucks, some of which can still be seen embedded in the walls. The walls were raised by around one metre and a new roof fitted to allow an upper floor to be built. Sometime after Alexander’s eviction the house became a stalkers residence. The hunting, mostly for red deer, would be taken by wealthy individuals; one notable visitor was Lord Malmesbury who took the shooting every year. The building continued as a stalkers house until 1966. It was taken on as a bothy by the MBA in 1981 and originally looked after by MBA stalwart Howard Ashton for 28 years.\n\nSee NEWSLETTER 212 in the Member section for additional historical information.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "Strictly no vehicle access",
+      "Sleeping platform",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 15,
@@ -869,8 +1075,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR9: NC 292 727\n\nLocation: Northern Highlands\n\nJS Mitchell\n\nOwner : Cape Wrath Estate, MoD\n\nAccess Restrictions: Kearvaig is within an MoD firing range and for safety reasons access to, and use of the bothy, is strictly prohibited when the range is in use (indicated by red flags flying). Firing times are normally displayed at Durness Post Office or can be obtained from Major (Retd) Phillip Curtis, Range Officer, 01971 511242 or 07773 953637, [email protected] They are also published on the official Firing Times website.\n\nMilitary exercises are provisionally planned for the following dates during 2026:\n\n7-10 April 20-24 April 18-29 May (The range will be active for bombing 18-22 May. There’ll be no activity over the bank holiday weekend and will then we go live again on 26th for any bombing that wasn’t completed the week before, and a couple of days of Naval gunfire. The flags will remain up throughout, but there will NOT be any activity on 23rd, 24th and 25th)\n\nThere is no bombing in June due to nesting sea birds. The range closes in July and August unless there is a pressing operational imperative. Due to the physical difficulties of getting around the range, flags may go up a couple of days prior to going live, and may remain up for a few days afterwards. Other periods of live firing, resulting in closure of access to Kearvaig and Cape Wrath, may take place at other times with short notice.\n\nInformation on ferry and mini bus access to Cape Wrath can be found at www.visitcapewrath.com/how-to-visit/\n\nFuel : Only driftwood may be available locally\n\nDerivation: The name Kearvaig derives from the Gaelic Cearbhaig , itself derived from the Norse and meaning something like “bay [suitable] for galleys” – it being the last/first safe spot for a viking galley to pull ashore before/after rounding Cape Wrath.\n\nSummer work party 2017\n\nHistorical Note Memories of Kearvaig\n\nClick the thumbnails below for an enlargement.\n\nJ&M liefdesbothy ❤︎",
-    "bothy_features": []
+    "description": "Owner: Cape Wrath Estate, MoD\n\nAccess Restrictions:Kearvaig is within an MoD firing range and for safety reasons access to, and use of the bothy, is strictly prohibited when the range is in use (indicated by red flags flying).  Firing times are normally displayed at Durness Post Office or can be obtained from Major (Retd) Phillip Curtis, Range Officer, 01971 511242 or 07773 953637,[email protected]They are also published on the officialFiring Timeswebsite.\n\nMilitary exercises are provisionally planned for the following dates during 2026:\n\n7-10 April20-24 April18-29 May  (The range will be active for bombing 18-22 May.  There’ll be no activity over the bank holiday weekend and will then we go live again on 26th for any bombing that wasn’t completed the week before, and a couple of days of Naval gunfire.  The flags will remain up throughout, but there will NOT be any activity on 23rd, 24th and 25th)\n\nThere is no bombing in June due to nesting sea birds.The range closes in July and August unless there is a pressing operational imperative.Due to the physical difficulties of getting around the range, flags may go up a couple of days prior to going live, and may remain up for a few days afterwards.Other periods of live firing, resulting in closure of access to Kearvaig and Cape Wrath, may take place at other times with short notice.\n\nInformation onferry and mini bus access to Cape Wrathcan be found atwww.visitcapewrath.com/how-to-visit/\n\nFuel: Only driftwood may be available locally\n\nDerivation:The name Kearvaig derives from the GaelicCearbhaig, itself derived from the Norse and meaning something like “bay [suitable] for galleys” – it being the last/first safe spot for a viking galley to pull ashore before/after rounding Cape Wrath.\n\nSummer work party 2017\n\nHistorical NoteMemories of Kearvaig\n\nJ&M liefdesbothy ❤︎",
+    "bothy_features": [
+      "No local fuel",
+      "Open fire",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 281,
@@ -884,8 +1094,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR79: NY 544 863\n\nLocation: Northern England & Borders\n\nBe aware of Contractors plant operating and log lorries in the area.\n\nFuel . Wood fuel available locally. No vehicles are permitted in the forest. FIRE RISK – No fires outside.\n\nHistorical Notes The Horrible Murder of A Gamewatcher Some notes on the history and occupation of Kershopehead.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Be aware of Contractors plant operating and log lorries in the area.\n\nFuel. Wood fuel available locally.No vehicles are permitted in the forest.FIRE RISK – No fires outside.\n\nHistorical NotesThe Horrible Murder of A GamewatcherSome notes on the history and occupation of Kershopehead.",
+    "bothy_features": [
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 330,
@@ -899,8 +1113,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR78: NS 912 021\n\nLocation: Southern Scotland\n\nNeil Stewart\n\nOwner : Buccleuch Estates\n\nPlease be aware of estate partridge shooting taking place between September 1st and mid-January, especially across the route from Durisdeer village to the bothy. Buccleuch Estates ask for your co-operation throughout this period, when there is likely to be shooting each day, Monday to Saturday. There is no shooting on Sundays. During August, the estate team will be working to introduce birds to the area, so please be aware of this when accessing the bothy. During January, please call the head keeper on 07771 886949 the day before you go to check if there is shooting arranged for the following day.\n\nSheep are present throughout the year on all access routes and in the area around the bothy. Visitors are expected to keep dogs under control.\n\nPlease also note that there is no vehicle access to Kettleton Byre without the permission of the estate.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner: Buccleuch Estates\n\nPlease be aware of estate partridge shooting taking place between September 1st and mid-January, especially across the route from Durisdeer village to the bothy.  Buccleuch Estates ask for your co-operation throughout this period, when there is likely to be shooting each day, Monday to Saturday.  There is no shooting on Sundays. During August, the estate team will be working to introduce birds to the area, so please be aware of this when accessing the bothy. During January, please call the head keeper on 07771 886949 the day before you go to check if there is shooting arranged for the following day.\n\nSheep are present throughout the year on all access routes and in the area around the bothy. Visitors are expected to keepdogsunder control.\n\nPlease also note that there is no vehicle access to Kettleton Byre without the permission of the estate.",
+    "bothy_features": [
+      "Wood burning stove",
+      "Small Bothy",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 183,
@@ -914,8 +1132,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR33: NN 002 960\n\nLocation: Western Highlands & Islands\n\nFuel : only limited bogwood (usually wet).\n\nHistorical Note Kinbreack bothy is the stable building of a former shepherd’s cottage in lonely Glen Kingie. The bothy was renovated by the MBA in 1969 and is an excellent base for those climbing the many surrounding high mountains.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Availability: No restrictions on access but please check with the estate before visiting the bothy during the stalking season, 01397 712709 or 0776 6694672.\n\nFuel: only limited bogwood (usually wet).\n\nHistorical NoteKinbreack bothy is the stable building of a former shepherd’s cottage in lonely Glen Kingie. The bothy was renovated by the MBA in 1969 and is an excellent base for those climbing the many surrounding high mountains.",
+    "bothy_features": [
+      "Open fire",
+      "Fuel scarce",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 228,
@@ -929,8 +1151,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR20: NH 286 954\n\nLocation: Northern Highlands\n\nOwner : East Rhidorroch Estate.\n\nAvailability: Not available during stag stalking September 20 to October 20.\n\nFuel : There is no fuel available at this location so please take your own and do not cut live wood.\n\nLOGBOOK ENTRY “Dead sheep in storage/workshop area at rear of bothy. Starting to go off a bit. Otherwise fine (the bothy, not the sheep) .”\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner: East Rhidorroch Estate.\n\nAvailability: Not available during stag stalking September 20 to October 20.\n\nFuel: There is no fuel available at this location so please take your own and do not cut live wood.",
+    "bothy_features": [
+      "Sleeping platform",
+      "Open fire",
+      "Strictly no vehicle access",
+      "No fires outside",
+      "No local fuel"
+    ]
   },
   {
     "elevation_m": 465,
@@ -944,8 +1172,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR41:NN 282 738\n\nLocation: Central Highlands\n\nOwner: Simec Lochaber Hydropower 2 Ltd\n\nAvailability : The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods please contact the estate or use Hillphones to find out where deer control is taking place,\n\nLOGBOOK ENTRY “I couldn’t believe the mouse had even jumped into my tea cup over night…fortunately we hung up all the food!”\n\nHistorical Note Lairig Leacach is in a stunning location on the old drovers road linking the Great Glen with the south. It has been maintained by the MBA since 1977 and is popular with walkers and cyclists who travel through the pass or who are climbing the hills in the Grey Corries range.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Simec Lochaber Hydropower 2 Ltd\n\nAvailability: The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods please contact the estate or useHillphonesto find out where deer control is taking place,\n\nHistorical NoteLairig Leacach is in a stunning location on the old drovers road linking the Great Glen with the south. It has been maintained by the MBA since 1977 and is popular with walkers and cyclists who travel through the pass or who are climbing the hills in the Grey Corries range.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Small Bothy",
+      "No local fuel"
+    ]
   },
   {
     "elevation_m": 162,
@@ -959,8 +1191,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR49: NM 742 472\n\nLocation: Southwest Highlands & Islands\n\nOwner. Ardtornish Estate , 01967 421 292\n\nAvailability . Bothy not available during stag stalking 1 September to 20 October. From then until 15 February access normally restricted to the track from Ardtornish- for alternative route please contact estate office.\n\nDogs must be kept on a lead at all times. Fuel very scarce, do not cut live wood. Do not fish in loch without permit from estate.\n\nA major work party was held at this bothy in May 2019. Among the works carried out were a complete roof replacement, renovation of the wall heads, installation of two Velux windows, lime pointing the walls and updating the interior.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Ardtornish Estate,01967 421 292\n\nAvailability. Bothy not available during stag stalking 1 September to 20 October. From then until 15 February access normally restricted to the track from Ardtornish- for alternative route please contact estate office.\n\nDogsmust be kept on a lead at all times.Fuelvery scarce, do not cut live wood. Do not fish in loch without permit from estate.\n\nA major work party was held at this bothy in May 2019. Among the works carried out were a complete roof replacement, renovation of the wall heads, installation of two Velux windows, lime pointing the walls and updating the interior.",
+    "bothy_features": [
+      "Fuel scarce",
+      "Open fire",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 1,
@@ -974,8 +1210,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: NY 536 976\n\nLocation: Southern Scotland\n\nAccess: Note that vehicular access is expressly prohibited – any transgression may seriously affect the viability of the bothy.\n\nPlease Note: Use of chainsaws is prohibited by the owner for any purpose.\n\nThe stove will be removed for repairs 14-15 February 2026. We do not currently know how long for.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Access: Note that vehicular access is expressly prohibited– any transgression may seriously affect the viability of the bothy.\n\nPlease Note: Use of chainsaws is prohibited by the owner for any purpose.\n\nThe stove will be removed for repairs 14-15 February 2026.   We do not currently know how long for.",
+    "bothy_features": [
+      "Open fire",
+      "Strictly no vehicle access"
+    ]
   },
   {
     "elevation_m": 350,
@@ -989,8 +1228,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR147: SN901 705\n\nLocation: Wales\n\nFormer shepherd’s cottage, restored 2013.\n\nFuel . Local fuel very limited.\n\nSheep graze locally, ensure that door is firmly closed on departure.\n\nCamping and fishing by permission of the estate only- Estate Office 01597 810449.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Former shepherd’s cottage, restored 2013.\n\nFuel. Local fuel very limited.\n\nSheepgraze locally, ensure that door is firmly closed on departure.\n\nCamping and fishingby permission of the estate only- Estate Office 01597 810449.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "No local fuel",
+      "Sleeping platform",
+      "Strictly no vehicle access",
+      "No fires outside",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 370,
@@ -1006,8 +1252,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR41: NN 289 634\n\nLocation: Central Highlands\n\nOwner: Simec Power 4 Ltd\n\nAvailability: The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods, please contact the Estate or use Hillphones ;\n\nHistorical Note Situated in remote country near to the Blackwater Reservoir, Loch Chiarain bothy was first renovated by the MBA in 1977.\n\nA View from the Roof\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Simec Power 4 Ltd\n\nAvailability: The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods, please contact the Estate or useHillphones;\n\nHistorical NoteSituated in remote country near to the Blackwater Reservoir, Loch Chiarain bothy was first renovated by the MBA in 1977.\n\nA View from the Roof",
+    "bothy_features": [
+      "No local fuel",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 116,
@@ -1021,8 +1270,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR23: NG 412 763\n\nLocation: North West Highlands & Islands\n\nCameron McMurdo\n\nOwner: Kilmuir Estate\n\nThis is a small bothy that only has accommodation for three persons. There is no fireplace or stove and no drinking water either at the bothy or on the headland.\n\nParking : Please park in the new car park above the phone kiosk, by the cattle grid. NG 422 742\n\nSafety Warning : Beware of steep cliff face in front of bothy.\n\nHistorical Note The Lookout is a former coastguard watch station. The front part of the building –the watch room –was built in 1928 by Macleans of Mull. It is equipped with a large bay window enjoying commanding views out over the Minch. Over the years, advances in radio communication meant that the building was no longer required for its original purpose and it has been a bothy since the mid-70’s. It was taken over by the MBA in 2006 and renovated in memory of David J J Brown, an MBA member who was a frequent visitor of the North West of Scotland. In it’s solitude atop the cliffs of Rubha Hunnish, the bothy has a spectacular view over the Minch, the Isle of Lewis and Harris in the Outer Hebrides. In the wee hours of the morning you may be lucky enough to catch a glimpse of whales and dolphins from it’s large, panoramic windows.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Kilmuir Estate\n\nThis is a small bothy that only has accommodation for three persons. There is no fireplace or stove and no drinking water either at the bothy or on the headland.\n\nParking: Please park in the new car park above the phone kiosk, by the cattle grid. NG 422 742\n\nSafety Warning: Beware of steep cliff face in front of bothy.\n\nHistorical NoteThe Lookout is a former coastguard watch station. The front part of the building –the watch room –was built in 1928 by Macleans of Mull. It is equipped with a large bay window enjoying commanding views out over the Minch. Over the years, advances in radio communication meant that the building was no longer required for its original purpose and it has been a bothy since the mid-70’s. It was taken over by the MBA in 2006 and renovated in memory of David J J Brown, an MBA member who was a frequent visitor of the North West of Scotland.  In it’s solitude atop the cliffs of Rubha Hunnish, the bothy has a spectacular view over the Minch, the Isle of Lewis and Harris in the Outer Hebrides. In the wee hours of the morning you may be lucky enough to catch a glimpse of whales and dolphins from it’s large, panoramic windows.",
+    "bothy_features": [
+      "Water unreliable",
+      "No Fire or Stove",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 328,
@@ -1036,8 +1289,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR34: NN 394 936\n\nLocation: Central Highlands\n\nOwner: Wildland Ltd\n\nAvailability : Walkers and bothy users should be aware that stalking takes place on Braeroy Estate during the stag stalking season from early August to 20 October and the hind cull period from 21 October to 15 February. However, there is no restriction to access to the bothy during these periods.\n\nNote: there is a bridge (as of 2017) across the Allt Chonnal approx 1km upstream from the bothy\n\nHistorical Note Located in an exposed site near to the watershed between the River Roy and the River Spey, Luib Chonnal was renovated in 1971 and gives shelter to walkers and cyclists who appreciate this wild and lonely place.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Wildland Ltd\n\nAvailability:  Walkers and bothy users should be aware that stalking takes place on Braeroy Estate during the stag stalking season from early August to 20 October and the hind cull period from 21 October to 15 February. However, there is no restriction to access to the bothy during these periods.\n\nNote: there is a bridge (as of 2017) across the Allt Chonnal approx 1km upstream from the bothy\n\nHistorical NoteLocated in an exposed site near to the watershed between the River Roy and the River Spey, Luib Chonnal was renovated in 1971 and gives shelter to walkers and cyclists who appreciate this wild and lonely place.",
+    "bothy_features": [
+      "No local fuel",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 262,
@@ -1054,8 +1310,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR25: NH 053 360\n\nLocation: North West Highlands & Islands\n\nOwner: Killilan Estate 01599 530 055\n\nAvailability : The bothy is not available during the stag stalking season and please check with the estate during the hind stalking season.\n\nHistorical Note: A History of Maol Buidhe pt 1 (pdf) A History of Maol Buidhe pt 2 (pdf)\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Killilan Estate 01599 530 055\n\nAvailability: The bothy is not available during the stag stalking season and please check with the estate during the hind stalking season.\n\nHistorical Note:A History of Maol Buidhe pt 1 (pdf)A History of Maol Buidhe pt 2 (pdf)",
+    "bothy_features": [
+      "Open fire",
+      "Fuel scarce",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 10,
@@ -1069,8 +1329,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR56 NS 229 952\n\nLocation: Southwest Highlands & Islands\n\nOwner. Forestry Commission .\n\nAccess. Mark Cottage (also known as Mark Ferry) is situated on the Ardgartan peninsula on the shores of Loch Long. Normal access is by forest track from the A83 Arrochar to Inverary road at Forest Enterprise Information Centre NN 269 037 to a car park at Coilessan Glen NN 258 012 where there is a locked gate from where any further vehicle access is prohibited. Foot or cycle access only is permitted from this point to the bothy. (approx 7.5 Kms) Beware of fire risk in area surrounding the bothy.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Forestry Commission.\n\nAccess.Mark Cottage (also known as Mark Ferry) is situated on the Ardgartan peninsula on the shores of Loch Long. Normal access is by forest track from the A83 Arrochar to Inverary road at Forest Enterprise Information Centre NN 269 037 to a car park at Coilessan Glen NN 258 012 where there is a locked gate from where any further vehicle access is prohibited. Foot or cycle access only is permitted from this point to the bothy.  (approx 7.5 Kms)Beware of fire risk in area surrounding the bothy.",
+    "bothy_features": [
+      "No fires outside",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 343,
@@ -1086,8 +1349,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR41: NN 266 685\n\nLocation: Central Highlands\n\nOwner: Simec Lochaber Hydropower 2 Ltd\n\nAvailability : The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods please contact the estate or use Hillphones to find out where deer control is taking place,\n\nHistorical Note Meanach bothy has been in the care of the MBA since it’s renovation in 1977. Situated at approximately 1,000 feet above sea level and with a potentially difficult river crossing at the Abhainn Rath, this remote bothy can be challenging to reach at times.",
-    "bothy_features": []
+    "description": "Owner:Simec Lochaber Hydropower 2 Ltd\n\nAvailability: The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods please contact the estate or useHillphonesto find out where deer control is taking place,\n\nHistorical NoteMeanach bothy has been in the care of the MBA since it’s renovation in 1977. Situated at approximately 1,000 feet above sea level and with a potentially difficult river crossing at the Abhainn Rath, this remote bothy can be challenging to reach at times.",
+    "bothy_features": [
+      "Open fire",
+      "No local fuel"
+    ]
   },
   {
     "elevation_m": 373,
@@ -1101,8 +1367,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR147: SN 807 612\n\nLocation: Wales\n\nFormer shepherds dwelling.\n\nVehicles . Forestry based bothy- no vehicle access please, access gates may be locked at any time.\n\nPolice Wales – Bothy Vehicle Watch Notice English Cymraeg\n\nPlease note that the bridge over the stream outside the bothy (as shown in the picture above) no longer exists.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Former shepherds dwelling.\n\nVehicles. Forestry based bothy- no vehicle access please, access gates may be locked at any time.\n\nPolice Wales – Bothy Vehicle Watch NoticeEnglishCymraeg\n\nPlease note that the bridge over the stream outside the bothy (as shown in the picture above) no longer exists.",
+    "bothy_features": [
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Sleeping platform",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 443,
@@ -1117,7 +1388,10 @@
     "status": "open",
     "type": "MBA",
     "description": "Grid Ref: LR90: NY 495 095\n\nLocation: Northern England & Borders\n\nC Hutchison\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "bothy_features": [
+      "No local fuel",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 466,
@@ -1133,8 +1407,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR135: SN 837 793\n\nLocation: Wales\n\nNote that some access restrictions may occur on Sat 13th November due to a motor rally taking place within the forest area\n\nFormer shepherd’s dwelling.\n\nAccess and Parking. Vehicles must not be driven to the bothy or into the forest. CCTV is in operation and drivers may be prosecuted. Parking is possible at the end of the minor road at grid ref 842 772.\n\nPolice Wales – Bothy Vehicle Watch Notice English Cymraeg\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Note that some access restrictions may occur on Sat 13th November due to a motor rally taking place within the forest area\n\nFormer shepherd’s dwelling.\n\nAccess and Parking.Vehicles must not be driven to the bothy or into the forest.  CCTV is in operation and drivers may be prosecuted. Parking is possible at the end of the minor road at grid ref 842 772.\n\nPolice Wales – Bothy Vehicle Watch NoticeEnglishCymraeg",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Sleeping platform",
+      "Strictly no vehicle access",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 309,
@@ -1148,8 +1427,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR135: SN773 791\n\nLocation: Wales\n\nC Hutchison\n\nFormer shepherd’s dwelling.\n\nVehicles . Forestry based bothy, no vehicle access please, access gates may be locked at any time.\n\nPolice Wales – Bothy Vehicle Watch Notice English Cymraeg\n\nSheep graze locally, ensure door is firmly closed on departure.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Former shepherd’s dwelling.\n\nVehicles. Forestry based bothy, no vehicle access please, access gates may be locked at any time.\n\nPolice Wales – Bothy Vehicle Watch NoticeEnglishCymraeg\n\nSheepgraze locally, ensure door is firmly closed on departure.",
+    "bothy_features": [
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Multi-fuel stove",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 20,
@@ -1163,8 +1447,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR33: NM 863 901\n\nLocation: Western Highlands & Islands\n\nNot available (locked) during stalking, usually from late August until late February. The date of reopening varies year to year, depending on weather; we will post a News Item on the website Home page as soon as we know what that date is to be.\n\nAlthough accessible by water, please respect both MBA policy and the owner’s reservations about larger groups using the bothy for longer stays.\n\nFuel : As at all bothies, do not fell live wood from nearby woodland. The bothy has a sleeping platform and there is also a large first floor sleeping area.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Not available (locked) during stalking, usually from late August until late February.  The date of reopening varies year to year, depending on weather; we will post a News Item on the website Home page as soon as we know what that date is to be.\n\nAlthough accessible by water, please respect both MBA policy and the owner’s reservations about larger groups using the bothy for longer stays.\n\nFuel: As at all bothies, do not fell live wood from nearby woodland. The bothy has a sleeping platform and there is also a large first floor sleeping area.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Fuel scarce",
+      "Sleeping platform",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 89,
@@ -1178,8 +1468,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR23: NG 213 394\n\nLocation: North West Highlands & Islands\n\nOwner: Glendale Estate\n\nAvailability : The bothy is used occasionally by shepherds to whom priority should be given. It is situated on a working sheep farm so no dogs please.\n\nA new roof was fitted in the early autumn of September 2021 and in early spring of 2025 we removed the existing snug linings, uncovering the open fire – which was in some disrepair. New linings were fitted and a sleeping platform erected. Additionally, the old byre end – which was in a sorry state – was renovated to created a second snug, again with the addition of platforms and a shiny new Dowling Stove. A new door and window frames were made onsite and fitted. A second workparty is due to take place in summer 2025 to complete works, repair the open fire, and add more platforms and tables.\n\nThe original snug, with the open fire, is closed until this work has been completed. Please bring your own fuel, there are no trees or peat to be cut.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Glendale Estate\n\nAvailability: The bothy is used occasionally by shepherds to whom priority should be given. It is situated on a working sheep farm so no dogs please.\n\nA new roof was fitted in the early autumn of September 2021 and inearly spring of 2025 we removed the existing snug linings, uncovering the open fire –  which was in some disrepair. New linings were fitted and a sleeping platform erected. Additionally, the old byre end – which was in a sorry state – was renovated to created a second snug, again with the addition of platforms and a shiny new Dowling Stove.  A new door and window frames were made onsite and fitted.A second workparty is due to take place in summer 2025 to complete works,  repair the open fire, and add more platforms and tables.The original snug, with the open fire,  is closed until this work has been completed.Please bring your own fuel, there are no trees or peat to be cut.",
+    "bothy_features": [
+      "No local fuel",
+      "Multi-fuel stove",
+      "Sleeping platform",
+      "No dogs allowed",
+      "Open fire",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 379,
@@ -1193,8 +1490,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR79: NT 183 082\n\nLocation: Southern Scotland\n\nOwner: Mountain Bothies Association\n\nVehicles must not be taken beyond end of tarmac road up Ettrick Valley.\n\nIndoor flushing toilet in the byre adjacent to the bothy.\n\nTimber extraction currently in progress in the vicinity of the bothy; please heed advisory signs. Visitors should also be aware that both burns close to the bothy are designated under international conservation rules. Please take care not to foul the water.\n\nTrees have recently been planted to enhance the environment and protect the side of the burn from erosion.\n\nHistorical Note A History of Over Phawhope\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner:Mountain Bothies Association\n\nVehicles must not be taken beyond end of tarmac road up Ettrick Valley.\n\nIndoor flushing toilet in the byre adjacent to the bothy.\n\nTimber extraction currently in progress in the vicinity of the bothy; please heed advisory signs. Visitors should also be aware that both burns close to the bothy are designated under international conservation rules. Please take care not to foul the water.\n\nTrees have recently been planted to enhance the environment and protect the side of the burn from erosion.\n\nHistorical NoteA History of Over Phawhope",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Strictly no vehicle access"
+    ]
   },
   {
     "elevation_m": 170,
@@ -1208,8 +1508,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR124: SH 738 239\n\nLocation: Wales\n\nOld farmhouse with long history, now surrounded by forestry.\n\nBothy equipped with a stove. Please do not light fires outside of the bothy or cut any live wood.\n\nPlease respect privacy of nearby smallholder; keep dogs on lead.\n\nVehicles . No vehicles please, forestry access gates may be locked at any time.\n\nToilet . Earth privy in woods near bothy.\n\nThe bothy owner, Natural Resources Wales (Cyfoeth Naturiol Cymru), have also indicated that wild camping is NOT permitted anywhere within Coed y Brenin – which includes the environs of the bothy.",
-    "bothy_features": []
+    "description": "Old farmhouse with long history, now surrounded by forestry.\n\nBothy equipped with a stove. Please do not light fires outside of the bothy or cut any live wood.\n\nPlease respect privacy of nearby smallholder; keepdogson lead.\n\nVehicles. No vehicles please, forestry access gates may be locked at any time.\n\nToilet. Earth privy in woods near bothy.\n\nThe bothy owner, Natural Resources Wales (Cyfoeth Naturiol Cymru), have also indicated thatwild camping is NOT permittedanywhere within Coed y Brenin – which includes the environs of the bothy.",
+    "bothy_features": [
+      "No fires outside",
+      "Dogs under strict control",
+      "Strictly no vehicle access",
+      "Multi-fuel stove",
+      "Composting toilet"
+    ]
   },
   {
     "elevation_m": 115,
@@ -1223,8 +1529,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "Grid Ref: LR40: NM 861 710\n\nLocation: Southwest Highlands & Islands\n\nS Aitcheson\n\nOwner. Forestry and Land Scotland\n\nPlease be aware of the fire risk to surrounding plantation. Do not light fires outside bothy. Please don’t drive on forestry roads.\n\nClick the thumbnails below for an enlargement.",
-    "bothy_features": []
+    "description": "Owner.Forestry and Land Scotland\n\nPlease be aware of the fire risk to surrounding plantation. Do not light fires outside bothy. Please don’t drive on forestry roads.",
+    "bothy_features": [
+      "Wood burning stove",
+      "Strictly no vehicle access",
+      "Open fire",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 219,

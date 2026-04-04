@@ -34,6 +34,9 @@ data class Bothy(
     val osmId: String? = null,
     val access: String? = null,
     val description: String? = null,
+
+    @SerializedName("bothy_features")
+    val bothyFeatures: List<String> = emptyList(),
 ) {
     val isMba: Boolean get() = type == "MBA"
     val isOpen: Boolean get() = status.lowercase() == "open"

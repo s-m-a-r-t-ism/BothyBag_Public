@@ -1,11 +1,17 @@
 """
 Scrape bothy descriptions and features from MBA website pages.
-Updates app/src/main/assets/bothies.json for MBA bothies with empty descriptions.
+Updates app/src/main/assets/bothies.json.
+
+Modes:
+  --missing-only   Only scrape bothies with empty description (default)
+  --features       Re-scrape features for bothies with empty bothy_features
+  --all            Re-scrape everything
 """
 
 import json
 import sys
 import time
+import argparse
 import requests
 from bs4 import BeautifulSoup
 from pathlib import Path
@@ -29,31 +35,24 @@ def extract_description(content_div):
     grid-ref div and the first <hr> (which precedes Bothy Features).
     """
     paragraphs = []
-    # Skip the h1 and the first grid-ref div, then collect until first <hr>
     started = False
     for child in content_div.children:
         if not hasattr(child, 'name') or not child.name:
             continue
-        # Skip the h1 header
         if child.name == 'h1':
             continue
-        # The first div contains grid ref info — skip it but mark that we've started
         if child.name == 'div' and not started:
             started = True
             continue
         if not started:
             continue
-        # Stop at first hr (before Bothy Features)
         if child.name == 'hr':
             break
-        # Skip image/gallery divs (they have nested content but no useful text)
         if child.name == 'div':
             text = child.get_text(strip=True)
-            # Only include if it looks like actual description text (not just an image caption)
             if len(text) > 20:
                 paragraphs.append(text)
             continue
-        # Collect p and h3 elements
         if child.name in ('p', 'h3'):
             text = child.get_text(strip=True)
             if text:
@@ -87,15 +86,33 @@ def scrape_bothy(url):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--features', action='store_true',
+                        help='Re-scrape features for bothies with empty bothy_features')
+    parser.add_argument('--all', action='store_true',
+                        help='Re-scrape everything')
+    args = parser.parse_args()
+
     with open(BOTHIES_JSON, encoding='utf-8') as f:
         bothies = json.load(f)
 
-    to_scrape = [
-        (i, b) for i, b in enumerate(bothies)
-        if b.get('type') == 'MBA' and b.get('mba_url') and not b.get('description')
-    ]
+    if args.all:
+        to_scrape = [
+            (i, b) for i, b in enumerate(bothies)
+            if b.get('type') == 'MBA' and b.get('mba_url')
+        ]
+    elif args.features:
+        to_scrape = [
+            (i, b) for i, b in enumerate(bothies)
+            if b.get('type') == 'MBA' and b.get('mba_url') and not b.get('bothy_features')
+        ]
+    else:
+        to_scrape = [
+            (i, b) for i, b in enumerate(bothies)
+            if b.get('type') == 'MBA' and b.get('mba_url') and not b.get('description')
+        ]
 
-    print(f"Found {len(to_scrape)} MBA bothies without descriptions")
+    print(f"Found {len(to_scrape)} MBA bothies to scrape")
 
     for idx, (i, bothy) in enumerate(to_scrape):
         name = bothy['name']
