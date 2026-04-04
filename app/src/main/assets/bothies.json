@@ -380,7 +380,7 @@
     "id": "mba_025",
     "latitude": 54.713105,
     "longitude": -2.480366,
-    "mba_url": "https://www.mountainbothies.org.uk/bothies/northern-england-borders/cross-fell-gregs-hut/",
+    "mba_url": "https://www.mountainbothies.org.uk/bothies/northern-england-borders/gregs-hut-cross-fell/",
     "name": "Cross Fell (Greg's Hut) Bothy",
     "notes": "Highest bothy in England at 695m on Cross Fell",
     "os_grid_ref": "NY691354",
@@ -389,8 +389,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Small bothy in popular area. Restored by friends of John Gregory in 1968. Major refurbishment 2022-2023.\n\nFuel: No locally available fuel.\n\nWarning:Please note that there has been subsidence on the Pennine Way approximately 500 metres to the east of the bothy. This is a significant risk especially at night or in bad weather. The vertical side of the hole consists of old mining spoil and is very likely to be unstable.\n\nOpening Ceremony 2024\n\nSafety Advice\n\nMountain Rescue 2024\n\nA short History\n\nHistorical NoteGreg’s Hut was originally built as a blacksmith’s shop and in the early 1880’s was used to house miners who lived here during the week while working on the nearby Katelock lead mine. Situated near to the summit of Cross Fell, the bothy was renovated in 1968 in memory of John Gregory and provides shelter for walkers on the nearby Pennine Way. It is maintained jointly by the MBA and the Greg’s Hut Association.\n\nIn 1883 a visiting journalist wrote:“This house consists of two rooms, in the outer one is a blacksmith’s forge (near to which is a stream of running water), a large cupboard, which on my visit contained tea, coffee, bacon, bread and even jam. In a room or two or three beds, a quantity of miner’s clothing – trousers, stockings and strong, heavy boots”.A number of lead mines were worked near here on the slopes of Cross Fell in the last century. They produced over 13,000 tons of ore between 1811 and 1911, and their ruins are of  great interest to industrial archaeologists and historians. Just outside are the remains of mine spoil heaps, bouseteems (lead ore storage bays) and a washing floor, where ore was separated from waste. These are important relics from a once great industry, and poigant reminder of the men who lived and worked here.",
+    "bothy_features": [
+      "Small Bothy",
+      "No local fuel",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 8,
@@ -570,7 +574,7 @@
     "id": "mba_037",
     "latitude": 57.110199,
     "longitude": -3.582532,
-    "mba_url": "https://www.mountainbothies.org.uk/bothies/eastern-highlands/fords-of-avon/",
+    "mba_url": "https://www.mountainbothies.org.uk/bothies/eastern-highlands/fords-of-avon-refuge/",
     "name": "Fords of Avon Bothy",
     "notes": "Emergency refuge hut only",
     "os_grid_ref": "NJ042032",
@@ -578,8 +582,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.Abernethy Estate.\n\nA small emergency refuge shelter only, situated on the north side of the River Avon.  Not intended for planned overnight stays.\n\nNo fire or stove.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.",
+    "bothy_features": [
+      "Emergency Refuge",
+      "No Fire or Stove"
+    ]
   },
   {
     "elevation_m": 414,
@@ -1241,8 +1248,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Contractors have now completed forestry harvesting and the bothy is now open.\n\nParking.Please park vehicles in the wide gateway on the right hand (north) side of the road prior to the bridge over the burn. Grid reference – OSGB  LR 80 763834.Do not park vehicles on the verge opposite Bower farm or enter through the farm gate with your vehicleas there is no parking beyond this point.\n\nToilet. Composting toilet.",
+    "bothy_features": [
+      "Composting toilet",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 34,
@@ -1258,8 +1268,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.East Lomond Forest.\n\nDo not cut live wood. Please help by burning or removing rubbish. Do not light fires outside bothy and don’t drive on forestry roads.\n\nHistorical NoteSurprising as it may now seem, in 1759 there were nine families living in the vicinity of Rowchoish with at least three more settlements between there and Inversnaid. The bothy was the byre of Rowchoish cottage which was occupied until the late thirties.\n\nIn 1965, “Public Spirited Bodies” led by the Scottish Rights of Way Society renovated the byre with the consent of the Forestry Commission and dedicated it to William Ferris who was a prominent official of several outdoor organisations. The maintenance was originally the responsibility of the Moray Outward Bound Club but in 1977 this passed to the MBA. In 1981, much work was done by Endevour Training (Scotland) Ltd and, more recently, the Long Distance Paths Association re-roofed the structure.\n\nFilm NoteRowchoish was a location for the 2013 BAFTA nominated film Under the Skin starring Scarlett Johansson.",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Open fire",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 350,
@@ -1275,8 +1289,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.Glenfeshie Estate, 01540 651 212.\n\nOwnership and maintenance\n\nThis bothy is owned and maintained by Wildland Limited. If you have any concerns or questions concerning its management or maintenance please contact the MBA Chairman who will log these and pass them to the representatives of Wildland for their consideration.\n\nAccess.The Carnachuin Bridge near Ruigh Aiteachain (GR NN 845 937) was swept away by the River Feshie in spate on 3rd September 2009. Anyone heading to Ruigh Aiteachain should therefore be warned that the Pony Bridge at(GR NN  850 964) is now the last crossing in upper Glen Feshie.\n\nFuel. Use only wood supplied and please note that it will need to be sawn up- there is a saw in the bothy. No outside fires permitted.\n\nToilet. The toilet is in the adjacent building; please follow instructions for its use and ensure that it is left clean.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nHistorical noteRuigh Aiteachain bothy is sometimes incorrectly referred to as Landseer’s bothy. It was certainly in this area that Sir Edwin Landseer, the noted English painter, watched and studied red deer for his most famous painting of a stag, the Monarch of the Glen. However, it was in an adjacent building, now ruined, and not the present bothy, that he drew his preliminary sketches, including a fresco above the fireplace.",
+    "bothy_features": [
+      "Composting toilet",
+      "Wood burning stove",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 399,
@@ -1292,8 +1310,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.Abernethy Estate.\n\nAvailability.The estate is an RSPB nature reserve; restrictions may apply at nesting time.\n\nFuel. Also note that the bothy is an area of native wood regeneration – under no circumstance must any live wood be cut.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nHistorical noteRyvoan is situated on the Thieves’ Road which runs from Nethy Bridge south towards Glenmore. It was formerly a farm which was abandoned in 1877 and over time, the attached byre was lost leaving a single room remaining. The bothy was renovated by the MBA in 1967. The poemI leave tonight from Eustonwas written by a lady called A M Lawrence who lived at Burgh on Sands, Cumbria in the 1950’s, and who spent a good deal of her childhood at Nethy Bridge. There is a tradition that a copy of the poem is kept on the door at Ryvoan.",
+    "bothy_features": [
+      "Small Bothy",
+      "No local fuel",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 105,
@@ -1307,8 +1329,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Corriemulzie Estate.\n\nAvailability:No restrictions but during the stalking season,  September 1 to October 20, the estate asks that visitors keep to the main estate tracks.\n\nNo stove or fireplace.\n\nHistorical NoteThe Schoolhouse is one of a number of buildings of its type constructed by local authorities in the Highland area, but is one of few now remaining. It is believed to have been used as a school until the 1930’s serving the needs of children from the surrounding area. There would have been just one class and it is possible that the teacher lived on the premises. The journeys made by pupils would often have been hazardous; a report in the Northern Times in September 2007 records that pupils often had to use stilts to cross the swollen river Einig to get to the school.\n\nThe Schoolhouse was an MBA project in 2008. The exterior of the building has been restored as far as possible in keeping with the original.",
+    "bothy_features": [
+      "No Fire or Stove"
+    ]
   },
   {
     "elevation_m": 117,
@@ -1324,8 +1348,14 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Gruinard Estate.\n\nFishing activity:The MBA has use of this bothy courtesy of the local estate. Please co-operate with them by reporting any fishing activity to them. Doing so will be to the mutual benefit of the estate and of the MBA.Fuel:Driftwood may be found at the end of Loch na Sealga.Rubbish:Please note there is no rubbish collection at this bothy nor any other bothy.Historical NoteShenavall – A Brief History\n\nHistory Board",
+    "bothy_features": [
+      "Small Bothy",
+      "Open fire",
+      "Fuel scarce",
+      "Strictly no vehicle access",
+      "No fires outside"
+    ]
   },
   {
     "elevation_m": 638,
@@ -1339,8 +1369,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.Dalhousie Estate.\n\nAvailability and access. Access by way of Glen Lee frowned upon during period 1 September to 20 October. Suggest use alternative route from Loch Muick.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nHistorical NoteShielin of Mark was originally constructed as a deer watchers hut and would have been occupied during the stalking season to protect the deer from poachers. It was adopted by the MBA in 1994.",
+    "bothy_features": [
+      "No local fuel",
+      "Open fire",
+      "Small Bothy"
+    ]
   },
   {
     "elevation_m": 9,
@@ -1356,8 +1390,16 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Availability: No restrictions but please note that during the stalking season (Sep-Oct) the estate requests that all visitors keep to the main paths. The owner particularly requests visitors to follow the MBA policy on group use- it’s a small bothy in a popular area so be prepared to camp.\n\nLitter: Please note that there is no rubbish collection at the bothy so please take all your litter home with you.\n\nThe new footbridgeover the River Carnach at NM865964 is now open,",
+    "bothy_features": [
+      "Open fire",
+      "Fuel scarce",
+      "Small Bothy",
+      "Sleeping platform",
+      "No fires outside",
+      "Dogs under strict control",
+      "Composting toilet"
+    ]
   },
   {
     "elevation_m": 339,
@@ -1371,8 +1413,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Fuel. Wood fuel locally available. Please replenish wood store with cut wood.Parking. If parking at Byrness please use the parking area by the recycling bins rather than parking in the village.No vehicles are permitted in the forest.\n\nHistorical NoteThe bothy is situated on an ancient cross border drove road with a large dry stone wall enclosure to the rear of the building. It could have been an open night resting place for the drovers and their stock on their journey to the markets in the south. When this trade ceased it became a ‘keb hoose’ where a shepherd would ‘set on’ orphan lambs with ewes which had lost lambs. Keb Sike runs nearby. It is also believed to have been used as a shooting hut. Then the forest came.",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Wood burning stove",
+      "Small Bothy",
+      "Composting toilet"
+    ]
   },
   {
     "elevation_m": 297,
@@ -1388,8 +1435,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner:Simec Power 4 Ltd\n\nAvailability: The stag stalking season runs from 15 August to 20 October and the hind cull runs from 21 October to 15 February. Before going on the hills during these periods please contact the estate or useHillphonesto find out where deer control is taking place,\n\nFuel: Please do not cut live trees.\n\nHistorical NoteStaoineag has been maintained by the MBA since 1966. It is well located for walkers looking for shelter on the walk between Fort William and Dalwhinnie. It is situated to the south-west of Loch Treig, a large reservoir built in 1929 which resulted in the loss of two communities.",
+    "bothy_features": [
+      "Open fire",
+      "Fuel scarce"
+    ]
   },
   {
     "elevation_m": 28,
@@ -1403,8 +1453,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Wildland Ltd\n\nParking: Please be careful parking, access to the track is required at all times- any vehicle blocking the entrance will be moved.\n\nFuel: Please do not cut live wood, there is plenty of fallen timber further up the glen.\n\nHistorical Note:Strabeg is a two story house built in 1894 to house an estate shepherd replacing an earlier building not far away.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 45,
@@ -1418,8 +1473,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Keoldale Estate.\n\nThe bothy is on a working sheep farm; please keep dogs under close control.\n\nFuel: None available\n\nPlease note that the path from the road, by Oldshore Beg, shown on OS maps, is extremely boggy in places.\n\nMilitary training: Please note that the area north of the bothy, towards Kearvaig bothy, is occasionally used for military training.  Access is strictly prohibited when red flags are flying.  More information, and latest advised dates, are posted on ourKearvaig page.\n\nHistorical NoteThe Strathan Bridge Disaster",
+    "bothy_features": [
+      "No fires outside",
+      "Fuel scarce",
+      "Sleeping platform",
+      "No dogs allowed",
+      "Open fire",
+      "Dogs under strict control"
+    ]
   },
   {
     "elevation_m": 97,
@@ -1435,8 +1497,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Access: The bothy is situated on a working sheep farm; please keep dogs under close control. A new sheep fence now runs across the Parph. To access the bothy, there is a gate at NC 244 656. Please leave it shut.\n\nMilitary training: Please note that the area north of the bothy, towards Kearvaig bothy, is occasionally used for military training.  Access is strictly prohibited when red flags are flying.  More information, and latest advised dates, are posted on ourKearvaig page.\n\nFuel: Only peat available locally.\n\nHistorical NoteClose to Sandwood Bay, Strathcailleach bothy is surrounded by many peat banks, trout filled rivers and deer on the hills. It was here that James McRory-Smith or “Sandy” to his friends made his home for over 40 years. Sandy eventually became too old to stay here and in 1999, the MBA renovated the cottage and it has been used as a bothy ever since.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "Small Bothy",
+      "Cut your own peat",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 126,
@@ -1450,8 +1517,15 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Availability.No restriction on access.Fuel. Fallen wood in nearby plantation.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "No fires outside",
+      "Strictly no vehicle access",
+      "Fuel scarce",
+      "Sleeping platform",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 145,
@@ -1465,8 +1539,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Glencanisp Estate.\n\nFuel: No fuel available locally. No fires outside.\n\nFishing: Loch fishing by permit only.",
+    "bothy_features": [
+      "Sleeping Bunks",
+      "Open fire",
+      "No local fuel"
+    ]
   },
   {
     "elevation_m": 207,
@@ -1480,8 +1558,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Single storey building, large open room. Freshwater source nearby.\n\nFuel.Please burn deadfall only.\n\nHistorical noteThe bothy was the birthplace of James Stewart (James of the Glen) who was hung at Cnap a’Chaolais near Ballachulish in 1752 for the murder of Colin Campbell (the Red Fox), an official of the British Government- a murder that he did not commit. This event formed the basis of Robert Louis Stevenson’s novel,Kidnapped.",
+    "bothy_features": [
+      "Wood burning stove",
+      "Sleeping platform"
+    ]
   },
   {
     "elevation_m": 48,
@@ -1495,8 +1576,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner:Raasay Estate\n\nFuel and water: No fuel is available locally. Lochan gun Ghrunnd is often the only water supply.\n\nThe bothy was restored in memory of Graham Lipp.\n\nHistorical NoteTaigh Thormoid Dhuibh or “Black Normans House” is located at the north end of the Isle of Raasay. First renovated by the MBA in 1995, it receives occasional visitors throughout the year who appreciate the shelter it provides in a remote and wild part of this lovely island.",
+    "bothy_features": [
+      "Water unreliable",
+      "Open fire",
+      "Fuel scarce"
+    ]
   },
   {
     "elevation_m": 567,
@@ -1510,23 +1595,32 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.Atholl Estate\n\nAccess and parking. There is no vehicular access to Forest Lodge. Please use the car park at the foot of Glen Tilt.\n\nStalkingtakes place on the estate between end-August and 20 October. There is no stalking on Sundays. Stalking information is available by recorded phone message on 01796 481740 – if further information is needed, please  phone 01796 481355 (office hours only).\n\nFuel. No firewood in area. Please use smokeless coal in the stove.\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.\n\nNote that the adjacent Feith Uaine Mhor may be difficult to cross when in spare\n\nAtholl Estate – Guidance for Public Access\n\nHistorical NoteThe earliest reference to Feith Uaine bothy, better known as the Tarf Hotel, was in 1794 when John Forbes charged six shillings for a man and two horses to take baggage there. Renovations to the bothy took place in 1806, however, within 20 years it became a haunt for poachers so was burnt to the ground to discourage these activities. Ruinous again until it was rebuilt in 1850, it was extensively repaired by the Duke of Atholl in 1873.  After another fire in 1909 it remained as just basic, open shelter, until it was adopted by the MBA in 1992 and steadily improved over several years.",
+    "bothy_features": [
+      "No local fuel",
+      "Multi-fuel stove",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 1,
     "id": "mba_098",
     "latitude": 56.963004,
     "longitude": -3.640429,
-    "mba_url": "https://www.mountainbothies.org.uk/bothies/eastern-highlands/the-red-house/",
+    "mba_url": "https://www.mountainbothies.org.uk/bothies/eastern-highlands/the-red-house-ruighe-ealasaid/",
     "name": "The Red House",
     "os_grid_ref": "NO003869",
     "region": "Eastern Highlands",
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Opened December 2022\n\nMar Lodge Estate (NTS)\n\nPlease note thatnew bylaws prohibit the lighting of campfires and BBQs within the Cairngorm National Parkbetween 1st April and 30th September.",
+    "bothy_features": [
+      "Sleeping Bunks",
+      "Strictly no vehicle access",
+      "Composting toilet",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 91,
@@ -1540,8 +1634,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner.Glen Forsa estate\n\nParking and Access. Do not drive up glen- park cars 100m up the track off the A849. Access up Glen Forsa includes a ford, difficult in spate.\n\nStalking.Deer control: the stag stalking season runs from 15 August to 20 October and the hind cull from 21 October to 15 February; before going on the hills during these periods please contact Glen Forsa Estate or useHillphonesto find out where deer control is taking place,01680 300229.\n\nDogson leads please, especially during the lambing season.\n\nThe bothy has two large rooms and one small room. 8 person double bunk in one room; 2 person sleeping platform in small room.",
+    "bothy_features": [
+      "Dogs under strict control",
+      "Open fire",
+      "Sleeping platform"
+    ]
   },
   {
     "elevation_m": 312,
@@ -1558,8 +1656,10 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner: Galloway Forest.\n\nTunskeen was the first MBA project in 1965. It was rebuilt and enlarged in 1998-99.\n\nPlease note that there is no rubbish collection at any bothy. Please take all of your litter home with you.\n\nHistorical NoteThe First Workparty – Tunskeen 1965",
+    "bothy_features": [
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 11,
@@ -1573,8 +1673,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner:Applecross estate (01478 613489,[email protected])\n\nParking: Please park at Toscaig pier NG 710377 andnotat Upper Toscaig regardless of any guidance given in any guide book.You must not park outside Toscaig residents houses.\n\nNote that using the Toscaig pier car park for overnight camping in a van or other vehicle is not permitted – so if leaving a vehicle there overnight whilst visiting Uags, please leave a note for the Ranger so that he knows you’re a legitimate visitor.\n\nFor access to Uags, use either the Toscaig bridge or take a longer walk to the higher bridge near Upper Toscaig. Both are useable.\n\nThe M.B.A have now installed  a multi-fuel stove to help encourage visitors to avoid cutting live or even foraging “dead” wood (which returns much needed nutrients to the soil ) from the recently protected and fenced off rare Atlantic oakwood fringe near the bothy.\n\nPlease respect our remnant woodlands which once covered this coastline and which with your support may yet one day regenerate again.\n\nHistorical NoteGaelic Name: Na h-Uamhagan. English Meaning: Uags; the little caves. For more information visitApplecross Placenames Project",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 28,
@@ -1588,8 +1691,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner:South Uist Estate\n\nAvailability: The bothy is open all year but the estate should be contacted during the stag stalking season (beginning of September until 20th of October). Stòras Uibhist 01878 700101\n\nThe bothy is small and unsuitable for groups.\n\nThe bothy was renovated in memory of Donald Stuart.",
+    "bothy_features": [
+      "Small Bothy",
+      "Multi-fuel stove"
+    ]
   },
   {
     "elevation_m": 271,
@@ -1604,8 +1710,12 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "The annual arrival of ospreys, who nest close by, means that Wainhope bothy, in the Kielder Forest, is closed from March until they depart, usually early in September.Opening and closing dates will be published in the Latest News on the home page.Kielder Ospreys\n\nNo vehicles are permitted in the forest.\n\nParking. Users should park either at Kielder Castle, NY 632 935 or Kielder Dam, NY 708 882, but please note that overnight parking is not permitted at Kielder Dam, especially of campervans.\n\nFuel.Wood fuel available locally.",
+    "bothy_features": [
+      "Multi-fuel stove",
+      "Strictly no vehicle access",
+      "Open fire"
+    ]
   },
   {
     "elevation_m": 450,
@@ -1620,8 +1730,13 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "PLEASE NOTE: The missing carbon monoxide monitor has been replaced but there isNO STOVE.\n\nBasic shelter – unsuitable for groups. There is nofuellocally. Please keepdogson a lead.\n\nPlease be aware car parking at Honister Slate Mines is a paid for facility. Overnight is £15 per vehicle per night. Tickets are issued and vehicles will be clamped if not clearly showing  official dated stamped tickets.\n\nFor more information about the bothy and both past and future workparties please visithttps://warnscalehead.wordpress.com/\n\nThere is also a Facebook Group for the bothy:https://www.facebook.com/groups/411745549034944/about/",
+    "bothy_features": [
+      "Small Bothy",
+      "Dogs under strict control",
+      "No local fuel",
+      "No Fire or Stove"
+    ]
   },
   {
     "elevation_m": 261,
@@ -1635,8 +1750,11 @@
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "MBA",
-    "description": "",
-    "bothy_features": []
+    "description": "Owner:Galloway Forest.\n\nForestry & Land Scotland have advised that all vehicle gates on the access tracks to White Laggan bothy from both Bruce’s Stone car park and the car park 2km beyond Craigencallie House area are now being locked on a daily basis. Vehicle access to the foot of the access path to White Laggan is no longer possible as a result. Anybody who attempts to drive to the bothy and who finds the access gates open and who chooses to drive on to the bothy is doing so at their own risk and may find themselves locked in. Please do not drive through any open gates in an attempt to access the bothy.\n\nVehicles should be left at Bruce’s Stone car park (NX414803) or the car park 2km beyond Craigencallie house (NX494793) and the bothy access by cycle or on foot.\n\nHistorical NoteWhite Laggan cottage was part of the Kirroughtrie estate in 1799. The estate belonged to one Patrick Heron and his father. The census of 1851 shows White Laggan occupied by a shepherd, Alexander Logan, and his family. Records show a Logan family connection at White Laggan through to 1864, thereafter, the cottage was converted into a working place and sleeping quarters for cooks and servants who were employed to cater for the estates shooting and fishing parties. The guests were accommodated in another, prefabricated, lodge built at the front of the cottage. This later building was subsequently removed and White Laggan further converted and adapted to accommodate both guests and servants. It’s probable that the guests were accommodated in the main part of the cottage where today only foundations remain with the servants confined to the end which is now the bothy.\n\nThe White Laggan ‘Saga’",
+    "bothy_features": [
+      "Strictly no vehicle access",
+      "Wood burning stove"
+    ]
   },
   {
     "access": "permissive",
