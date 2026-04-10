@@ -238,35 +238,6 @@ fun BothyDetailScreen(
                 }
             }
 
-            // Personal notes
-            Spacer(modifier = Modifier.height(16.dp))
-            OutlinedTextField(
-                value = noteText,
-                onValueChange = { newText ->
-                    noteText = newText
-                    notesRepo.saveNote(bothyId, newText)
-                },
-                label = { Text("Personal notes") },
-                placeholder = { Text("e.g. Great spot, avoid in winter") },
-                modifier = Modifier.fillMaxWidth(),
-                minLines = 2,
-                maxLines = 5,
-                trailingIcon = {
-                    if (noteText.isNotEmpty()) {
-                        IconButton(onClick = {
-                            noteText = ""
-                            notesRepo.saveNote(bothyId, "")
-                        }) {
-                            Icon(
-                                Icons.Default.Close,
-                                contentDescription = "Clear notes",
-                                modifier = Modifier.size(18.dp)
-                            )
-                        }
-                    }
-                }
-            )
-
             // Latest updates section (news matched to this bothy)
             if (newsItems.isNotEmpty()) {
                 Spacer(modifier = Modifier.height(20.dp))
@@ -320,6 +291,35 @@ fun BothyDetailScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
+
+            // Personal notes
+            Spacer(modifier = Modifier.height(16.dp))
+            OutlinedTextField(
+                value = noteText,
+                onValueChange = { newText ->
+                    noteText = newText
+                    notesRepo.saveNote(bothyId, newText)
+                },
+                label = { Text("Personal notes") },
+                placeholder = { Text("e.g. Great spot, avoid in winter") },
+                modifier = Modifier.fillMaxWidth(),
+                minLines = 2,
+                maxLines = 5,
+                trailingIcon = {
+                    if (noteText.isNotEmpty()) {
+                        IconButton(onClick = {
+                            noteText = ""
+                            notesRepo.saveNote(bothyId, "")
+                        }) {
+                            Icon(
+                                Icons.Default.Close,
+                                contentDescription = "Clear notes",
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+                }
+            )
 
             Spacer(modifier = Modifier.height(12.dp))
             Row(
