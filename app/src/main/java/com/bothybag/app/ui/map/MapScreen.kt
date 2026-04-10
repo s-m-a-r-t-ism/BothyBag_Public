@@ -13,6 +13,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -84,6 +85,7 @@ fun MapScreen(
 
     // The MapView reference
     var mapView by remember { mutableStateOf<MapView?>(null) }
+    var menuExpanded by remember { mutableStateOf(false) }
 
     // Location permissions
     val locationPermissions = rememberMultiplePermissionsState(
@@ -209,6 +211,31 @@ fun MapScreen(
                             tint = MaterialTheme.colorScheme.onPrimary
                         )
                     }
+                    Box {
+                        IconButton(onClick = { menuExpanded = true }) {
+                            Icon(
+                                Icons.Default.MoreVert,
+                                contentDescription = "More options",
+                                tint = MaterialTheme.colorScheme.onPrimary
+                            )
+                        }
+                        DropdownMenu(
+                            expanded = menuExpanded,
+                            onDismissRequest = { menuExpanded = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = {
+                                    Text(
+                                        "Map caches as you browse",
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                        fontSize = 14.sp
+                                    )
+                                },
+                                onClick = { menuExpanded = false },
+                                enabled = false
+                            )
+                        }
+                    }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = MaterialTheme.colorScheme.primary,
@@ -226,10 +253,12 @@ fun MapScreen(
             AndroidView(
                 modifier = Modifier.fillMaxSize(),
                 factory = { ctx ->
-                    // Configure OSMDroid
+                    // Configure OSMDroid with persistent tile cache
                     Configuration.getInstance().apply {
                         userAgentValue = "BothyBag/1.0"
-                        osmdroidTileCache = ctx.cacheDir
+                        osmdroidTileCache = java.io.File(ctx.filesDir, "osmdroid/tiles")
+                        tileFileSystemCacheMaxBytes = 100L * 1024 * 1024 // 100 MB
+                        tileFileSystemCacheTrimBytes = 80L * 1024 * 1024 // Trim to 80 MB
                     }
 
                     MapView(ctx).apply {
