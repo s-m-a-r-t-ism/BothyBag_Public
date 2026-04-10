@@ -13,7 +13,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.FilterList
-import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -85,7 +84,6 @@ fun MapScreen(
 
     // The MapView reference
     var mapView by remember { mutableStateOf<MapView?>(null) }
-    var menuExpanded by remember { mutableStateOf(false) }
 
     // Location permissions
     val locationPermissions = rememberMultiplePermissionsState(
@@ -202,6 +200,12 @@ fun MapScreen(
                                 text = { Text("$visitedMbaCount/105 MBA visited") },
                                 onClick = { showMenu = false }
                             )
+                            Text(
+                                text = "Map caches as you browse",
+                                fontSize = 12.sp,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                                modifier = Modifier.padding(horizontal = 12.dp, vertical = 8.dp)
+                            )
                         }
                     }
                     IconButton(onClick = onNewsClick) {
@@ -210,31 +214,6 @@ fun MapScreen(
                             contentDescription = "MBA News",
                             tint = MaterialTheme.colorScheme.onPrimary
                         )
-                    }
-                    Box {
-                        IconButton(onClick = { menuExpanded = true }) {
-                            Icon(
-                                Icons.Default.MoreVert,
-                                contentDescription = "More options",
-                                tint = MaterialTheme.colorScheme.onPrimary
-                            )
-                        }
-                        DropdownMenu(
-                            expanded = menuExpanded,
-                            onDismissRequest = { menuExpanded = false }
-                        ) {
-                            DropdownMenuItem(
-                                text = {
-                                    Text(
-                                        "Map caches as you browse",
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant,
-                                        fontSize = 14.sp
-                                    )
-                                },
-                                onClick = { menuExpanded = false },
-                                enabled = false
-                            )
-                        }
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
