@@ -221,6 +221,8 @@ fun BothyDetailScreen(
                         InfoRow("OS Grid Ref", it)
                     }
 
+                    InfoRow("Coordinates", "%.5f, %.5f".format(bothy.latitude, bothy.longitude))
+
                     bothy.fireInfo?.let {
                         InfoRow("Fire/Stove", it)
                     }
@@ -229,7 +231,7 @@ fun BothyDetailScreen(
                         InfoRow("Size", it)
                     }
 
-                    if (bothy.bothyFeatures.isNotEmpty()) {
+                    if (!bothy.bothyFeatures.isNullOrEmpty()) {
                         InfoRow("Features", bothy.bothyFeatures.joinToString(" • "))
                     }
                 }
