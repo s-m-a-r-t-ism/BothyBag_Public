@@ -2089,7 +2089,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -2157,7 +2158,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -2220,12 +2222,13 @@
     "latitude": 57.283683,
     "longitude": -5.726623,
     "name": "Unnamed shelter",
-    "operator": null,
+    "operator": "Kyle & Lochalsh Community Trust",
     "osm_id": "node/9082214399",
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -2276,7 +2279,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "private",
@@ -2429,7 +2433,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -2446,7 +2451,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -2752,7 +2758,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -2786,7 +2793,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": "https://www.oread.co.uk/huts/tan-yr-wyddfa/"
   },
   {
     "access": "yes",
@@ -2939,7 +2947,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "private",
@@ -2956,7 +2965,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": "https://www.imperial.ac.uk/sport/facilities/north-wales/"
   },
   {
     "access": "yes",
@@ -3024,7 +3034,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3058,7 +3069,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "permissive",
@@ -3109,7 +3121,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "permissive",
@@ -3160,7 +3173,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3313,7 +3327,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3347,7 +3362,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3398,7 +3414,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3432,7 +3449,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3517,7 +3535,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3568,7 +3587,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3704,7 +3724,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3738,7 +3759,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3857,7 +3879,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3908,7 +3931,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -3993,7 +4017,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "permissive",
@@ -4078,7 +4103,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4231,7 +4257,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "private",
@@ -4265,7 +4292,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4350,7 +4378,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4367,7 +4396,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4435,7 +4465,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4452,7 +4483,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4520,7 +4552,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4571,7 +4604,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4605,7 +4639,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": null,
@@ -4690,7 +4725,8 @@
     "region": "Unknown",
     "source": "OpenStreetMap",
     "status": "open",
-    "type": "Non-MBA"
+    "type": "Non-MBA",
+    "website": null
   },
   {
     "access": "customers",
