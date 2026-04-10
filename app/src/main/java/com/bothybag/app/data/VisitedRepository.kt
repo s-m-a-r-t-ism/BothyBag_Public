@@ -28,6 +28,12 @@ class VisitedRepository(context: Context) {
         save(map)
     }
 
+    fun markVisitedOnDate(bothyId: String, date: LocalDate) {
+        val map = getVisitedMap().toMutableMap()
+        map[bothyId] = date.toString()
+        save(map)
+    }
+
     fun markUnvisited(bothyId: String) {
         val map = getVisitedMap().toMutableMap()
         map.remove(bothyId)

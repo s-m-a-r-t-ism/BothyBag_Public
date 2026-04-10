@@ -4,7 +4,6 @@ import android.content.Intent
 import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -23,6 +22,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material.icons.filled.Public
 import androidx.compose.material.icons.filled.Share
@@ -30,18 +30,21 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.DatePicker
+import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Switch
-import androidx.compose.material3.SwitchDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -57,11 +60,17 @@ import androidx.compose.ui.unit.sp
 import com.bothybag.app.data.BothyRepository
 import com.bothybag.app.data.NewsItem
 import com.bothybag.app.data.NewsRepository
+import com.bothybag.app.data.NotesRepository
 import com.bothybag.app.data.VisitedRepository
 import com.bothybag.app.ui.components.BothyTypeBadge
 import com.bothybag.app.ui.components.StatusBadge
 import com.bothybag.app.ui.theme.AmberDark
 import com.bothybag.app.ui.theme.GreenVisited
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -73,6 +82,7 @@ fun BothyDetailScreen(
     val bothyRepo = remember { BothyRepository(context) }
     val visitedRepo = remember { VisitedRepository(context) }
     val newsRepo = remember { NewsRepository(context) }
+    val notesRepo = remember { NotesRepository(context) }
     val bothy = remember { bothyRepo.getBothyById(bothyId) }
     val newsItems = remember { newsRepo.getNewsForBothy(bothyId) }
 
@@ -83,6 +93,12 @@ fun BothyDetailScreen(
 
     var isVisited by remember { mutableStateOf(visitedRepo.isVisited(bothyId)) }
     var visitedDate by remember { mutableStateOf(visitedRepo.getVisitedDate(bothyId)) }
+    var noteText by remember { mutableStateOf(notesRepo.getNote(bothyId)) }
+    var showDatePicker by remember { mutableStateOf(false) }
+
+    val displayDateFormatter = remember {
+        DateTimeFormatter.ofPattern("d MMMM yyyy", Locale.ENGLISH)
+    }
 
     Scaffold(
         topBar = {
@@ -111,12 +127,16 @@ fun BothyDetailScreen(
                     .padding(horizontal = 16.dp, vertical = 8.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                // Mark as Visited button - bottom left, 1/3 width
+                // Mark as Visited button - opens date picker
                 Button(
                     onClick = {
-                        visitedRepo.toggleVisited(bothyId)
-                        isVisited = !isVisited
-                        visitedDate = visitedRepo.getVisitedDate(bothyId)
+                        if (isVisited) {
+                            visitedRepo.markUnvisited(bothyId)
+                            isVisited = false
+                            visitedDate = null
+                        } else {
+                            showDatePicker = true
+                        }
                     },
                     modifier = Modifier
                         .weight(1f / 3f)
@@ -192,6 +212,60 @@ fun BothyDetailScreen(
                 BothyTypeBadge(isMba = bothy.isMba)
                 StatusBadge(status = bothy.status)
             }
+
+            // Visited date display
+            if (isVisited && visitedDate != null) {
+                Spacer(modifier = Modifier.height(12.dp))
+                val formattedDate = try {
+                    LocalDate.parse(visitedDate).format(displayDateFormatter)
+                } catch (e: Exception) {
+                    visitedDate
+                }
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Icon(
+                        Icons.Default.CheckCircle,
+                        contentDescription = null,
+                        tint = GreenVisited,
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(modifier = Modifier.width(6.dp))
+                    Text(
+                        text = "Visited: $formattedDate",
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Medium,
+                        color = GreenVisited
+                    )
+                }
+            }
+
+            // Personal notes
+            Spacer(modifier = Modifier.height(16.dp))
+            OutlinedTextField(
+                value = noteText,
+                onValueChange = { newText ->
+                    noteText = newText
+                    notesRepo.saveNote(bothyId, newText)
+                },
+                label = { Text("Personal notes") },
+                placeholder = { Text("e.g. Great spot, avoid in winter") },
+                modifier = Modifier.fillMaxWidth(),
+                minLines = 2,
+                maxLines = 5,
+                trailingIcon = {
+                    if (noteText.isNotEmpty()) {
+                        IconButton(onClick = {
+                            noteText = ""
+                            notesRepo.saveNote(bothyId, "")
+                        }) {
+                            Icon(
+                                Icons.Default.Close,
+                                contentDescription = "Clear notes",
+                                modifier = Modifier.size(18.dp)
+                            )
+                        }
+                    }
+                }
+            )
 
             // Latest updates section (news matched to this bothy)
             if (newsItems.isNotEmpty()) {
@@ -302,6 +376,40 @@ fun BothyDetailScreen(
                     color = MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.6f)
                 )
             }
+        }
+    }
+
+    // Date picker dialog
+    if (showDatePicker) {
+        val datePickerState = rememberDatePickerState(
+            initialSelectedDateMillis = System.currentTimeMillis()
+        )
+        DatePickerDialog(
+            onDismissRequest = { showDatePicker = false },
+            confirmButton = {
+                TextButton(
+                    onClick = {
+                        datePickerState.selectedDateMillis?.let { millis ->
+                            val selectedDate = Instant.ofEpochMilli(millis)
+                                .atZone(ZoneId.systemDefault())
+                                .toLocalDate()
+                            visitedRepo.markVisitedOnDate(bothyId, selectedDate)
+                            isVisited = true
+                            visitedDate = selectedDate.toString()
+                        }
+                        showDatePicker = false
+                    }
+                ) {
+                    Text("Confirm")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showDatePicker = false }) {
+                    Text("Cancel")
+                }
+            }
+        ) {
+            DatePicker(state = datePickerState)
         }
     }
 }
