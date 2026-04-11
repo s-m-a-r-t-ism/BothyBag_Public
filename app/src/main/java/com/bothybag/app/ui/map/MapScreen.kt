@@ -210,7 +210,7 @@ fun MapScreen(
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
-                                text = { Text("Version v1.0") },
+                                text = { Text("Version v1.1") },
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
