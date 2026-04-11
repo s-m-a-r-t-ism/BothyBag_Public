@@ -12,7 +12,9 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Article
+import androidx.compose.material.icons.filled.DarkMode
 import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.MyLocation
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -53,6 +55,7 @@ import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import kotlinx.coroutines.launch
 import org.osmdroid.config.Configuration
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
+import org.osmdroid.tileprovider.tilesource.XYTileSource
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
 import org.osmdroid.views.overlay.Marker
@@ -74,6 +77,20 @@ fun MapScreen(
     val newsRepo = remember { NewsRepository(context) }
     val locationService = remember { LocationService(context) }
     val scope = rememberCoroutineScope()
+
+    val mapPrefs = remember { context.getSharedPreferences("map_prefs", android.content.Context.MODE_PRIVATE) }
+    var isDarkMap by remember { mutableStateOf(mapPrefs.getBoolean("dark_map", false)) }
+    val darkTileSource = remember {
+        XYTileSource(
+            "CartoDB Dark Matter",
+            0, 19, 256, ".png",
+            arrayOf(
+                "https://a.basemaps.cartocdn.com/dark_all/",
+                "https://b.basemaps.cartocdn.com/dark_all/",
+                "https://c.basemaps.cartocdn.com/dark_all/"
+            )
+        )
+    }
 
     var bothies by remember { mutableStateOf(bothyRepo.loadBothies()) }
     var showMba by remember { mutableStateOf(true) }
@@ -208,6 +225,17 @@ fun MapScreen(
                             )
                         }
                     }
+                    IconButton(onClick = {
+                        isDarkMap = !isDarkMap
+                        mapPrefs.edit().putBoolean("dark_map", isDarkMap).apply()
+                        mapView?.setTileSource(if (isDarkMap) darkTileSource else TileSourceFactory.MAPNIK)
+                    }) {
+                        Icon(
+                            if (isDarkMap) Icons.Default.LightMode else Icons.Default.DarkMode,
+                            contentDescription = "Toggle dark map",
+                            tint = MaterialTheme.colorScheme.onPrimary
+                        )
+                    }
                     IconButton(onClick = onNewsClick) {
                         Icon(
                             Icons.Default.Article,
@@ -241,7 +269,7 @@ fun MapScreen(
                     }
 
                     MapView(ctx).apply {
-                        setTileSource(TileSourceFactory.MAPNIK)
+                        setTileSource(if (isDarkMap) darkTileSource else TileSourceFactory.MAPNIK)
                         setMultiTouchControls(true)
                         controller.setZoom(6.5)
                         controller.setCenter(GeoPoint(56.5, -4.0))
