@@ -46,6 +46,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -90,7 +91,17 @@ fun BothyDetailScreen(
     val newsRepo = remember { NewsRepository(context) }
     val notesRepo = remember { NotesRepository(context) }
     val bothy = remember { bothyRepo.getBothyById(bothyId) }
-    val newsItems = remember { newsRepo.getNewsForBothy(bothyId) }
+    var newsItems by remember { mutableStateOf<List<NewsItem>>(emptyList()) }
+    LaunchedEffect(bothyId) {
+        val cached = newsRepo.getNewsForBothy(bothyId)
+        if (cached.isNotEmpty()) {
+            newsItems = cached
+        } else {
+            // News not cached yet — fetch it now (also populates cache for News screen)
+            newsRepo.getNews(bothyRepo)
+            newsItems = newsRepo.getNewsForBothy(bothyId)
+        }
+    }
 
     if (bothy == null) {
         Text("Bothy not found", modifier = Modifier.padding(16.dp))

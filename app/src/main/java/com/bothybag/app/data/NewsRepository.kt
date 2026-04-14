@@ -135,7 +135,7 @@ class NewsRepository(private val context: Context) {
                     }
                 }
 
-                XmlPullParser.TEXT -> {
+                XmlPullParser.TEXT, XmlPullParser.CDSECT -> {
                     if (inItem) {
                         val text = parser.text?.trim() ?: ""
                         when (currentTag) {
