@@ -4796,5 +4796,22 @@
     "source": "OpenStreetMap",
     "status": "open",
     "type": "Non-MBA"
+  },
+  {
+    "access": null,
+    "capacity": null,
+    "description": null,
+    "elevation_m": null,
+    "fireplace": null,
+    "id": "osm_158",
+    "latitude": 54.8804,
+    "longitude": -3.76881,
+    "name": "Smithton Bothy",
+    "operator": null,
+    "osm_id": "way/793485765",
+    "region": "Southern Scotland",
+    "source": "OpenStreetMap",
+    "status": "open",
+    "type": "Non-MBA"
   }
 ]
