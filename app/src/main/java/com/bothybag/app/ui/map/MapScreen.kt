@@ -206,7 +206,7 @@ fun MapScreen(
                             }
                             // Static menu items
                             DropdownMenuItem(
-                                text = { Text("Created by Smartism") },
+                                text = { Text("Created by Mart Zijp") },
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
