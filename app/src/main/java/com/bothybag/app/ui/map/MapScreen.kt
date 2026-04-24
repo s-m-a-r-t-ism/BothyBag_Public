@@ -127,6 +127,14 @@ fun MapScreen(
         }
     }
 
+    // Release OSMDroid MapView resources when leaving the screen
+    DisposableEffect(Unit) {
+        onDispose {
+            mapView?.onDetach()
+            mapView = null
+        }
+    }
+
     // Refresh visited count when returning to this screen, and fetch news in background
     LaunchedEffect(Unit) {
         visitedMbaCount = visitedRepo.visitedMbaCount(bothyRepo)

@@ -15,7 +15,11 @@ class VisitedRepository(context: Context) {
     fun getVisitedMap(): Map<String, String> {
         val json = prefs.getString(key, null) ?: return emptyMap()
         val type = object : TypeToken<Map<String, String>>() {}.type
-        return gson.fromJson(json, type)
+        return try {
+            gson.fromJson<Map<String, String>>(json, type) ?: emptyMap()
+        } catch (e: Exception) {
+            emptyMap()
+        }
     }
 
     fun isVisited(bothyId: String): Boolean = getVisitedMap().containsKey(bothyId)

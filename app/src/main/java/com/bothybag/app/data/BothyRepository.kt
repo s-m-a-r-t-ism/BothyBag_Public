@@ -11,13 +11,16 @@ class BothyRepository(private val context: Context) {
     fun loadBothies(): List<Bothy> {
         if (bothies.isNotEmpty()) return bothies
 
-        val json = context.assets
-            .open("bothies.json")
-            .bufferedReader()
-            .use { it.readText() }
-
-        val type = object : TypeToken<List<Bothy>>() {}.type
-        bothies = Gson().fromJson(json, type)
+        bothies = try {
+            val json = context.assets
+                .open("bothies.json")
+                .bufferedReader()
+                .use { it.readText() }
+            val type = object : TypeToken<List<Bothy>>() {}.type
+            Gson().fromJson<List<Bothy>>(json, type) ?: emptyList()
+        } catch (e: Exception) {
+            emptyList()
+        }
         return bothies
     }
 
