@@ -87,7 +87,8 @@ class NewsRepository(private val context: Context) {
             val connection = URL(url).openConnection() as HttpURLConnection
             connection.apply {
                 requestMethod = "GET"
-                setRequestProperty("User-Agent", "BothyBag/1.0")
+                setRequestProperty("User-Agent", "Mozilla/5.0 (Linux; Android 10) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36")
+                setRequestProperty("Accept", "application/rss+xml, application/xml, text/xml, */*")
                 connectTimeout = 15_000
                 readTimeout = 15_000
             }
