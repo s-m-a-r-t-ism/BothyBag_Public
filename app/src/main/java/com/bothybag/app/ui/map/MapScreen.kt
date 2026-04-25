@@ -54,10 +54,12 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import kotlinx.coroutines.launch
 import org.osmdroid.config.Configuration
+import org.osmdroid.events.MapEventsReceiver
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.tileprovider.tilesource.XYTileSource
 import org.osmdroid.util.GeoPoint
 import org.osmdroid.views.MapView
+import org.osmdroid.views.overlay.MapEventsOverlay
 import org.osmdroid.views.overlay.Marker
 import org.osmdroid.views.overlay.infowindow.InfoWindow
 import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow
@@ -281,6 +283,16 @@ fun MapScreen(
                         setMultiTouchControls(true)
                         controller.setZoom(6.5)
                         controller.setCenter(GeoPoint(56.5, -4.0))
+
+                        // Dismiss any open info window on a tap that misses a marker
+                        val mapEvents = MapEventsOverlay(object : MapEventsReceiver {
+                            override fun singleTapConfirmedHelper(p: GeoPoint?): Boolean {
+                                InfoWindow.closeAllInfoWindowsOn(this@apply)
+                                return false
+                            }
+                            override fun longPressHelper(p: GeoPoint?): Boolean = false
+                        })
+                        overlays.add(0, mapEvents)
 
                         // My location overlay
                         if (locationPermissions.allPermissionsGranted) {
