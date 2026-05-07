@@ -91,15 +91,8 @@
     "region": "Southwest Highlands & Islands",
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
-    "type": "MBA",
-    "description": "Owner: Scottish Ministers\n\nAvailability: not available during stag stalking September 10 to October 20\n\nPlease give priority to shepherds who use the bothy occasionally. Dogs: The bothy is on a sheep farm, please keep dogs under strict control. Fuel: The sheep fank outside the bothy is vital for sheep management and under no circumstances should be vandalised for firewood. Please do not cut live wood.\n\nDerivation: Achnanclach is Gaelic for field of the stone.",
-    "bothy_features": [
-      "Small Bothy",
-      "No fires outside",
-      "Strictly no vehicle access",
-      "Dogs under strict control",
-      "Open fire"
-    ]
+    "type": "Non-MBA",
+    "description": "No longer an MBA bothy. Booking required via Dunlossit Estate: 01496 840232."
   },
   {
     "elevation_m": 400,
