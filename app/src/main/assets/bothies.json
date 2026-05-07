@@ -81,18 +81,23 @@
     ]
   },
   {
-    "elevation_m": 5,
+    "elevation_m": 2,
     "id": "mba_005",
-    "latitude": 55.786487,
-    "longitude": -6.084126,
+    "latitude": 55.7855,
+    "longitude": -6.0853,
     "mba_url": null,
     "name": "An Cladach Bothy",
-    "os_grid_ref": "NR440623",
+    "os_grid_ref": "NR439623",
     "region": "Southwest Highlands & Islands",
     "source": "haroldstreet.org.uk / MBA",
     "status": "open",
     "type": "Non-MBA",
-    "description": "No longer an MBA bothy. Booking required via Dunlossit Estate: 01496 840232."
+    "description": "No longer an MBA bothy. Booking required via Dunlossit Estate: 01496 840232.",
+    "bothy_features": [
+      "Very small",
+      "Single room",
+      "2 bunk-beds, sleeping 4"
+    ]
   },
   {
     "elevation_m": 400,
