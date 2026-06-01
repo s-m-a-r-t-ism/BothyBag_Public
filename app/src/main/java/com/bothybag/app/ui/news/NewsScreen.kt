@@ -1,7 +1,5 @@
 package com.bothybag.app.ui.news
 
-import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -54,6 +52,7 @@ import com.bothybag.app.data.BothyRepository
 import com.bothybag.app.data.NewsItem
 import com.bothybag.app.data.NewsRepository
 import com.bothybag.app.ui.theme.AmberDark
+import com.bothybag.app.util.openUrlSafely
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -187,8 +186,7 @@ private fun NewsItemRow(
         modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.link))
-                context.startActivity(intent)
+                context.openUrlSafely(item.link)
             }
             .padding(horizontal = 16.dp, vertical = 12.dp)
     ) {

@@ -71,6 +71,7 @@ import com.bothybag.app.ui.components.BothyTypeBadge
 import com.bothybag.app.ui.components.StatusBadge
 import com.bothybag.app.ui.theme.AmberDark
 import com.bothybag.app.ui.theme.GreenVisited
+import com.bothybag.app.util.openUrlSafely
 import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
@@ -190,10 +191,9 @@ fun BothyDetailScreen(
                         if (intent.resolveActivity(context.packageManager) != null) {
                             context.startActivity(intent)
                         } else {
-                            val webUri = Uri.parse(
+                            context.openUrlSafely(
                                 "https://www.google.com/maps/dir/?api=1&destination=${bothy.latitude},${bothy.longitude}&travelmode=walking"
                             )
-                            context.startActivity(Intent(Intent.ACTION_VIEW, webUri))
                         }
                     },
                     modifier = Modifier
@@ -351,10 +351,7 @@ fun BothyDetailScreen(
             ) {
                 if (bothy.isMba && bothy.mbaUrl != null) {
                     OutlinedButton(
-                        onClick = {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(bothy.mbaUrl))
-                            context.startActivity(intent)
-                        },
+                        onClick = { context.openUrlSafely(bothy.mbaUrl) },
                         modifier = Modifier.weight(1f)
                     ) {
                         Icon(Icons.Default.Public, contentDescription = null)
@@ -469,8 +466,7 @@ private fun NewsUpdatesSection(newsItems: List<NewsItem>) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .clickable {
-                            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(item.link))
-                            context.startActivity(intent)
+                            context.openUrlSafely(item.link)
                         }
                         .padding(vertical = 6.dp)
                 ) {
