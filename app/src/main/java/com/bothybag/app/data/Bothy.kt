@@ -16,7 +16,7 @@ data class Bothy(
 
     val region: String? = null,
     val type: String = "Non-MBA",    // "MBA" or "Non-MBA"
-    val status: String = "open",     // "open", "closed", "seasonal"
+    val status: String = "open",     // "open", "closed", "permanently_closed", "seasonal"
     val source: String? = null,
 
     // MBA-specific fields
@@ -40,7 +40,8 @@ data class Bothy(
 ) {
     val isMba: Boolean get() = type == "MBA"
     val isOpen: Boolean get() = status.lowercase() == "open"
-    val isClosed: Boolean get() = status.lowercase() == "closed"
+    val isClosed: Boolean
+        get() = status.lowercase().let { it == "closed" || it == "permanently_closed" }
 
     val elevationFt: Int? get() = elevationM?.let { (it * 3.28084).toInt() }
 

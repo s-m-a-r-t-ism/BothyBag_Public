@@ -236,6 +236,21 @@ fun BothyDetailScreen(
                 StatusBadge(status = bothy.status)
             }
 
+            // Important notes (closures, seasonal restrictions, warnings)
+            bothy.notes?.takeIf { it.isNotBlank() }?.let { note ->
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = note,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = if (bothy.isClosed) {
+                        MaterialTheme.colorScheme.error
+                    } else {
+                        MaterialTheme.colorScheme.onSurface
+                    }
+                )
+            }
+
             // Visited date display
             if (isVisited && visitedDate != null) {
                 Spacer(modifier = Modifier.height(12.dp))
