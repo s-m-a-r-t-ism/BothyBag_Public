@@ -240,7 +240,8 @@ class NewsRepository(private val context: Context) {
             // Pad with spaces so names only match on whole-word boundaries
             val titlePadded = " ${normalize(item.title)} "
             val match = sortedLookup.firstOrNull { (name, _) ->
-                titlePadded.contains(" $name ")
+                // The second check covers possessives: "Shenavall's" normalizes to "shenavalls"
+                titlePadded.contains(" $name ") || titlePadded.contains(" ${name}s ")
             }
             if (match != null) {
                 item.copy(
