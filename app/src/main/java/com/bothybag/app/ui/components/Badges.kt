@@ -37,6 +37,11 @@ fun StatusBadge(status: String, modifier: Modifier = Modifier) {
 }
 
 @Composable
+fun PrivateBadge(modifier: Modifier = Modifier) {
+    Badge(text = "Private", backgroundColor = RedClosed, modifier = modifier)
+}
+
+@Composable
 private fun Badge(
     text: String,
     backgroundColor: Color,

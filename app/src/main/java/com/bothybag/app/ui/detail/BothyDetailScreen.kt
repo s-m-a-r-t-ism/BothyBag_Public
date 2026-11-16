@@ -68,6 +68,7 @@ import com.bothybag.app.data.NewsRepository
 import com.bothybag.app.data.NotesRepository
 import com.bothybag.app.data.VisitedRepository
 import com.bothybag.app.ui.components.BothyTypeBadge
+import com.bothybag.app.ui.components.PrivateBadge
 import com.bothybag.app.ui.components.StatusBadge
 import com.bothybag.app.ui.theme.AmberDark
 import com.bothybag.app.ui.theme.GreenVisited
@@ -233,7 +234,14 @@ fun BothyDetailScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 BothyTypeBadge(isMba = bothy.isMba)
-                StatusBadge(status = bothy.status)
+                // "Open" next to "Private" would contradict itself, so a private
+                // bothy only shows its status when that status is not open
+                if (!bothy.isPrivate || !bothy.isOpen) {
+                    StatusBadge(status = bothy.status)
+                }
+                if (bothy.isPrivate) {
+                    PrivateBadge()
+                }
             }
 
             // Important notes (closures, seasonal restrictions, warnings)
@@ -305,6 +313,10 @@ fun BothyDetailScreen(
                     }
 
                     InfoRow("Coordinates", "%.5f, %.5f".format(bothy.latitude, bothy.longitude))
+
+                    bothy.accessInfo?.let {
+                        InfoRow("Access", it)
+                    }
 
                     bothy.fireInfo?.let {
                         InfoRow("Fire/Stove", it)

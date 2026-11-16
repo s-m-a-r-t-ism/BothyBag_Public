@@ -492,6 +492,7 @@ private fun addBothyMarkers(
             snippet = buildString {
                 append(if (bothy.isMba) "MBA" else "Non-MBA")
                 if (bothy.isClosed) append(" • Closed")
+                if (bothy.isPrivate) append(" • Private")
                 if (bothy.region != null && bothy.region != "Unknown") {
                     append(" • ${bothy.region}")
                 }
