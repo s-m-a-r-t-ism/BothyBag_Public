@@ -7,6 +7,7 @@ import com.google.gson.reflect.TypeToken
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.xmlpull.v1.XmlPullParser
+import java.io.IOException
 import java.io.StringReader
 import java.net.HttpURLConnection
 import java.net.URL
@@ -111,10 +112,18 @@ class NewsRepository(private val context: Context) {
 
             try {
                 val responseCode = connection.responseCode
-                if (responseCode != 200) break // No more pages
+                if (responseCode != 200) {
+                    // A failing first page is an error, not an empty feed: throwing
+                    // keeps the existing cache instead of overwriting it with nothing
+                    if (page == 1) throw IOException("HTTP $responseCode")
+                    break // No more pages
+                }
                 val xml = connection.inputStream.bufferedReader().use { it.readText() }
                 val items = parseRss(xml)
-                if (items.isEmpty()) break
+                if (items.isEmpty()) {
+                    if (page == 1) throw IOException("News feed returned no articles")
+                    break
+                }
                 allItems.addAll(items)
             } catch (e: Exception) {
                 if (page == 1) throw e // Only fail if the first page fails
