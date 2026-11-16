@@ -2,6 +2,9 @@ package com.bothybag.app.ui.map
 
 import android.Manifest
 import android.location.Location
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -48,6 +51,7 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.bothybag.app.data.Bothy
 import com.bothybag.app.data.BothyRepository
 import com.bothybag.app.data.NewsRepository
+import com.bothybag.app.data.UserDataBackup
 import com.bothybag.app.data.VisitedRepository
 import com.bothybag.app.location.LocationService
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
@@ -103,6 +107,56 @@ fun MapScreen(
 
     // The MapView reference
     var mapView by remember { mutableStateOf<MapView?>(null) }
+
+    // Export / import of visited bothies and personal notes
+    val userDataBackup = remember { UserDataBackup(context) }
+    // Bumped after an import so the markers are redrawn with the new visited state
+    var visitedVersion by remember { mutableStateOf(0) }
+
+    val exportLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument("application/json")
+    ) { uri ->
+        if (uri != null) {
+            val saved = try {
+                context.contentResolver.openOutputStream(uri, "wt")?.use { stream ->
+                    stream.write(userDataBackup.exportJson().toByteArray(Charsets.UTF_8))
+                } != null
+            } catch (e: Exception) {
+                false
+            }
+            Toast.makeText(
+                context,
+                if (saved) "Backup saved" else "Could not save backup",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    val importLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenDocument()
+    ) { uri ->
+        if (uri != null) {
+            val result = try {
+                context.contentResolver.openInputStream(uri)
+                    ?.bufferedReader()
+                    ?.use { it.readText() }
+                    ?.let { userDataBackup.importJson(it) }
+            } catch (e: Exception) {
+                null
+            }
+            if (result != null) {
+                visitedMbaCount = visitedRepo.visitedMbaCount(bothyRepo)
+                visitedVersion++
+                Toast.makeText(
+                    context,
+                    "Imported ${result.visitedCount} visited, ${result.notesCount} notes",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                Toast.makeText(context, "Not a BothyBag backup file", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
     // Location permissions
     val locationPermissions = rememberMultiplePermissionsState(
@@ -227,6 +281,23 @@ fun MapScreen(
                                 text = { Text("$visitedMbaCount/$totalMba MBA visited") },
                                 onClick = { showMenu = false }
                             )
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                            DropdownMenuItem(
+                                text = { Text("Export visited & notes") },
+                                onClick = {
+                                    showMenu = false
+                                    exportLauncher.launch(
+                                        "bothybag-backup-${java.time.LocalDate.now()}.json"
+                                    )
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Import visited & notes") },
+                                onClick = {
+                                    showMenu = false
+                                    importLauncher.launch(arrayOf("*/*"))
+                                }
+                            )
                             Text(
                                 text = "Map caches as you browse",
                                 fontSize = 12.sp,
@@ -310,6 +381,8 @@ fun MapScreen(
                     }
                 },
                 update = { mv ->
+                    // Reading this makes the block re-run after an import
+                    visitedVersion
                     // Clear and re-add markers when filters change
                     mv.overlays.removeAll { it is Marker }
                     addBothyMarkers(mv, bothies, visitedRepo, showMba, showNonMba, onBothyClick)

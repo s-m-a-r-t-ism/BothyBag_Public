@@ -38,6 +38,14 @@ class VisitedRepository(context: Context) {
         save(map)
     }
 
+    /** Adds several visits at once, replacing the existing date for the same bothy */
+    fun mergeVisited(visits: Map<String, String>) {
+        if (visits.isEmpty()) return
+        val map = getVisitedMap().toMutableMap()
+        map.putAll(visits)
+        save(map)
+    }
+
     fun markUnvisited(bothyId: String) {
         val map = getVisitedMap().toMutableMap()
         map.remove(bothyId)
