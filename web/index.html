@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>BothyBag</title>
+  <meta name="description" content="Map of bothies in Scotland, England and Wales. Track which ones you have visited.">
+
+  <meta name="theme-color" content="#FF8F00">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="BothyBag">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+  <link rel="stylesheet" href="vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+  <!-- Map screen: always present, the other screens slide over it -->
+  <section id="screen-map" class="screen">
+    <header class="appbar">
+      <h1 class="appbar-title">BothyBag</h1>
+      <button class="icon-btn" id="btn-menu" aria-label="Menu and search" aria-expanded="false"></button>
+      <button class="icon-btn" id="btn-dark" aria-label="Toggle dark map"></button>
+      <button class="icon-btn" id="btn-news" aria-label="MBA News"></button>
+    </header>
+
+    <div class="map-wrap">
+      <div id="map"></div>
+
+      <div id="menu-backdrop" class="menu-backdrop" hidden></div>
+      <div id="menu" class="menu" hidden>
+        <input id="search" class="search" type="search" placeholder="Search bothies..." autocomplete="off"
+               autocorrect="off" spellcheck="false" aria-label="Search bothies">
+        <ul id="search-results" class="search-results"></ul>
+        <div class="menu-item">Created by Mart Zijp</div>
+        <div class="menu-item" id="menu-version">Version v1.2</div>
+        <div class="menu-item" id="menu-visited"></div>
+        <div class="menu-note">Map caches as you browse</div>
+        <div class="menu-note" id="install-hint" hidden></div>
+      </div>
+
+      <div id="filter-label" class="filter-label" hidden></div>
+      <button id="btn-filter" class="fab fab-small" aria-label="Filter bothies"></button>
+      <button id="btn-locate" class="fab" aria-label="My location"></button>
+    </div>
+  </section>
+
+  <!-- Bothy detail screen -->
+  <section id="screen-detail" class="screen overlay" hidden>
+    <header class="appbar">
+      <button class="icon-btn" id="detail-back" aria-label="Back"></button>
+      <h1 class="appbar-title" id="detail-title"></h1>
+    </header>
+    <div class="scroll" id="detail-body"></div>
+    <footer class="bottombar">
+      <button class="btn btn-visit" id="btn-visit"></button>
+      <button class="btn btn-primary" id="btn-navigate"></button>
+    </footer>
+  </section>
+
+  <!-- News screen -->
+  <section id="screen-news" class="screen overlay" hidden>
+    <header class="appbar">
+      <button class="icon-btn" id="news-back" aria-label="Back"></button>
+      <h1 class="appbar-title">MBA News</h1>
+      <button class="icon-btn" id="news-refresh" aria-label="Refresh news"></button>
+    </header>
+    <div class="scroll" id="news-body"></div>
+  </section>
+
+  <!-- Date picker for "Visit" -->
+  <dialog id="date-dialog" class="dialog">
+    <form method="dialog">
+      <h2>When did you visit?</h2>
+      <input type="date" id="visit-date" required>
+      <div class="dialog-actions">
+        <button class="btn-text" value="cancel" formnovalidate>Cancel</button>
+        <button class="btn-text" value="confirm" id="date-confirm">Confirm</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="vendor/leaflet/leaflet.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
