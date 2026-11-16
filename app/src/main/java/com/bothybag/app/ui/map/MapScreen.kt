@@ -224,7 +224,7 @@ fun MapScreen(
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
-                                text = { Text("$visitedMbaCount/105 MBA visited") },
+                                text = { Text("$visitedMbaCount/$totalMba MBA visited") },
                                 onClick = { showMenu = false }
                             )
                             Text(
