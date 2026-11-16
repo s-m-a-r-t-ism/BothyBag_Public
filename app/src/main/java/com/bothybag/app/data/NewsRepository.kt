@@ -20,10 +20,26 @@ class NewsRepository(private val context: Context) {
 
     companion object {
         private const val RSS_URL = "https://www.mountainbothies.org.uk/feed/"
-        private const val KEY_NEWS = "cached_news"
-        private const val KEY_TIMESTAMP = "cached_timestamp"
+        // v2: cache written with the stricter bothy matching (older caches held false matches)
+        private const val KEY_NEWS = "cached_news_v2"
+        private const val KEY_TIMESTAMP = "cached_timestamp_v2"
+        private const val OLD_KEY_NEWS = "cached_news"
+        private const val OLD_KEY_TIMESTAMP = "cached_timestamp"
         private const val CACHE_DURATION_MS = 24 * 60 * 60 * 1000L // 24 hours
         private const val MAX_PAGES = 5 // Fetch up to 5 pages (~50 articles)
+
+        /**
+         * Bothy names that are also everyday words or place names once the "Bothy"
+         * suffix is dropped. These only match when the full name appears in the title.
+         */
+        private val AMBIGUOUS_SHORT_NAMES = setOf("green", "oban")
+    }
+
+    init {
+        // Drop the pre-v2 cache, which could link articles to the wrong bothy
+        if (prefs.contains(OLD_KEY_NEWS) || prefs.contains(OLD_KEY_TIMESTAMP)) {
+            prefs.edit().remove(OLD_KEY_NEWS).remove(OLD_KEY_TIMESTAMP).apply()
+        }
     }
 
     /**
@@ -183,14 +199,16 @@ class NewsRepository(private val context: Context) {
     }
 
     /**
-     * Match news items to bothies by checking if any bothy name appears in the title.
-     * Strips "Bothy" suffix, apostrophes, and special characters for flexible matching.
+     * Match news items to MBA bothies by checking if a bothy name appears in the title
+     * as whole words. Strips "Bothy" suffix, apostrophes, and special characters for
+     * flexible matching. Only MBA bothies are considered: the feed is the MBA's own
+     * news, and non-MBA names such as "Bothy" or "Red Bothy" caused false matches.
      */
     private fun matchBothies(
         items: List<NewsItem>,
         bothyRepo: BothyRepository
     ): List<NewsItem> {
-        val bothies = bothyRepo.loadBothies()
+        val bothies = bothyRepo.loadBothies().filter { it.isMba }
 
         // Build lookup: list of (normalized name, bothy) pairs
         val bothyLookup = bothies.flatMap { bothy ->
@@ -199,16 +217,21 @@ class NewsRepository(private val context: Context) {
             val stripped = normalize(
                 bothy.name.replace(Regex("\\s+bothy$", RegexOption.IGNORE_CASE), "")
             )
-            if (stripped != names[0] && stripped.isNotBlank()) names.add(stripped)
+            if (stripped != names[0] && stripped.isNotBlank() &&
+                stripped !in AMBIGUOUS_SHORT_NAMES
+            ) {
+                names.add(stripped)
+            }
             names.filter { it.isNotBlank() }.map { it to bothy }
         }
         // Sort by name length descending so longer names match first (avoids partial matches)
         val sortedLookup = bothyLookup.sortedByDescending { it.first.length }
 
         return items.map { item ->
-            val titleNormalized = normalize(item.title)
+            // Pad with spaces so names only match on whole-word boundaries
+            val titlePadded = " ${normalize(item.title)} "
             val match = sortedLookup.firstOrNull { (name, _) ->
-                titleNormalized.contains(name)
+                titlePadded.contains(" $name ")
             }
             if (match != null) {
                 item.copy(
