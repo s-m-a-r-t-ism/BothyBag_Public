@@ -56,6 +56,7 @@ import com.bothybag.app.data.NewsRepository
 import com.bothybag.app.data.UserDataBackup
 import com.bothybag.app.data.VisitedRepository
 import com.bothybag.app.location.LocationService
+import com.bothybag.app.util.appVersionName
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import kotlinx.coroutines.launch
@@ -135,6 +136,7 @@ fun MapScreen(
     var permissionRequested by rememberSaveable { mutableStateOf(false) }
     var visitedMbaCount by remember { mutableStateOf(visitedRepo.visitedMbaCount(bothyRepo)) }
     val totalMba = remember { bothyRepo.mbaBothyCount }
+    val versionName = remember { context.appVersionName() }
     var userLocation by remember { mutableStateOf<Location?>(null) }
 
     // The MapView reference
@@ -310,7 +312,7 @@ fun MapScreen(
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
-                                text = { Text("Version v1.2") },
+                                text = { Text("Version v$versionName") },
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
@@ -379,7 +381,7 @@ fun MapScreen(
                 factory = { ctx ->
                     // Configure OSMDroid with persistent tile cache
                     Configuration.getInstance().apply {
-                        userAgentValue = "BothyBag/1.0"
+                        userAgentValue = "BothyBag/${ctx.appVersionName()}"
                         osmdroidTileCache = java.io.File(ctx.filesDir, "osmdroid/tiles")
                         tileFileSystemCacheMaxBytes = 100L * 1024 * 1024 // 100 MB
                         tileFileSystemCacheTrimBytes = 80L * 1024 * 1024 // Trim to 80 MB
