@@ -75,7 +75,7 @@ import com.bothybag.app.ui.theme.GreenVisited
 import com.bothybag.app.util.openUrlSafely
 import java.time.Instant
 import java.time.LocalDate
-import java.time.ZoneId
+import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
@@ -428,8 +428,13 @@ fun BothyDetailScreen(
 
     // Date picker dialog
     if (showDatePicker) {
+        // The date picker works in UTC: a day is the millisecond of its UTC midnight.
+        // Start on today's local date, expressed that way.
         val datePickerState = rememberDatePickerState(
-            initialSelectedDateMillis = System.currentTimeMillis()
+            initialSelectedDateMillis = LocalDate.now()
+                .atStartOfDay(ZoneOffset.UTC)
+                .toInstant()
+                .toEpochMilli()
         )
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
@@ -437,8 +442,10 @@ fun BothyDetailScreen(
                 TextButton(
                     onClick = {
                         datePickerState.selectedDateMillis?.let { millis ->
+                            // Read it back in UTC too. Using the phone's time zone here
+                            // gave the day before for anyone west of Greenwich.
                             val selectedDate = Instant.ofEpochMilli(millis)
-                                .atZone(ZoneId.systemDefault())
+                                .atZone(ZoneOffset.UTC)
                                 .toLocalDate()
                             visitedRepo.markVisitedOnDate(bothyId, selectedDate)
                             isVisited = true
