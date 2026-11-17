@@ -31,9 +31,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
-import androidx.compose.material3.pulltorefresh.PullToRefreshContainer
-import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
-import androidx.compose.ui.input.nestedscroll.nestedScroll
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -88,15 +86,6 @@ fun NewsScreen(
         }
     }
 
-    val pullToRefreshState = rememberPullToRefreshState()
-
-    if (pullToRefreshState.isRefreshing) {
-        LaunchedEffect(true) {
-            loadNews(forceRefresh = true)
-            pullToRefreshState.endRefresh()
-        }
-    }
-
     LaunchedEffect(Unit) { loadNews() }
 
     Scaffold(
@@ -119,11 +108,13 @@ fun NewsScreen(
             )
         }
     ) { paddingValues ->
-        Box(
+        // The spinner stays visible for as long as the refresh is running
+        PullToRefreshBox(
+            isRefreshing = isRefreshing,
+            onRefresh = { loadNews(forceRefresh = true) },
             modifier = Modifier
                 .fillMaxSize()
                 .padding(paddingValues)
-                .nestedScroll(pullToRefreshState.nestedScrollConnection)
         ) {
             when {
                 isLoading -> {
@@ -132,22 +123,39 @@ fun NewsScreen(
                     }
                 }
 
+                // The error and empty states sit in a scrollable list, because
+                // pull-to-refresh only responds to something that can scroll.
+                // That is what lets you pull down to try again when offline.
                 errorMsg != null && newsItems.isEmpty() -> {
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Text(
-                            text = errorMsg!!,
-                            color = MaterialTheme.colorScheme.error,
-                            modifier = Modifier.padding(16.dp)
-                        )
+                    LazyColumn(modifier = Modifier.fillMaxSize()) {
+                        item {
+                            Box(
+                                Modifier.fillParentMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    text = "${errorMsg}\n\nPull down to try again",
+                                    color = MaterialTheme.colorScheme.error,
+                                    modifier = Modifier.padding(16.dp)
+                                )
+                            }
+                        }
                     }
                 }
 
                 newsItems.isEmpty() -> {
-                    Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
-                        Text(
-                            "No news available",
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
+                    LazyColumn(modifier = Modifier.fillMaxSize()) {
+                        item {
+                            Box(
+                                Modifier.fillParentMaxSize(),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(
+                                    "No news available",
+                                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                                )
+                            }
+                        }
                     }
                 }
 
@@ -166,11 +174,6 @@ fun NewsScreen(
                     }
                 }
             }
-
-            PullToRefreshContainer(
-                state = pullToRefreshState,
-                modifier = Modifier.align(Alignment.TopCenter)
-            )
         }
     }
 }
