@@ -16,7 +16,7 @@ data class Bothy(
 
     val region: String? = null,
     val type: String = "Non-MBA",    // "MBA" or "Non-MBA"
-    val status: String = "open",     // "open", "closed", "seasonal"
+    val status: String = "open",     // "open", "closed", "permanently_closed", "seasonal"
     val source: String? = null,
 
     // MBA-specific fields
@@ -40,7 +40,25 @@ data class Bothy(
 ) {
     val isMba: Boolean get() = type == "MBA"
     val isOpen: Boolean get() = status.lowercase() == "open"
-    val isClosed: Boolean get() = status.lowercase() == "closed"
+    val isClosed: Boolean
+        get() = status.lowercase().let { it == "closed" || it == "permanently_closed" }
+
+    /** Not freely open to walkers: private, paying customers only, or no access */
+    val isPrivate: Boolean
+        get() = access?.lowercase().let { it == "private" || it == "customers" || it == "no" }
+
+    /** Readable access text for the detail screen */
+    val accessInfo: String?
+        get() = access?.takeIf { it.isNotBlank() }?.let {
+            when (it.lowercase()) {
+                "private" -> "Private, no public access"
+                "customers" -> "Paying customers only"
+                "no" -> "No access"
+                "permissive" -> "Open by permission of the owner"
+                "yes" -> "Public"
+                else -> it
+            }
+        }
 
     val elevationFt: Int? get() = elevationM?.let { (it * 3.28084).toInt() }
 
