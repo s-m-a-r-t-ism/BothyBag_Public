@@ -13,6 +13,7 @@ import argparse
 import hashlib
 import http.server
 import json
+import re
 import shutil
 from functools import partial
 from pathlib import Path
@@ -20,6 +21,15 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
 BOTHIES_JSON = ROOT / "app" / "src" / "main" / "assets" / "bothies.json"
+GRADLE_FILE = ROOT / "app" / "build.gradle.kts"
+
+
+def app_version() -> str:
+    """versionName from the Android build, so both apps always show the same version."""
+    match = re.search(r'versionName\s*=\s*"([^"]+)"', GRADLE_FILE.read_text(encoding="utf-8"))
+    if not match:
+        raise SystemExit(f"build_web: no versionName found in {GRADLE_FILE}")
+    return match.group(1)
 
 # Not precached: the worker itself, and news, which is fetched fresh when online.
 NOT_PRECACHED = {"sw.js", "data/news.json"}
@@ -28,7 +38,13 @@ NOT_PRECACHED = {"sw.js", "data/news.json"}
 def build(out: Path) -> None:
     if out.exists():
         shutil.rmtree(out)
-    shutil.copytree(WEB, out)
+    shutil.copytree(WEB, out, ignore=shutil.ignore_patterns("__pycache__", ".DS_Store"))
+
+    index = out / "index.html"
+    html = index.read_text(encoding="utf-8")
+    if html.count("__APP_VERSION__") != 1:
+        raise SystemExit("build_web: expected exactly one __APP_VERSION__ in web/index.html")
+    index.write_text(html.replace("__APP_VERSION__", app_version()), encoding="utf-8")
 
     data = out / "data"
     data.mkdir(exist_ok=True)
@@ -65,7 +81,7 @@ def build(out: Path) -> None:
         text = text.replace(old, new)
     sw.write_text(text, encoding="utf-8")
 
-    print(f"Built {out} ({len(files)} files, {len(bothies)} bothies, version {version})")
+    print(f"Built {out} (v{app_version()}, {len(files)} files, {len(bothies)} bothies, cache {version})")
 
 
 def main() -> None:

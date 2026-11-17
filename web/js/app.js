@@ -1,10 +1,10 @@
 // BothyBag web app: map, bothy detail and MBA news. A port of the Android app.
 
 import { icon, iconSvg, markerSvg } from './icons.js';
-import { visited, notes, prefs, newsCache, todayIso } from './store.js';
+import { visited, notes, prefs, newsCache, backup, todayIso } from './store.js';
 import {
-  loadBothies, allBothies, getBothy, isMba, isClosed, regionOf, statusBadge,
-  fireInfo, sizeInfo, elevationText, safeUrl, matchBothy,
+  loadBothies, allBothies, getBothy, isMba, isOpen, isClosed, isPrivate, regionOf, statusBadge,
+  accessInfo, fireInfo, sizeInfo, elevationText, safeUrl, matchBothy,
 } from './bothies.js';
 
 /* global L */
@@ -134,7 +134,11 @@ function initMap() {
 function openBubble(b) {
   const visitedMark = visited.date(b.id) ? ' ✓' : '';
   const region = regionOf(b);
-  const snippet = (isMba(b) ? 'MBA' : 'Non-MBA') + (region ? ` • ${region}` : '') + visitedMark;
+  const parts = [isMba(b) ? 'MBA' : 'Non-MBA'];
+  if (isClosed(b)) parts.push('Closed');
+  if (isPrivate(b)) parts.push('Private');
+  if (region) parts.push(region);
+  const snippet = parts.join(' • ') + visitedMark;
   const content = h('button', { class: 'bubble', onclick: () => go(`#/bothy/${b.id}`) },
     h('span', { class: 'bubble-text' },
       h('div', { class: 'bubble-title' }, b.name),
@@ -187,11 +191,6 @@ function cycleFilter() {
   else showMba = true;
   updateFilterLabel();
   renderMarkers();
-}
-
-function focusBothy(b, withBubble) {
-  map.setView([b.latitude, b.longitude], Math.max(map.getZoom(), DETAIL_ZOOM), { animate: true });
-  if (withBubble && markers.has(b.id)) openBubble(b);
 }
 
 /* ---------- Location ---------- */
@@ -303,6 +302,55 @@ function closeMenu() {
   $('menu-backdrop').hidden = true;
   $('btn-menu').setAttribute('aria-expanded', 'false');
   $('search').blur();
+}
+
+/* ---------- Backup ---------- */
+
+async function exportBackup() {
+  closeMenu();
+  const name = `bothybag-backup-${todayIso()}.json`;
+  const blob = new Blob([backup.exportJson()], { type: 'application/json' });
+  // On iPhone the share sheet is the way to save a file ("Save to Files", AirDrop, mail).
+  if (IS_IOS && navigator.canShare) {
+    const file = new File([blob], name, { type: 'application/json' });
+    if (navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file] });
+        return;
+      } catch (err) {
+        if (err.name === 'AbortError') return;
+        // fall through to a plain download
+      }
+    }
+  }
+  const url = URL.createObjectURL(blob);
+  const a = h('a', { href: url, download: name });
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+  toast('Backup saved');
+}
+
+async function importBackup(file) {
+  if (!file) return;
+  let text;
+  try {
+    if (file.size > 5 * 1024 * 1024) throw new Error('too large');
+    text = await file.text();
+  } catch {
+    toast('Not a BothyBag backup file');
+    return;
+  }
+  const result = backup.importJson(text);
+  if (!result) {
+    toast('Not a BothyBag backup file');
+  } else if (result.error) {
+    toast(result.error);
+  } else {
+    renderMarkers();
+    toast(`Imported ${result.visitedCount} visited, ${result.notesCount} notes`);
+  }
 }
 
 function runSearch() {
@@ -423,7 +471,8 @@ async function renderNews(force = false) {
       h('div', { class: 'news-footer' }, `${updated}Source: mountainbothies.org.uk`));
     if (force) body.scrollTop = 0;
   } catch (err) {
-    body.replaceChildren(h('div', { class: 'state error' }, `Could not load news: ${err.message}`));
+    body.replaceChildren(h('div', { class: 'state error' },
+      h('div', {}, `Could not load news: ${err.message}`, h('br'), h('br'), 'Tap the refresh button to try again')));
   } finally {
     refresh.classList.remove('spinning');
   }
@@ -539,6 +588,7 @@ function renderDetail(id) {
     ['Elevation', elevationText(b)],
     ['OS Grid Ref', b.os_grid_ref],
     ['Coordinates', `${b.latitude.toFixed(5)}, ${b.longitude.toFixed(5)}`],
+    ['Access', accessInfo(b)],
     ['Fire/Stove', fireInfo(b)],
     ['Size', sizeInfo(b)],
     ['Features', Array.isArray(b.bothy_features) && b.bothy_features.length ? b.bothy_features.join(' • ') : null],
@@ -572,7 +622,13 @@ function renderDetail(id) {
   body.replaceChildren(h('div', { class: 'detail' },
     h('div', { class: 'badges' },
       h('span', { class: `badge ${isMba(b) ? 'mba' : 'non-mba'}` }, isMba(b) ? 'MBA' : 'Non-MBA'),
-      h('span', { class: `badge ${status.kind}` }, status.text)),
+      // "Open" next to "Private" would contradict itself, so a private bothy
+      // only shows its status when that status is not open.
+      (!isPrivate(b) || !isOpen(b)) && h('span', { class: `badge ${status.kind}` }, status.text),
+      isPrivate(b) && h('span', { class: 'badge closed' }, 'Private')),
+    // Important notes: closures, seasonal restrictions, warnings.
+    typeof b.notes === 'string' && b.notes.trim() &&
+      h('p', { class: `bothy-note${isClosed(b) ? ' is-closed' : ''}` }, b.notes),
     h('div', { class: 'visited-line', id: 'visited-line', hidden: true }),
     updatesSlot,
     h('section', { class: 'card' },
@@ -600,6 +656,7 @@ function renderDetail(id) {
 
 let depth = 0; // how many screens we pushed ourselves, so Back knows whether history has somewhere to go
 let currentRoute = { name: 'map' };
+let leaving = false; // set while a Back is under way, so a quick second tap does not go back twice
 
 function parseRoute() {
   const hash = location.hash.replace(/^#\/?/, '');
@@ -610,13 +667,15 @@ function parseRoute() {
 }
 
 function go(hash) {
-  if (location.hash === hash) return;
+  if (leaving || location.hash === hash) return;
   depth += 1;
   location.hash = hash;
 }
 
 function back() {
+  if (leaving) return;
   if (depth > 0) {
+    leaving = true;
     depth -= 1;
     history.back();
   } else {
@@ -626,7 +685,7 @@ function back() {
 }
 
 function applyRoute() {
-  const prev = currentRoute;
+  leaving = false;
   const route = parseRoute();
   currentRoute = route;
   closeMenu();
@@ -642,11 +701,9 @@ function applyRoute() {
   } else if (route.name === 'news') {
     renderNews();
   } else {
+    // The map stays where it was left, as in the Android app.
     detailId = null;
     map.invalidateSize();
-    // Coming back from a bothy: show it on the map, as the Android app does.
-    const b = prev.name === 'detail' ? getBothy(prev.id) : null;
-    if (b) focusBothy(b, false);
   }
 }
 
@@ -665,6 +722,13 @@ function wireUi() {
   $('btn-menu').addEventListener('click', () => ($('menu').hidden ? openMenu() : closeMenu()));
   $('menu-backdrop').addEventListener('click', closeMenu);
   $('search').addEventListener('input', runSearch);
+  $('btn-export').addEventListener('click', exportBackup);
+  $('btn-import').addEventListener('click', () => {
+    closeMenu();
+    $('import-file').value = '';
+    $('import-file').click();
+  });
+  $('import-file').addEventListener('change', (e) => importBackup(e.target.files[0]));
   $('btn-dark').addEventListener('click', () => {
     isDarkMap = !isDarkMap;
     prefs.set('dark_map', isDarkMap);

@@ -77,6 +77,76 @@ export const notes = {
   },
 };
 
+const DATE_RE = /^(\d{4})-(\d{2})-(\d{2})$/;
+
+function isValidDate(value) {
+  const m = DATE_RE.exec(value);
+  if (!m) return false;
+  const d = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+  return d.getUTCFullYear() === +m[1] && d.getUTCMonth() === +m[2] - 1 && d.getUTCDate() === +m[3];
+}
+
+function allNotes() {
+  const out = {};
+  try {
+    for (let i = 0; i < localStorage.length; i += 1) {
+      const key = localStorage.key(i);
+      if (!key || !key.startsWith(NOTE_PREFIX)) continue;
+      const text = read(key, '');
+      if (typeof text === 'string' && text.trim()) out[key.slice(NOTE_PREFIX.length)] = text;
+    }
+  } catch {
+    // storage unavailable: nothing to export
+  }
+  return out;
+}
+
+/**
+ * Backup of visited bothies and notes. Same file format as the Android app
+ * (UserDataBackup.kt), so a backup can move between phone and web app.
+ */
+export const backup = {
+  exportJson() {
+    return JSON.stringify({
+      app: 'BothyBag',
+      version: 1,
+      exported: todayIso(),
+      visited: visited.map(),
+      notes: allNotes(),
+    });
+  },
+
+  /**
+   * Merges a backup: entries from the file are added and replace the entry for the
+   * same bothy. Nothing is removed. Returns null when the text is not a BothyBag backup.
+   */
+  importJson(text) {
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      return null;
+    }
+    if (!data || typeof data !== 'object' || Array.isArray(data)) return null;
+    const isMap = (v) => v && typeof v === 'object' && !Array.isArray(v);
+    if (!isMap(data.visited) && !isMap(data.notes)) return null;
+
+    const newVisits = {};
+    for (const [id, date] of Object.entries(isMap(data.visited) ? data.visited : {})) {
+      if (id.trim() && typeof date === 'string' && isValidDate(date)) newVisits[id] = date;
+    }
+    const newNotes = {};
+    for (const [id, note] of Object.entries(isMap(data.notes) ? data.notes : {})) {
+      if (id.trim() && typeof note === 'string' && note.trim()) newNotes[id] = note;
+    }
+
+    let ok = write(VISITED_KEY, { ...visited.map(), ...newVisits });
+    for (const [id, note] of Object.entries(newNotes)) ok = write(NOTE_PREFIX + id, note) && ok;
+    if (!ok) return { error: 'Could not save. Storage may be full or disabled.' };
+    return { visitedCount: Object.keys(newVisits).length, notesCount: Object.keys(newNotes).length };
+  },
+};
+
 export const prefs = {
   get(name, fallback) {
     const p = read(PREFS_KEY, {});

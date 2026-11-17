@@ -330,6 +330,17 @@ svg { display: block; }
 .search-results small { display: block; color: var(--on-surface-variant); font-size: 12px; }
 
 .menu-item { padding: 11px 16px; font-size: 15px; }
+.menu-divider { margin: 4px 0; border-top: 1px solid var(--divider); }
+
+.menu-action {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: none;
+  text-align: left;
+}
+
+.menu-action:active { background: var(--surface-variant); }
 .menu-note { padding: 8px 16px; font-size: 12px; color: var(--on-surface-variant); }
 
 /* ---------- Detail ---------- */
@@ -350,6 +361,15 @@ svg { display: block; }
 .badge.non-mba, .badge.other { background: var(--grey); }
 .badge.open { background: var(--green); }
 .badge.closed { background: var(--red); }
+
+.bothy-note {
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--on-surface);
+}
+
+.bothy-note.is-closed { color: var(--error); }
 
 .visited-line {
   display: flex;

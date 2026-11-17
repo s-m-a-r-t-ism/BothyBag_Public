@@ -1,7 +1,7 @@
 # BothyBag
 
 An Android app for finding bothies in Britain and keeping track of the ones
-you have visited.
+you have visited, with a web version for iPhone and any other browser.
 
 ## What it does
 
@@ -44,6 +44,28 @@ Actions (`.github/workflows/build.yml`).
 Raise both `versionCode` and `versionName` in `app/build.gradle.kts`. The
 version shown in the app's menu is read from there.
 
+## Web app (iPhone and other browsers)
+
+`web/` holds a web version of the app with the same features. It is a
+Progressive Web App: open it in Safari on an iPhone, tap Share, then
+"Add to Home Screen", and it works like an installed app, offline included.
+It uses the same `bothies.json` as the Android app, and its backup files are
+interchangeable with the Android export.
+
+It is published to GitHub Pages by `.github/workflows/pages.yml` whenever the
+web app or the dataset changes on `main`, and once a day to refresh the MBA
+news (browsers cannot read the MBA feed directly, so the workflow saves it as
+`data/news.json`).
+
+To try it locally:
+
+```
+python scripts/build_web.py --serve 8000    # then open http://localhost:8000
+```
+
+The version shown in the web app's menu is also read from
+`app/build.gradle.kts`.
+
 ## Project layout
 
 ```
@@ -56,7 +78,8 @@ app/src/main/java/com/bothybag/app
   navigation/   screen navigation
   location/     device location
 app/src/test    unit tests
-scripts/        dataset maintenance
+web/            web app (PWA)
+scripts/        dataset maintenance, web build and news fetch
 ```
 
 ## The dataset
@@ -94,7 +117,8 @@ snapshot, so check the MBA website before relying on a bothy.
   contributors, available under the Open Database License
 - Map tiles: OpenStreetMap, and [CARTO](https://carto.com/attributions) for the
   dark style
-- Map display: [osmdroid](https://github.com/osmdroid/osmdroid)
+- Map display: [osmdroid](https://github.com/osmdroid/osmdroid), and
+  [Leaflet](https://leafletjs.com/) in the web app
 
 BothyBag is an independent project and is not affiliated with the Mountain
 Bothies Association.

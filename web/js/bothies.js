@@ -19,8 +19,26 @@ export const getBothy = (id) => byId.get(id) ?? null;
 
 export const isMba = (b) => b.type === 'MBA';
 const statusOf = (b) => String(b.status ?? 'open').toLowerCase();
-// The data also contains "permanently_closed", which counts as closed here.
-export const isClosed = (b) => statusOf(b).includes('closed');
+export const isOpen = (b) => statusOf(b) === 'open';
+export const isClosed = (b) => ['closed', 'permanently_closed'].includes(statusOf(b));
+
+const accessOf = (b) => String(b.access ?? '').trim().toLowerCase();
+
+/** Not freely open to walkers: private, paying customers only, or no access. */
+export const isPrivate = (b) => ['private', 'customers', 'no'].includes(accessOf(b));
+
+/** Readable access text for the detail screen. */
+export function accessInfo(b) {
+  const raw = String(b.access ?? '').trim();
+  if (!raw) return null;
+  return {
+    private: 'Private, no public access',
+    customers: 'Paying customers only',
+    no: 'No access',
+    permissive: 'Open by permission of the owner',
+    yes: 'Public',
+  }[raw.toLowerCase()] ?? raw;
+}
 
 export function regionOf(b) {
   return b.region && b.region !== 'Unknown' ? b.region : null;
@@ -29,9 +47,11 @@ export function regionOf(b) {
 export function statusBadge(b) {
   const s = statusOf(b);
   if (s === 'open') return { text: 'Open', kind: 'open' };
+  if (s === 'closed') return { text: 'Closed', kind: 'closed' };
+  if (s === 'permanently_closed') return { text: 'Permanently closed', kind: 'closed' };
   if (s === 'seasonal') return { text: 'Seasonal', kind: 'seasonal' };
   const text = s.replace(/_/g, ' ');
-  return { text: text.charAt(0).toUpperCase() + text.slice(1), kind: isClosed(b) ? 'closed' : 'other' };
+  return { text: text.charAt(0).toUpperCase() + text.slice(1), kind: 'other' };
 }
 
 export function fireInfo(b) {
@@ -74,16 +94,23 @@ export function normalize(text) {
     .trim();
 }
 
+// Bothy names that are everyday words or place names once "Bothy" is dropped.
+// These only match when the full name is in the title.
+const AMBIGUOUS_SHORT_NAMES = new Set(['green', 'oban']);
+
 let lookup = null;
 
+// Same rules as NewsMatcher.kt in the Android app.
 function nameLookup() {
   if (lookup) return lookup;
   lookup = [];
-  for (const b of bothies) {
+  // Only MBA bothies: the feed is the MBA's own news, and names such as
+  // "Red Bothy" caused false matches.
+  for (const b of bothies.filter(isMba)) {
     const full = normalize(b.name);
     if (full) lookup.push([full, b]);
     const stripped = normalize(b.name.replace(/\s+bothy$/i, ''));
-    if (stripped && stripped !== full) lookup.push([stripped, b]);
+    if (stripped && stripped !== full && !AMBIGUOUS_SHORT_NAMES.has(stripped)) lookup.push([stripped, b]);
   }
   // Longest names first, so "Glen Dubh Lighe" wins over "Glen".
   lookup.sort((a, b) => b[0].length - a[0].length);
@@ -94,7 +121,8 @@ function nameLookup() {
 export function matchBothy(title) {
   const t = ` ${normalize(title)} `;
   for (const [name, b] of nameLookup()) {
-    if (t.includes(` ${name} `)) return b;
+    // The second check covers possessives: "Shenavall's" normalizes to "shenavalls".
+    if (t.includes(` ${name} `) || t.includes(` ${name}s `)) return b;
   }
   return null;
 }

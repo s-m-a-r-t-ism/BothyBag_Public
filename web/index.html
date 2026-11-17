@@ -39,8 +39,12 @@
                autocorrect="off" spellcheck="false" aria-label="Search bothies">
         <ul id="search-results" class="search-results"></ul>
         <div class="menu-item">Created by Mart Zijp</div>
-        <div class="menu-item" id="menu-version">Version v1.2</div>
+        <div class="menu-item" id="menu-version">Version v__APP_VERSION__</div>
         <div class="menu-item" id="menu-visited"></div>
+        <div class="menu-divider"></div>
+        <button class="menu-item menu-action" id="btn-export">Export visited &amp; notes</button>
+        <button class="menu-item menu-action" id="btn-import">Import visited &amp; notes</button>
+        <input type="file" id="import-file" accept=".json,application/json" hidden>
         <div class="menu-note">Map caches as you browse</div>
         <div class="menu-note" id="install-hint" hidden></div>
       </div>
