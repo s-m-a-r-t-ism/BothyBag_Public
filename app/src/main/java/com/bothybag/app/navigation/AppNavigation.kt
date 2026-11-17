@@ -1,6 +1,8 @@
 package com.bothybag.app.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.Lifecycle
+import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -15,12 +17,16 @@ object Screen {
     const val DETAIL = "detail/{bothyId}"
     const val NEWS = "news"
 
-    fun mapRoute(centerOnBothyId: String? = null): String {
-        return if (centerOnBothyId != null) "map?centerOnBothyId=$centerOnBothyId" else "map"
-    }
-
     fun detailRoute(bothyId: String) = "detail/$bothyId"
 }
+
+/**
+ * True while this screen is the one in front. Used to ignore a second tap that
+ * arrives while the screen is already animating away, which would otherwise
+ * navigate or go back twice.
+ */
+private fun NavBackStackEntry.isInFront(): Boolean =
+    lifecycle.currentState == Lifecycle.State.RESUMED
 
 @Composable
 fun AppNavigation() {
@@ -28,27 +34,20 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = "map"
+        startDestination = Screen.MAP
     ) {
-        composable(
-            route = "map?centerOnBothyId={centerOnBothyId}",
-            arguments = listOf(
-                navArgument("centerOnBothyId") {
-                    type = NavType.StringType
-                    nullable = true
-                    defaultValue = null
-                }
-            )
-        ) { backStackEntry ->
-            val centerOnBothyId = backStackEntry.arguments?.getString("centerOnBothyId")
+        composable(route = Screen.MAP) { backStackEntry ->
             MapScreen(
                 onBothyClick = { bothyId ->
-                    navController.navigate(Screen.detailRoute(bothyId))
+                    if (backStackEntry.isInFront()) {
+                        navController.navigate(Screen.detailRoute(bothyId))
+                    }
                 },
                 onNewsClick = {
-                    navController.navigate(Screen.NEWS)
-                },
-                centerOnBothyId = centerOnBothyId
+                    if (backStackEntry.isInFront()) {
+                        navController.navigate(Screen.NEWS)
+                    }
+                }
             )
         }
 
@@ -61,19 +60,23 @@ fun AppNavigation() {
             val bothyId = backStackEntry.arguments?.getString("bothyId") ?: return@composable
             BothyDetailScreen(
                 bothyId = bothyId,
+                // Go back to wherever the bothy was opened from: the map (which
+                // reopens where it was left) or the news list
                 onBack = {
-                    navController.navigate(Screen.mapRoute(centerOnBothyId = bothyId)) {
-                        popUpTo("map") { inclusive = true }
-                    }
+                    if (backStackEntry.isInFront()) navController.popBackStack()
                 }
             )
         }
 
-        composable(route = Screen.NEWS) {
+        composable(route = Screen.NEWS) { backStackEntry ->
             NewsScreen(
-                onBack = { navController.popBackStack() },
+                onBack = {
+                    if (backStackEntry.isInFront()) navController.popBackStack()
+                },
                 onBothyClick = { bothyId ->
-                    navController.navigate(Screen.detailRoute(bothyId))
+                    if (backStackEntry.isInFront()) {
+                        navController.navigate(Screen.detailRoute(bothyId))
+                    }
                 }
             )
         }

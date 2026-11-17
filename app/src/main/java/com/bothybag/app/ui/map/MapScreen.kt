@@ -40,6 +40,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.listSaver
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -59,6 +61,9 @@ import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import kotlinx.coroutines.launch
 import org.osmdroid.config.Configuration
 import org.osmdroid.events.MapEventsReceiver
+import org.osmdroid.events.MapListener
+import org.osmdroid.events.ScrollEvent
+import org.osmdroid.events.ZoomEvent
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.tileprovider.tilesource.XYTileSource
 import org.osmdroid.util.GeoPoint
@@ -70,12 +75,36 @@ import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 
+/**
+ * Where the map is looking. Kept up to date while the user pans and zooms, and
+ * saved with the screen, so the map reopens where it was left instead of
+ * jumping back to the overview of Scotland.
+ */
+private class MapCamera(
+    var latitude: Double = 56.5,
+    var longitude: Double = -4.0,
+    var zoom: Double = 6.5
+) {
+    fun updateFrom(mapView: MapView) {
+        // Before the first layout the map does not report a reliable center yet
+        if (!mapView.isLayoutOccurred) return
+        val center = mapView.mapCenter
+        latitude = center.latitude
+        longitude = center.longitude
+        zoom = mapView.zoomLevelDouble
+    }
+}
+
+private val MapCameraSaver = listSaver<MapCamera, Double>(
+    save = { listOf(it.latitude, it.longitude, it.zoom) },
+    restore = { MapCamera(it[0], it[1], it[2]) }
+)
+
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
 fun MapScreen(
     onBothyClick: (String) -> Unit,
-    onNewsClick: () -> Unit,
-    centerOnBothyId: String? = null
+    onNewsClick: () -> Unit
 ) {
     val context = LocalContext.current
     val bothyRepo = remember { BothyRepository(context) }
@@ -99,8 +128,11 @@ fun MapScreen(
     }
 
     var bothies by remember { mutableStateOf(bothyRepo.loadBothies()) }
-    var showMba by remember { mutableStateOf(true) }
-    var showNonMba by remember { mutableStateOf(true) }
+    // Saved with the screen, so they survive opening a bothy or the news and coming back
+    var showMba by rememberSaveable { mutableStateOf(true) }
+    var showNonMba by rememberSaveable { mutableStateOf(true) }
+    val camera = rememberSaveable(saver = MapCameraSaver) { MapCamera() }
+    var permissionRequested by rememberSaveable { mutableStateOf(false) }
     var visitedMbaCount by remember { mutableStateOf(visitedRepo.visitedMbaCount(bothyRepo)) }
     val totalMba = remember { bothyRepo.mbaBothyCount }
     var userLocation by remember { mutableStateOf<Location?>(null) }
@@ -166,9 +198,12 @@ fun MapScreen(
         )
     )
 
-    // Request permissions on launch
+    // Request permissions on launch (once, not on every return to the map)
     LaunchedEffect(Unit) {
-        locationPermissions.launchMultiplePermissionRequest()
+        if (!permissionRequested) {
+            permissionRequested = true
+            locationPermissions.launchMultiplePermissionRequest()
+        }
     }
 
     // Start/stop location updates based on permission
@@ -186,6 +221,7 @@ fun MapScreen(
     // Release OSMDroid MapView resources when leaving the screen
     DisposableEffect(Unit) {
         onDispose {
+            mapView?.let { camera.updateFrom(it) }
             mapView?.onDetach()
             mapView = null
         }
@@ -352,8 +388,20 @@ fun MapScreen(
                     MapView(ctx).apply {
                         setTileSource(if (isDarkMap) darkTileSource else TileSourceFactory.MAPNIK)
                         setMultiTouchControls(true)
-                        controller.setZoom(6.5)
-                        controller.setCenter(GeoPoint(56.5, -4.0))
+                        controller.setZoom(camera.zoom)
+                        controller.setCenter(GeoPoint(camera.latitude, camera.longitude))
+
+                        // Remember where the map is looking as the user pans and zooms
+                        addMapListener(object : MapListener {
+                            override fun onScroll(event: ScrollEvent?): Boolean {
+                                camera.updateFrom(this@apply)
+                                return false
+                            }
+                            override fun onZoom(event: ZoomEvent?): Boolean {
+                                camera.updateFrom(this@apply)
+                                return false
+                            }
+                        })
 
                         // Dismiss any open info window on a tap that misses a marker
                         val mapEvents = MapEventsOverlay(object : MapEventsReceiver {
@@ -389,16 +437,6 @@ fun MapScreen(
                     mv.invalidate()
                 }
             )
-
-            // Center on specific bothy if navigating back from detail
-            LaunchedEffect(centerOnBothyId) {
-                centerOnBothyId?.let { id ->
-                    val bothy = bothyRepo.getBothyById(id)
-                    bothy?.let {
-                        mapView?.controller?.animateTo(GeoPoint(it.latitude, it.longitude), 14.0, 500L)
-                    }
-                }
-            }
 
             // My Location FAB
             FloatingActionButton(
