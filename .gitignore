@@ -9,3 +9,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Web app build output
+/dist-web
+
+# Python bytecode
+__pycache__/
