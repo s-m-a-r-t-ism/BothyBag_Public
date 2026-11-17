@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android 11 and lower: back up only the user's visited bothies and personal notes -->
+<full-backup-content>
+    <include domain="sharedpref" path="visited_bothies.xml" />
+    <include domain="sharedpref" path="bothy_notes.xml" />
+</full-backup-content>

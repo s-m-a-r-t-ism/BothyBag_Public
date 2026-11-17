@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.bothybag.app.navigation.AppNavigation
 import com.bothybag.app.ui.theme.BothyBagTheme
+import com.bothybag.app.util.appVersionName
 import org.osmdroid.config.Configuration
 
 class MainActivity : ComponentActivity() {
@@ -15,7 +16,7 @@ class MainActivity : ComponentActivity() {
 
         // Configure OSMDroid before any MapView is created
         Configuration.getInstance().apply {
-            userAgentValue = "BothyBag/1.0"
+            userAgentValue = "BothyBag/${appVersionName()}"
             osmdroidTileCache = cacheDir
         }
 

@@ -68,13 +68,14 @@ import com.bothybag.app.data.NewsRepository
 import com.bothybag.app.data.NotesRepository
 import com.bothybag.app.data.VisitedRepository
 import com.bothybag.app.ui.components.BothyTypeBadge
+import com.bothybag.app.ui.components.PrivateBadge
 import com.bothybag.app.ui.components.StatusBadge
 import com.bothybag.app.ui.theme.AmberDark
 import com.bothybag.app.ui.theme.GreenVisited
 import com.bothybag.app.util.openUrlSafely
 import java.time.Instant
 import java.time.LocalDate
-import java.time.ZoneId
+import java.time.ZoneOffset
 import java.time.format.DateTimeFormatter
 import java.util.Locale
 
@@ -233,7 +234,29 @@ fun BothyDetailScreen(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 BothyTypeBadge(isMba = bothy.isMba)
-                StatusBadge(status = bothy.status)
+                // "Open" next to "Private" would contradict itself, so a private
+                // bothy only shows its status when that status is not open
+                if (!bothy.isPrivate || !bothy.isOpen) {
+                    StatusBadge(status = bothy.status)
+                }
+                if (bothy.isPrivate) {
+                    PrivateBadge()
+                }
+            }
+
+            // Important notes (closures, seasonal restrictions, warnings)
+            bothy.notes?.takeIf { it.isNotBlank() }?.let { note ->
+                Spacer(modifier = Modifier.height(12.dp))
+                Text(
+                    text = note,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Medium,
+                    color = if (bothy.isClosed) {
+                        MaterialTheme.colorScheme.error
+                    } else {
+                        MaterialTheme.colorScheme.onSurface
+                    }
+                )
             }
 
             // Visited date display
@@ -290,6 +313,10 @@ fun BothyDetailScreen(
                     }
 
                     InfoRow("Coordinates", "%.5f, %.5f".format(bothy.latitude, bothy.longitude))
+
+                    bothy.accessInfo?.let {
+                        InfoRow("Access", it)
+                    }
 
                     bothy.fireInfo?.let {
                         InfoRow("Fire/Stove", it)
@@ -401,8 +428,13 @@ fun BothyDetailScreen(
 
     // Date picker dialog
     if (showDatePicker) {
+        // The date picker works in UTC: a day is the millisecond of its UTC midnight.
+        // Start on today's local date, expressed that way.
         val datePickerState = rememberDatePickerState(
-            initialSelectedDateMillis = System.currentTimeMillis()
+            initialSelectedDateMillis = LocalDate.now()
+                .atStartOfDay(ZoneOffset.UTC)
+                .toInstant()
+                .toEpochMilli()
         )
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
@@ -410,8 +442,10 @@ fun BothyDetailScreen(
                 TextButton(
                     onClick = {
                         datePickerState.selectedDateMillis?.let { millis ->
+                            // Read it back in UTC too. Using the phone's time zone here
+                            // gave the day before for anyone west of Greenwich.
                             val selectedDate = Instant.ofEpochMilli(millis)
-                                .atZone(ZoneId.systemDefault())
+                                .atZone(ZoneOffset.UTC)
                                 .toLocalDate()
                             visitedRepo.markVisitedOnDate(bothyId, selectedDate)
                             isVisited = true

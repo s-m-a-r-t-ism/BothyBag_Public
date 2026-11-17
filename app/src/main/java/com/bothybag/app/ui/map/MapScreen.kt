@@ -2,6 +2,9 @@ package com.bothybag.app.ui.map
 
 import android.Manifest
 import android.location.Location
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -37,6 +40,8 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.listSaver
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -48,13 +53,18 @@ import androidx.compose.ui.viewinterop.AndroidView
 import com.bothybag.app.data.Bothy
 import com.bothybag.app.data.BothyRepository
 import com.bothybag.app.data.NewsRepository
+import com.bothybag.app.data.UserDataBackup
 import com.bothybag.app.data.VisitedRepository
 import com.bothybag.app.location.LocationService
+import com.bothybag.app.util.appVersionName
 import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import kotlinx.coroutines.launch
 import org.osmdroid.config.Configuration
 import org.osmdroid.events.MapEventsReceiver
+import org.osmdroid.events.MapListener
+import org.osmdroid.events.ScrollEvent
+import org.osmdroid.events.ZoomEvent
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory
 import org.osmdroid.tileprovider.tilesource.XYTileSource
 import org.osmdroid.util.GeoPoint
@@ -66,12 +76,36 @@ import org.osmdroid.views.overlay.infowindow.MarkerInfoWindow
 import org.osmdroid.views.overlay.mylocation.GpsMyLocationProvider
 import org.osmdroid.views.overlay.mylocation.MyLocationNewOverlay
 
+/**
+ * Where the map is looking. Kept up to date while the user pans and zooms, and
+ * saved with the screen, so the map reopens where it was left instead of
+ * jumping back to the overview of Scotland.
+ */
+private class MapCamera(
+    var latitude: Double = 56.5,
+    var longitude: Double = -4.0,
+    var zoom: Double = 6.5
+) {
+    fun updateFrom(mapView: MapView) {
+        // Before the first layout the map does not report a reliable center yet
+        if (!mapView.isLayoutOccurred) return
+        val center = mapView.mapCenter
+        latitude = center.latitude
+        longitude = center.longitude
+        zoom = mapView.zoomLevelDouble
+    }
+}
+
+private val MapCameraSaver = listSaver<MapCamera, Double>(
+    save = { listOf(it.latitude, it.longitude, it.zoom) },
+    restore = { MapCamera(it[0], it[1], it[2]) }
+)
+
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalPermissionsApi::class)
 @Composable
 fun MapScreen(
     onBothyClick: (String) -> Unit,
-    onNewsClick: () -> Unit,
-    centerOnBothyId: String? = null
+    onNewsClick: () -> Unit
 ) {
     val context = LocalContext.current
     val bothyRepo = remember { BothyRepository(context) }
@@ -95,14 +129,68 @@ fun MapScreen(
     }
 
     var bothies by remember { mutableStateOf(bothyRepo.loadBothies()) }
-    var showMba by remember { mutableStateOf(true) }
-    var showNonMba by remember { mutableStateOf(true) }
+    // Saved with the screen, so they survive opening a bothy or the news and coming back
+    var showMba by rememberSaveable { mutableStateOf(true) }
+    var showNonMba by rememberSaveable { mutableStateOf(true) }
+    val camera = rememberSaveable(saver = MapCameraSaver) { MapCamera() }
+    var permissionRequested by rememberSaveable { mutableStateOf(false) }
     var visitedMbaCount by remember { mutableStateOf(visitedRepo.visitedMbaCount(bothyRepo)) }
     val totalMba = remember { bothyRepo.mbaBothyCount }
+    val versionName = remember { context.appVersionName() }
     var userLocation by remember { mutableStateOf<Location?>(null) }
 
     // The MapView reference
     var mapView by remember { mutableStateOf<MapView?>(null) }
+
+    // Export / import of visited bothies and personal notes
+    val userDataBackup = remember { UserDataBackup(context) }
+    // Bumped after an import so the markers are redrawn with the new visited state
+    var visitedVersion by remember { mutableStateOf(0) }
+
+    val exportLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.CreateDocument("application/json")
+    ) { uri ->
+        if (uri != null) {
+            val saved = try {
+                context.contentResolver.openOutputStream(uri, "wt")?.use { stream ->
+                    stream.write(userDataBackup.exportJson().toByteArray(Charsets.UTF_8))
+                } != null
+            } catch (e: Exception) {
+                false
+            }
+            Toast.makeText(
+                context,
+                if (saved) "Backup saved" else "Could not save backup",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+    }
+
+    val importLauncher = rememberLauncherForActivityResult(
+        ActivityResultContracts.OpenDocument()
+    ) { uri ->
+        if (uri != null) {
+            val result = try {
+                context.contentResolver.openInputStream(uri)
+                    ?.bufferedReader()
+                    ?.use { it.readText() }
+                    ?.let { userDataBackup.importJson(it) }
+            } catch (e: Exception) {
+                null
+            }
+            if (result != null) {
+                visitedMbaCount = visitedRepo.visitedMbaCount(bothyRepo)
+                visitedVersion++
+                Toast.makeText(
+                    context,
+                    "Imported ${result.visitedCount} visited, ${result.notesCount} notes",
+                    Toast.LENGTH_LONG
+                ).show()
+            } else {
+                Toast.makeText(context, "Not a BothyBag backup file", Toast.LENGTH_LONG).show()
+            }
+        }
+    }
 
     // Location permissions
     val locationPermissions = rememberMultiplePermissionsState(
@@ -112,9 +200,12 @@ fun MapScreen(
         )
     )
 
-    // Request permissions on launch
+    // Request permissions on launch (once, not on every return to the map)
     LaunchedEffect(Unit) {
-        locationPermissions.launchMultiplePermissionRequest()
+        if (!permissionRequested) {
+            permissionRequested = true
+            locationPermissions.launchMultiplePermissionRequest()
+        }
     }
 
     // Start/stop location updates based on permission
@@ -132,6 +223,7 @@ fun MapScreen(
     // Release OSMDroid MapView resources when leaving the screen
     DisposableEffect(Unit) {
         onDispose {
+            mapView?.let { camera.updateFrom(it) }
             mapView?.onDetach()
             mapView = null
         }
@@ -220,12 +312,29 @@ fun MapScreen(
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
-                                text = { Text("Version v1.2") },
+                                text = { Text("Version v$versionName") },
                                 onClick = { showMenu = false }
                             )
                             DropdownMenuItem(
-                                text = { Text("$visitedMbaCount/105 MBA visited") },
+                                text = { Text("$visitedMbaCount/$totalMba MBA visited") },
                                 onClick = { showMenu = false }
+                            )
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 4.dp))
+                            DropdownMenuItem(
+                                text = { Text("Export visited & notes") },
+                                onClick = {
+                                    showMenu = false
+                                    exportLauncher.launch(
+                                        "bothybag-backup-${java.time.LocalDate.now()}.json"
+                                    )
+                                }
+                            )
+                            DropdownMenuItem(
+                                text = { Text("Import visited & notes") },
+                                onClick = {
+                                    showMenu = false
+                                    importLauncher.launch(arrayOf("*/*"))
+                                }
                             )
                             Text(
                                 text = "Map caches as you browse",
@@ -272,7 +381,7 @@ fun MapScreen(
                 factory = { ctx ->
                     // Configure OSMDroid with persistent tile cache
                     Configuration.getInstance().apply {
-                        userAgentValue = "BothyBag/1.0"
+                        userAgentValue = "BothyBag/${ctx.appVersionName()}"
                         osmdroidTileCache = java.io.File(ctx.filesDir, "osmdroid/tiles")
                         tileFileSystemCacheMaxBytes = 100L * 1024 * 1024 // 100 MB
                         tileFileSystemCacheTrimBytes = 80L * 1024 * 1024 // Trim to 80 MB
@@ -281,8 +390,20 @@ fun MapScreen(
                     MapView(ctx).apply {
                         setTileSource(if (isDarkMap) darkTileSource else TileSourceFactory.MAPNIK)
                         setMultiTouchControls(true)
-                        controller.setZoom(6.5)
-                        controller.setCenter(GeoPoint(56.5, -4.0))
+                        controller.setZoom(camera.zoom)
+                        controller.setCenter(GeoPoint(camera.latitude, camera.longitude))
+
+                        // Remember where the map is looking as the user pans and zooms
+                        addMapListener(object : MapListener {
+                            override fun onScroll(event: ScrollEvent?): Boolean {
+                                camera.updateFrom(this@apply)
+                                return false
+                            }
+                            override fun onZoom(event: ZoomEvent?): Boolean {
+                                camera.updateFrom(this@apply)
+                                return false
+                            }
+                        })
 
                         // Dismiss any open info window on a tap that misses a marker
                         val mapEvents = MapEventsOverlay(object : MapEventsReceiver {
@@ -310,22 +431,14 @@ fun MapScreen(
                     }
                 },
                 update = { mv ->
+                    // Reading this makes the block re-run after an import
+                    visitedVersion
                     // Clear and re-add markers when filters change
                     mv.overlays.removeAll { it is Marker }
                     addBothyMarkers(mv, bothies, visitedRepo, showMba, showNonMba, onBothyClick)
                     mv.invalidate()
                 }
             )
-
-            // Center on specific bothy if navigating back from detail
-            LaunchedEffect(centerOnBothyId) {
-                centerOnBothyId?.let { id ->
-                    val bothy = bothyRepo.getBothyById(id)
-                    bothy?.let {
-                        mapView?.controller?.animateTo(GeoPoint(it.latitude, it.longitude), 14.0, 500L)
-                    }
-                }
-            }
 
             // My Location FAB
             FloatingActionButton(
@@ -418,6 +531,8 @@ private fun addBothyMarkers(
             title = bothy.name
             snippet = buildString {
                 append(if (bothy.isMba) "MBA" else "Non-MBA")
+                if (bothy.isClosed) append(" • Closed")
+                if (bothy.isPrivate) append(" • Private")
                 if (bothy.region != null && bothy.region != "Unknown") {
                     append(" • ${bothy.region}")
                 }

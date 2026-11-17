@@ -9,6 +9,7 @@ Modes:
 """
 
 import json
+import re
 import sys
 import time
 import argparse
@@ -26,6 +27,40 @@ HEADERS = {
 }
 
 DELAY = 3  # seconds between requests
+
+
+def decode_cf_email(encoded):
+    """Decode a Cloudflare-obfuscated email address (the data-cfemail attribute).
+
+    The first byte is an XOR key for the remaining bytes.
+    """
+    key = int(encoded[:2], 16)
+    return "".join(
+        chr(int(encoded[i:i + 2], 16) ^ key) for i in range(2, len(encoded), 2)
+    )
+
+
+def restore_emails(content_div):
+    """Replace Cloudflare's "[email protected]" placeholders with the real address."""
+    for tag in content_div.select("[data-cfemail]"):
+        try:
+            tag.replace_with(decode_cf_email(tag["data-cfemail"]))
+        except (ValueError, KeyError):
+            tag.replace_with("")
+
+
+def clean_text(element):
+    """Text of an element with single spaces between inline pieces.
+
+    get_text(strip=True) glues the text of links and bold spans onto the words
+    around them ("Sheepgraze", "Accessby"), so join the pieces with a space and
+    then remove the spaces that leaves in front of punctuation.
+    """
+    text = element.get_text(" ", strip=True)
+    text = re.sub(r"\s+", " ", text)
+    text = re.sub(r"\s+([.,;:!?)\]”’])", r"\1", text)
+    text = re.sub(r"([(\[“‘])\s+", r"\1", text)
+    return text.strip()
 
 
 def extract_description(content_div):
@@ -49,12 +84,12 @@ def extract_description(content_div):
         if child.name == 'hr':
             break
         if child.name == 'div':
-            text = child.get_text(strip=True)
+            text = clean_text(child)
             if len(text) > 20:
                 paragraphs.append(text)
             continue
         if child.name in ('p', 'h3'):
-            text = child.get_text(strip=True)
+            text = clean_text(child)
             if text:
                 paragraphs.append(text)
 
@@ -69,7 +104,7 @@ def extract_features(content_div):
     ul = h2.find_next_sibling('ul')
     if not ul:
         return []
-    return [li.get_text(strip=True) for li in ul.find_all('li') if li.get_text(strip=True)]
+    return [clean_text(li) for li in ul.find_all('li') if clean_text(li)]
 
 
 def scrape_bothy(url):
@@ -80,6 +115,7 @@ def scrape_bothy(url):
     content = soup.find(id='content-text')
     if not content:
         return None, []
+    restore_emails(content)
     description = extract_description(content)
     features = extract_features(content)
     return description, features

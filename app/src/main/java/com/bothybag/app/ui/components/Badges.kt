@@ -29,10 +29,16 @@ fun StatusBadge(status: String, modifier: Modifier = Modifier) {
     val (text, bgColor) = when (status.lowercase()) {
         "open" -> "Open" to GreenVisited
         "closed" -> "Closed" to RedClosed
+        "permanently_closed" -> "Permanently closed" to RedClosed
         "seasonal" -> "Seasonal" to AmberDark
-        else -> status.replaceFirstChar { it.uppercase() } to GreyNonMba
+        else -> status.replace('_', ' ').replaceFirstChar { it.uppercase() } to GreyNonMba
     }
     Badge(text = text, backgroundColor = bgColor, modifier = modifier)
+}
+
+@Composable
+fun PrivateBadge(modifier: Modifier = Modifier) {
+    Badge(text = "Private", backgroundColor = RedClosed, modifier = modifier)
 }
 
 @Composable
