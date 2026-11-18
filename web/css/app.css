@@ -515,7 +515,7 @@ dl { margin: 0; }
 }
 
 .btn {
-  min-width: 34%;
+  flex: 1;
   height: 48px;
   display: inline-flex;
   align-items: center;
@@ -531,7 +531,6 @@ dl { margin: 0; }
 
 .btn svg { width: 18px; height: 18px; }
 .btn:active { filter: brightness(0.93); }
-.btn-primary { background: var(--primary); color: var(--on-primary); }
 .btn-visit { background: var(--surface-variant); color: var(--on-surface-variant); }
 .btn-visit.is-visited { background: var(--green); color: #FFF; }
 

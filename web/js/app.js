@@ -523,14 +523,6 @@ function onVisitClick() {
   dialog.showModal();
 }
 
-function navigateTo(b) {
-  const dest = `${b.latitude},${b.longitude}`;
-  const url = IS_IOS
-    ? `https://maps.apple.com/?daddr=${dest}&dirflg=w`
-    : `https://www.google.com/maps/dir/?api=1&destination=${dest}&travelmode=walking`;
-  window.open(url, '_blank', 'noopener');
-}
-
 async function shareBothy(b) {
   const sep = ' — ';
   let text = b.name;
@@ -717,7 +709,6 @@ function wireUi() {
   $('detail-back').innerHTML = iconSvg('back');
   $('news-back').innerHTML = iconSvg('back');
   $('news-refresh').innerHTML = iconSvg('refresh');
-  $('btn-navigate').append(icon('navigate'), 'Navigate');
 
   $('btn-menu').addEventListener('click', () => ($('menu').hidden ? openMenu() : closeMenu()));
   $('menu-backdrop').addEventListener('click', closeMenu);
@@ -742,10 +733,6 @@ function wireUi() {
   $('news-back').addEventListener('click', back);
   $('news-refresh').addEventListener('click', () => renderNews(true));
   $('btn-visit').addEventListener('click', onVisitClick);
-  $('btn-navigate').addEventListener('click', () => {
-    const b = getBothy(detailId);
-    if (b) navigateTo(b);
-  });
   $('date-dialog').addEventListener('close', () => {
     const value = $('visit-date').value;
     if ($('date-dialog').returnValue === 'confirm' && detailId && /^\d{4}-\d{2}-\d{2}$/.test(value)) {

@@ -9,7 +9,6 @@ const ICONS = {
   locate: '<circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5" class="solid"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/>',
   filter: '<path d="M3 6h18M7 12h10M10 18h4"/>',
   check: '<circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/>',
-  navigate: '<path d="M12 2l7 19-7-4-7 4z" class="solid"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18a14 14 0 0 1 0-18"/>',
   share: '<path d="M12 3v12M8 7l4-4 4 4M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>',
   close: '<path d="M6 6l12 12M18 6L6 18"/>',

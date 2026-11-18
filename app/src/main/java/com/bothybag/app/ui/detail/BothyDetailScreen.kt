@@ -1,7 +1,6 @@
 package com.bothybag.app.ui.detail
 
 import android.content.Intent
-import android.net.Uri
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -23,7 +22,6 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Article
 import androidx.compose.material.icons.filled.CheckCircle
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.Navigation
 import androidx.compose.material.icons.filled.Public
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material3.Button
@@ -143,10 +141,9 @@ fun BothyDetailScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .windowInsetsPadding(WindowInsets.navigationBars)
-                    .padding(horizontal = 16.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.SpaceBetween
+                    .padding(horizontal = 16.dp, vertical = 8.dp)
             ) {
-                // Mark as Visited button - opens date picker
+                // Mark as Visited button - opens date picker, full width
                 Button(
                     onClick = {
                         if (isVisited) {
@@ -158,7 +155,7 @@ fun BothyDetailScreen(
                         }
                     },
                     modifier = Modifier
-                        .weight(1f / 3f)
+                        .fillMaxWidth()
                         .height(48.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (isVisited) GreenVisited else MaterialTheme.colorScheme.surfaceVariant,
@@ -176,41 +173,6 @@ fun BothyDetailScreen(
                         fontSize = 14.sp,
                         maxLines = 1
                     )
-                }
-
-                Spacer(modifier = Modifier.weight(1f / 3f))
-
-                // Navigate button - bottom right, 1/3 width
-                Button(
-                    onClick = {
-                        val uri = Uri.parse(
-                            "google.navigation:q=${bothy.latitude},${bothy.longitude}&mode=w"
-                        )
-                        val intent = Intent(Intent.ACTION_VIEW, uri).apply {
-                            setPackage("com.google.android.apps.maps")
-                        }
-                        if (intent.resolveActivity(context.packageManager) != null) {
-                            context.startActivity(intent)
-                        } else {
-                            context.openUrlSafely(
-                                "https://www.google.com/maps/dir/?api=1&destination=${bothy.latitude},${bothy.longitude}&travelmode=walking"
-                            )
-                        }
-                    },
-                    modifier = Modifier
-                        .weight(1f / 3f)
-                        .height(48.dp),
-                    colors = ButtonDefaults.buttonColors(
-                        containerColor = MaterialTheme.colorScheme.primary
-                    )
-                ) {
-                    Icon(
-                        Icons.Default.Navigation,
-                        contentDescription = null,
-                        modifier = Modifier.size(18.dp)
-                    )
-                    Spacer(modifier = Modifier.width(6.dp))
-                    Text("Navigate", fontSize = 14.sp, maxLines = 1)
                 }
             }
         }
