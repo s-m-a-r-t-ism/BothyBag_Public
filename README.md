@@ -15,8 +15,7 @@ you have visited, with a web version for iPhone and any other browser.
   see how many MBA bothies you have visited.
 - **MBA news**: the latest articles from the MBA website, linked to the bothy
   they are about.
-- **Navigate and share**: open walking directions in Google Maps or share a
-  bothy's name and grid reference.
+- **Share**: share a bothy's name and grid reference.
 - **Backup**: visited bothies and notes are included in Android's own backup,
   and can be exported to and imported from a file through the map menu.
 
