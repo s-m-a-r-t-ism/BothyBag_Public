@@ -143,7 +143,7 @@ fun BothyDetailScreen(
                     .windowInsetsPadding(WindowInsets.navigationBars)
                     .padding(horizontal = 16.dp, vertical = 8.dp)
             ) {
-                // Mark as Visited button - opens date picker, full width
+                // Mark as Visited button - opens date picker, bottom left, 1/3 width
                 Button(
                     onClick = {
                         if (isVisited) {
@@ -155,7 +155,7 @@ fun BothyDetailScreen(
                         }
                     },
                     modifier = Modifier
-                        .fillMaxWidth()
+                        .weight(1f / 3f)
                         .height(48.dp),
                     colors = ButtonDefaults.buttonColors(
                         containerColor = if (isVisited) GreenVisited else MaterialTheme.colorScheme.surfaceVariant,
@@ -174,6 +174,8 @@ fun BothyDetailScreen(
                         maxLines = 1
                     )
                 }
+
+                Spacer(modifier = Modifier.weight(2f / 3f))
             }
         }
     ) { paddingValues ->

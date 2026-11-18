@@ -515,7 +515,7 @@ dl { margin: 0; }
 }
 
 .btn {
-  flex: 1;
+  min-width: 34%;
   height: 48px;
   display: inline-flex;
   align-items: center;
